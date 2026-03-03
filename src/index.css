@@ -209,6 +209,11 @@ header {
   align-items: center;
 }
 
+.logo {
+  /* spacing around textual logo to create more white space */
+  padding: 0 20px;
+}
+
 .logo .ispec {
   font-size: 1.8rem;
   color: var(--primary);
@@ -378,7 +383,7 @@ header {
 
 .hero-bottom-illustration {
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   left: 0;
   width: 100%;
   z-index: 5;

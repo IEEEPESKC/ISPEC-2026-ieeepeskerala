@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import aboutBanner from '../assets/about-banner.png';
+import Ispeclogo from '../assets/Ispeclogo.png';
 
 const About = () => {
     return (
@@ -8,7 +8,7 @@ const About = () => {
             <div className="container">
                 <div className="welcome-grid">
                     <div className="welcome-image">
-                        <img src={aboutBanner} alt="iSPEC 2026 Sustainable Power Conference" style={{ width: '100%', borderRadius: '15px', boxShadow: 'var(--shadow)' }} />
+                        <img src={Ispeclogo} alt="iSPEC 2026 Sustainable Power Conference" style={{ width: '100%', borderRadius: '15px', boxShadow: 'var(--shadow)' }} />
                     </div>
                     <div className="welcome-text">
                         <h2 className="section-title">Welcome Message</h2>
