@@ -1,65 +1,108 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PageLayout from '../components/PageLayout';
 
 const SpecialSessionPage = () => {
     return (
         <PageLayout title="Special Session">
-            <div className="container">
-                <section className="mb-5">
-                    <h2>Invitation for Special Session Proposals</h2>
-                    <p>Special Sessions are intended to provide focused forums on timely and impactful topics that complement the main technical tracks of iSPEC 2026. Proposals may emphasize novel theories, advanced technologies, system-level integration, real-world deployment, or industry-relevant challenges. Contributions that bridge academia and industry are particularly encouraged.</p>
-                </section>
+            <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 15px' }}>
+                <div id="breadcrumbs" style={{ padding: '20px 0', fontSize: '0.9rem', color: '#666' }}>
+                    <span><span><Link to="/" style={{ color: '#00629b', textDecoration: 'none' }}>Home</Link></span> » <span className="breadcrumb_last" aria-current="page">Special Session</span></span>
+                </div>
 
-                <section className="mb-5">
-                    <h2>Scope of Special Session</h2>
-                    <p>Special Session topics may include, but are not limited to:</p>
-                    <ul>
-                        <li>Future power network architectures and grid modernization</li>
-                        <li>Microgrids, distributed energy resources, and grid-edge intelligence</li>
-                        <li>Energy storage systems, flexibility, and market participation</li>
-                        <li>Protection, control, and automation for modern power systems</li>
-                        <li>Power electronics, grid-forming inverters, and hybrid AC/DC systems</li>
-                        <li>Digitalization, digital twins, and data-driven power system operation</li>
-                        <li>Cyber-physical security and interoperability of power systems</li>
-                        <li>Electrification, sustainability, and resilient energy infrastructure</li>
-                    </ul>
-                </section>
+                <div className="section-content" style={{ paddingBottom: '60px' }}>
+                    <h1 style={{ fontSize: '2.5rem', marginBottom: '30px', color: '#333' }}><span>Invitation for Special Session Proposals</span></h1>
 
-                <section className="mb-5">
-                    <h2>Proposal Requirements</h2>
-                    <p>A Special Session proposal should include:</p>
-                    <ol>
-                        <li>Proposed Special Session title</li>
-                        <li>Brief description of the session (objectives, relevance, and scope)</li>
-                        <li>List of key topics to be covered</li>
-                        <li>Names and affiliations of the organizer(s)</li>
-                        <li>List of potential contributors (or indicative paper titles, one session is suggested to contain 8 papers in total)</li>
-                        <li>List of potential reviewers</li>
-                    </ol>
-                </section>
-
-                <section className="mb-5">
-                    <h2>Important Dates</h2>
-                    <div className="dates-grid" style={{ display: 'grid', gap: '20px' }}>
-                        <div className="date-category">
-                            <h4>Tutorials & Special Sessions</h4>
-                            <ul>
-                                <li><strong>Proposal Deadline:</strong> 10 March 2026</li>
-                                <li><strong>Decision Notification:</strong> 15 March 2026</li>
-                            </ul>
+                    <div style={{ marginBottom: '40px' }}>
+                        <div style={{ fontSize: '1.05rem', lineHeight: '1.6', color: '#444' }}>
+                            Special Sessions are intended to provide focused forums on timely and impactful topics that complement the main technical tracks of iSPEC 2026. Proposals may emphasize novel theories, advanced technologies, system-level integration, real-world deployment, or industry-relevant challenges. Contributions that bridge academia and industry, or that highlight practical insights from demonstrations and field applications, are particularly encouraged.
+                        </div>
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '30px 0' }}>
+                            <div style={{ flex: 1, height: '3px', background: '#ccc' }}></div>
+                            <div style={{ width: '50px', height: '3px', background: '#00629b', margin: '0 10px' }}></div>
+                            <div style={{ flex: 1, height: '3px', background: '#ccc' }}></div>
                         </div>
                     </div>
-                </section>
 
-                <section className="mb-5">
-                    <h2>Proposal Submission</h2>
-                    <p>Please use the template provided for filling up the proposal. All Special Sessions will follow the standard iSPEC peer-review process. Accepted papers will be published in the conference proceedings.</p>
-                    <p>Special Session proposals should be submitted to special session chair via email.</p>
-                    <div className="alert alert-info">
-                        <strong>Contact:</strong> Special Session Chair (Details to be announced)
+                    <div style={{ display: 'flex', flexWrap: 'wrap', margin: '0 -15px' }}>
+                        {/* Left Column (Main Content) */}
+                        <div style={{ flex: '0 0 100%', maxWidth: '100%', padding: '0 15px', marginBottom: '40px' }} className="col-lg-8 col-md-12">
+                            <h2 style={{ fontSize: '2rem', marginBottom: '20px', color: '#333' }}><span>Scope of Special Session</span></h2>
+                            <div style={{ fontSize: '1.05rem', lineHeight: '1.6', color: '#444', marginBottom: '30px' }}>
+                                <p>Special Session topics may include, but are not limited to:</p>
+                                <ul style={{ marginLeft: '20px', marginBottom: '20px' }}>
+                                    <li>Future power network architectures and grid modernization</li>
+                                    <li>Microgrids, distributed energy resources, and grid-edge intelligence</li>
+                                    <li>Energy storage systems, flexibility, and market participation</li>
+                                    <li>Protection, control, and automation for modern power systems</li>
+                                    <li>Power electronics, grid-forming inverters, and hybrid AC/DC systems</li>
+                                    <li>Digitalization, digital twins, and data-driven power system operation</li>
+                                    <li>Cyber-physical security and interoperability of power systems</li>
+                                    <li>Electrification, sustainability, and resilient energy infrastructure</li>
+                                </ul>
+                            </div>
+
+                            <h2 style={{ fontSize: '2rem', marginBottom: '20px', color: '#333', marginTop: '20px' }}><span>Proposal Requirements</span></h2>
+                            <div style={{ fontSize: '1.05rem', lineHeight: '1.6', color: '#444' }}>
+                                <p>A Special Session proposal should include:</p>
+                                <ol style={{ marginLeft: '20px', marginBottom: '20px' }}>
+                                    <li>Proposed Special Session title</li>
+                                    <li>Brief description of the session (objectives, relevance, and scope)</li>
+                                    <li>List of key topics to be covered</li>
+                                    <li>Names and affiliations of the organizer(s)</li>
+                                    <li>List of potential contributors (or indicative paper titles, one session is suggested to contain 8 papers in total)</li>
+                                    <li>List of potential reviewers</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        {/* Right Column (Sidebar) */}
+                        <div style={{ flex: '0 0 100%', maxWidth: '100%', padding: '0 15px' }} className="col-lg-4 col-md-12">
+                            <h2 style={{ fontSize: '2rem', marginBottom: '20px', color: '#333' }}><span>Important Dates</span></h2>
+                            <div style={{ fontSize: '1.05rem', lineHeight: '1.6', color: '#444' }}>
+                                <p style={{ marginBottom: '15px' }}>
+                                    <strong>Paper Submission</strong><br />
+                                    • Submission Open: 15 February 2026<br />
+                                    • Full Paper Deadline: 15 April 2026<br />
+                                    • Acceptance Notification: 15 June 2026
+                                </p>
+                                <p style={{ marginBottom: '15px' }}>
+                                    <strong>Tutorials &amp; Special Sessions</strong><br />
+                                    • Proposal Deadline: 10 March 2026<br />
+                                    • Decision Notification: 15 March 2026
+                                </p>
+                                <p style={{ marginBottom: '15px' }}>
+                                    <strong>Registration</strong><br />
+                                    • Early Registration Deadline: 15 July 2026<br />
+                                    • Camera-ready Paper Due: 15 July 2026
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                </section>
+
+                    {/* Bottom Full Width Content */}
+                    <div style={{ marginTop: '30px' }}>
+                        <h2 style={{ fontSize: '2rem', marginBottom: '20px', color: '#333' }}><span>Proposal Submission</span></h2>
+                        <div style={{ fontSize: '1.05rem', lineHeight: '1.6', color: '#444' }}>
+                            <p>
+                                Please use <a href="#" style={{ color: '#00629b' }}><em><strong>the template</strong></em></a> provided for filling up the proposal.<br />
+                                <a href="#" style={{ color: '#00629b' }}>Special_Session_Proposal_Template.docx</a><br />
+                                All Special Sessions will follow the standard iSPEC peer-review process. Accepted papers will be published in the conference proceedings.<br />
+                                Special Session proposals should be submitted to <strong>special session chair</strong> via email.<br />
+                                For proposal submission details and enquiries, please contact:<br />
+                                <strong>Special Session Chair: </strong>Assoc. Prof. (To Be Announced) <a href="mailto:info@ispec2026.org" style={{ color: '#00629b' }}>info@ispec2026.org</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <style>{`
+                @media (min-width: 992px) {
+                    .col-lg-8 { flex: 0 0 66.666667% !important; max-width: 66.666667% !important; }
+                    .col-lg-4 { flex: 0 0 33.333333% !important; max-width: 33.333333% !important; }
+                }
+            `}</style>
         </PageLayout>
     );
 };
