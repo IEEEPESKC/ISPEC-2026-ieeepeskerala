@@ -4,7 +4,8 @@ import speaker2 from '../assets/speaker.png';
 import speaker3 from '../assets/speaker.png';
 
 const Speakers = () => {
-    const speakerList = [
+    /*
+       const speakerList = [
         { name: 'Dr. Ajith Gopi', title: 'CEO, Zonergia', image: speaker1 },
         { name: 'Prof. David Chen', title: 'Director, Smart Grid Institute', image: speaker2 },
         { name: 'Dr. Emily Watson', title: 'Renewable Energy Researcher', image: speaker3 },
@@ -31,6 +32,7 @@ const Speakers = () => {
             </div>
         </section>
     );
+    */
 };
 
 export default Speakers;

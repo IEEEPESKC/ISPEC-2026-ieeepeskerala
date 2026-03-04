@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import keralaIllustration from '../assets/kerala.png';
+import keralaIllustration from '../assets/kerala2.7.png';
 
 const Hero = () => {
     return (
