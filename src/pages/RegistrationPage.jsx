@@ -305,20 +305,20 @@ const RegistrationPage = () => {
                 <div style={{ height: '1px', background: '#e0e0e0', margin: '40px 0' }}></div>
 
                 {/* Terms & Conditions */}
-                <section style={{ marginBottom: '20px' }}>
-                    <h2 style={{ fontSize: '2rem', color: '#00629b', marginBottom: '30px', fontWeight: 'bold', borderBottom: '3px solid #2e8b57', paddingBottom: '12px' }}>
+                <section style={{ marginBottom: '20px', textAlign: 'center' }}>
+                    <h2 style={{ fontSize: '2rem', color: '#00629b', marginBottom: '30px', fontWeight: 'bold', borderBottom: '3px solid #2e8b57', paddingBottom: '12px', display: 'inline-block' }}>
                         Terms &amp; Conditions
                     </h2>
-                    <div style={{ background: '#fff8e1', border: '1px solid #ffe082', borderRadius: '10px', padding: '20px 25px', marginBottom: '30px' }}>
+                    <div style={{ background: '#fff8e1', border: '1px solid #ffe082', borderRadius: '10px', padding: '20px 25px', marginBottom: '30px', maxWidth: '800px', margin: '0 auto 30px' }}>
                         <p style={{ margin: 0, fontSize: '1.05rem', color: '#444', lineHeight: '1.7' }}>
                             <strong>⚠️ Important:</strong> At least one author of each accepted paper must register. Each registration covers a maximum of <strong>two (2) papers</strong>, with a limit of <strong>6 pages per paper</strong>. Each additional page incurs <strong>XXXXX INR</strong> per page. Payment deadline: <strong>1 November 2026</strong>.
                         </p>
                     </div>
 
                     {tcSections.map(({ title, body }, i) => (
-                        <div key={i} style={{ marginBottom: '28px' }}>
-                            <h3 style={{ fontSize: '1.3rem', color: '#00629b', marginBottom: '12px', fontWeight: 'bold', borderLeft: '4px solid #2e8b57', paddingLeft: '10px' }}>{title}</h3>
-                            <div style={{ fontSize: '1.02rem', color: '#444', lineHeight: '1.7', paddingLeft: '14px' }}>{body}</div>
+                        <div key={i} style={{ marginBottom: '28px', maxWidth: '800px', margin: '0 auto 28px' }}>
+                            <h3 style={{ fontSize: '1.3rem', color: '#00629b', marginBottom: '12px', fontWeight: 'bold' }}>{title}</h3>
+                            <div style={{ fontSize: '1.02rem', color: '#444', lineHeight: '1.7' }}>{body}</div>
                         </div>
                     ))}
                 </section>
