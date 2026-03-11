@@ -214,15 +214,7 @@ header {
 }
 
 .logo {
-  /* spacing around textual logo to create more white space */
   padding: 0 20px;
-}
-
-.logo .ispec {
-  font-size: 1.8rem;
-  color: var(--primary);
-  text-decoration: none;
-  letter-spacing: -0.5px;
 }
 
 .nav-brand {
