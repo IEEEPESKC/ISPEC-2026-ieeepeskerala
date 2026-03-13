@@ -3,6 +3,8 @@ import { motion } from 'motion/react';
 import { Calendar, MapPin, FileText, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+import backgroundImage from '../assets/image.png';
+
 const Hero = () => {
   const conferenceInfo = {
     title: 'iSPEC 2026',
@@ -14,15 +16,15 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-slate-950 flex items-center">
-      {/* ── BACKGROUND LAYER (Variation 4 Image) ── */}
+      {/* ── BACKGROUND LAYER ── */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/src/assets/image.png"
-          alt="Kerala Landscape"
+          src={backgroundImage}
+          alt="Conference Background"
           className="w-full h-full object-cover"
         />
-        {/* Deep, High-Contrast Solid Overlay */}
-        <div className="absolute inset-0 bg-slate-950/80"></div>
+        {/* Deep Overlay */}
+        <div className="absolute inset-0 bg-slate-950/70"></div>
       </div>
 
       {/* ── MAIN CONTENT ── */}
