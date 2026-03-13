@@ -1,14 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PageLayout from '../components/PageLayout';
 
 const ContactPage = () => {
+    const [status, setStatus] = useState('');
+
     const contacts = [
         { icon: 'fa-envelope', label: 'General Enquiries', name: 'iSPEC 2026', email: 'contact@ispec2026.org', accent: '#2e8b57' },
         { icon: 'fa-user-tie', label: 'General Chair', name: 'Dr. Ajith Gopi', email: 'ajithgopi@ieee.org', accent: '#00629b' },
         { icon: 'fa-user-tie', label: 'General Co-Chair', name: 'Dr. Boby Philip', email: 'boby.philip@ieee.org', accent: '#00629b' },
         { icon: 'fa-map-marker-alt', label: 'Venue', name: 'Hyatt Regency Trivandrum', email: null, accent: '#e65100', extra: 'Kerala, India' },
     ];
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        setStatus('Sending...');
+
+        try {
+            const formData = new FormData(form);
+            const res = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (res.ok) {
+                setStatus('Message sent successfully!');
+                form.reset();
+                setTimeout(() => setStatus(''), 5000); // Clear message after 5 seconds
+            } else {
+                setStatus('Oops! There was a problem sending your message.');
+            }
+        } catch (error) {
+            console.error(error);
+            setStatus('Oops! There was a problem sending your message.');
+        }
+    };
 
     return (
         <PageLayout title="Contact Us">
@@ -55,7 +85,7 @@ const ContactPage = () => {
                         <h3 style={{ fontSize: '1.3rem', fontWeight: 'bold', color: '#333', marginBottom: '20px', paddingBottom: '12px', borderBottom: '2px solid #f0f0f0' }}>
                             Send Us a Message
                         </h3>
-                        <form action="https://formsubmit.co/contact@ispec2026.org" method="POST">
+                        <form action="https://formsubmit.co/contact@ispec2026.org" method="POST" onSubmit={handleSubmit}>
                             {/* Name + Email side by side */}
                             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '12px' }}>
                                 <div>
@@ -86,15 +116,18 @@ const ContactPage = () => {
                                 }}></textarea>
                             </div>
 
-                            <div style={{ textAlign: 'right' }}>
-                                <button type="submit" style={{
-                                    background: '#00629b', color: '#fff', border: 'none', padding: '10px 26px', borderRadius: '7px',
-                                    fontSize: '0.95rem', fontWeight: 'bold', cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '8px', transition: 'background 0.3s'
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                                <div style={{ fontSize: '0.9rem', fontWeight: 'bold', color: status.includes('success') ? '#2e8b57' : (status.includes('Oops') ? '#e65100' : '#00629b') }}>
+                                    {status}
+                                </div>
+                                <button type="submit" disabled={status === 'Sending...'} style={{
+                                    background: status === 'Sending...' ? '#ccc' : '#00629b', color: '#fff', border: 'none', padding: '10px 26px', borderRadius: '7px',
+                                    fontSize: '0.95rem', fontWeight: 'bold', cursor: status === 'Sending...' ? 'not-allowed' : 'pointer', display: 'inline-flex', alignItems: 'center', gap: '8px', transition: 'background 0.3s'
                                 }}
-                                    onMouseEnter={(e) => e.currentTarget.style.background = '#004a7c'}
-                                    onMouseLeave={(e) => e.currentTarget.style.background = '#00629b'}>
-                                    <i className="fas fa-paper-plane"></i>
-                                    Send Message
+                                    onMouseEnter={(e) => { if (status !== 'Sending...') e.currentTarget.style.background = '#004a7c'; }}
+                                    onMouseLeave={(e) => { if (status !== 'Sending...') e.currentTarget.style.background = '#00629b'; }}>
+                                    <i className={status === 'Sending...' ? "fas fa-spinner fa-spin" : "fas fa-paper-plane"}></i>
+                                    {status === 'Sending...' ? 'Sending...' : 'Send Message'}
                                 </button>
                             </div>
                         </form>
