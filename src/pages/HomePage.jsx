@@ -172,6 +172,7 @@ const HomePage = () => {
                                 {/* News */}
                                 <div>
                                     <SectionTitle>Latest News</SectionTitle>
+                                    {/* 
                                     <div style={{
                                         background: '#fafafa', borderRadius: '8px', padding: '20px',
                                         border: '1px solid #eaeaea'
@@ -189,6 +190,8 @@ const HomePage = () => {
                                             <i className="fas fa-calendar-alt"></i> 1st March 2026
                                         </div>
                                     </div>
+                                    */}
+                                    <div style={{ height: '100px' }}></div>
                                 </div>
 
                                 {/* Sponsors */}
