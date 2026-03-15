@@ -105,8 +105,8 @@ const Navbar = () => {
                                 VENUE <i className="fas fa-chevron-down"></i>
                             </span>
                             <ul className={`dropdown-menu ${openDropdown === 'venue' ? 'show' : ''}`}>
-                                <li><Link to="/venue" onClick={closeMenu}>Hyatt Regency Trivandrum</Link></li>
-                                <li><Link to="/travel" onClick={closeMenu}>Travel to Trivandrum</Link></li>
+                                <li><Link to="/#" onClick={closeMenu}> Thiruvananthapuram</Link></li>
+                                <li><Link to="#" onClick={closeMenu}>Travel to Thiruvananthapuram</Link></li>
                             </ul>
                         </li>
                         <li><Link to="/contact" onClick={closeMenu}>CONTACT</Link></li>

@@ -1,153 +1,123 @@
 import React from 'react';
+import { motion } from 'motion/react';
+import { Calendar, MapPin, FileText, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+import backgroundImage from '../assets/image.png';
+
 const Hero = () => {
-    return (
-        <section
-            id="home"
-            style={{
-                position: 'relative',
-                minHeight: '100vh',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                overflow: 'hidden',
-                backgroundColor: '#f4f9f7',
-                fontFamily: "'Outfit', sans-serif"
-            }}
-        >
-            {/* Soft background glows / Glassmorphism Orbs */}
-            <div style={{ position: 'absolute', top: '-10%', left: '-10%', width: '50%', height: '50%', background: 'radial-gradient(circle, rgba(46,139,87,0.18) 0%, transparent 70%)', filter: 'blur(60px)', zIndex: 1, animation: 'float 8s ease-in-out infinite' }}></div>
-            <div style={{ position: 'absolute', bottom: '-20%', right: '-10%', width: '60%', height: '60%', background: 'radial-gradient(circle, rgba(0,98,155,0.12) 0%, transparent 70%)', filter: 'blur(70px)', zIndex: 1, animation: 'float 12s ease-in-out infinite reverse' }}></div>
+  const conferenceInfo = {
+    title: 'iSPEC 2026',
+    subtitle: 'IEEE PES Kerala Chapter',
+    theme: 'Empowering a Sustainable Future Through Green Technology and Systems Innovation.',
+    date: 'Dec 4 – 6, 2026',
+    venue: 'Thiruvananthapuram, Kerala'
+  };
 
-            {/* Fine Grid pattern */}
-            <div style={{
-                position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
-                backgroundImage: 'linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)',
-                backgroundSize: '40px 40px',
-                zIndex: 1,
-                opacity: 0.7
-            }}></div>
+  return (
+    <section className="relative min-h-screen overflow-hidden bg-slate-950 flex items-center">
+      {/* ── BACKGROUND LAYER ── */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={backgroundImage}
+          alt="Conference Background"
+          className="w-full h-full object-cover"
+        />
+        {/* Deep Overlay */}
+        <div className="absolute inset-0 bg-slate-950/70"></div>
+      </div>
 
-            <div className="container" style={{ position: 'relative', zIndex: 10, maxWidth: '1400px', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '140px 20px 100px' }}>
+      {/* ── MAIN CONTENT ── */}
+      <div className="relative z-10 container mx-auto px-6 lg:px-12 py-32">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
-                {/* Conference Logo/Name Box */}
-                <div style={{ display: 'inline-block', marginBottom: '25px', animation: 'fadeDown 1s ease-out' }}>
-                    <div style={{
-                        background: 'linear-gradient(135deg, rgba(255,255,255,0.9), rgba(255,255,255,0.4))',
-                        backdropFilter: 'blur(12px)',
-                        border: '1px solid rgba(255,255,255,0.8)',
-                        padding: '10px 28px',
-                        borderRadius: '30px',
-                        boxShadow: '0 8px 32px rgba(0,0,0,0.05)',
-                        color: '#00629b',
-                        fontWeight: '700',
-                        letterSpacing: '2px',
-                        fontSize: '0.9rem',
-                        textTransform: 'uppercase'
-                    }}>
-                        IEEE PES Kerala Chapter
-                    </div>
+          {/* Left Column: Visionary Branding */}
+          <div className="lg:col-span-7">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="hero-label text-emerald-500 mb-4 block">{conferenceInfo.subtitle}</span>
+              <motion.h1
+                className="text-white text-6xl md:text-8xl lg:text-9xl font-black mb-6 leading-none tracking-tighter"
+                animate={{
+                  scale: [1, 1.02, 1],
+                  filter: ['brightness(1)', 'brightness(1.2)', 'brightness(1)']
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                iSPEC <span className="text-emerald-500">2026</span>
+              </motion.h1>
+              <p className="text-emerald-50/70 text-xl md:text-2xl lg:text-3xl font-medium max-w-2xl leading-tight">
+                {conferenceInfo.theme}
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Right Column: Structured Information Box (Technical Modernism) */}
+          <div className="lg:col-span-5">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="bg-slate-900 border-l-8 border-emerald-500 p-8 md:p-12 shadow-2xl relative overflow-hidden"
+            >
+              {/* Event Details Section */}
+              <div className="space-y-8">
+                <div>
+                  <span className="hero-label">Conference Dates</span>
+                  <div className="flex items-center gap-4 mt-2">
+                    <Calendar className="w-8 h-8 text-emerald-500 shrink-0" />
+                    <span className="text-white text-2xl md:text-3xl font-bold">{conferenceInfo.date}</span>
+                  </div>
                 </div>
 
-                {/* Spectacular Typography */}
-                <h1 style={{
-                    fontSize: 'clamp(3.8rem, 9vw, 8.5rem)',
-                    fontWeight: '800',
-                    lineHeight: '1.05',
-                    color: '#1a1a2e',
-                    marginBottom: '20px',
-                    letterSpacing: '-3px',
-                    animation: 'fadeUp 1s ease-out 0.2s both'
-                }}>
-                    iSPEC <span style={{
-                        background: 'linear-gradient(135deg, #00a859, #00629b)',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent',
-                        paddingRight: '5px' // Prevent clipping of italic/accent chars
-                    }}>2026</span>
-                </h1>
+                <div className="hero-divider opacity-20"></div>
 
-                {/* Updated Subtitle with Theme */}
-                <h2 style={{
-                    fontSize: 'clamp(1.1rem, 2.5vw, 1.6rem)',
-                    fontWeight: '400',
-                    color: '#444',
-                    maxWidth: '1000px',
-                    margin: '0 auto 40px',
-                    lineHeight: '1.6',
-                    letterSpacing: '-0.3px',
-                    animation: 'fadeUp 1s ease-out 0.4s both'
-                }}>
-                    <strong style={{ color: '#2e8b57' }}>Theme:</strong> Integrated Pathways in Sustainable Power and Energy for Carbon Neutrality
-                </h2>
-
-                {/* Animated Conference Info Cards */}
-                <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', justifyContent: 'center', marginBottom: '50px', animation: 'fadeUp 1s ease-out 0.6s both' }}>
-                    <div style={{
-                        background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(20px)',
-                        padding: '16px 35px', borderRadius: '50px', border: '1px solid rgba(255,255,255,0.9)',
-                        boxShadow: '0 10px 30px rgba(0,0,0,0.03)', display: 'flex', alignItems: 'center', gap: '12px',
-                        fontSize: '1.15rem', fontWeight: '600', color: '#1a1a2e', transition: 'transform 0.3s'
-                    }} onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-3px)'} onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}>
-                        <i className="fas fa-calendar-alt" style={{ color: '#2e8b57', fontSize: '1.3rem' }}></i> Dec 4 – 6, 2026
-                    </div>
-                    <div style={{
-                        background: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(20px)',
-                        padding: '16px 35px', borderRadius: '50px', border: '1px solid rgba(255,255,255,0.9)',
-                        boxShadow: '0 10px 30px rgba(0,0,0,0.03)', display: 'flex', alignItems: 'center', gap: '12px',
-                        fontSize: '1.15rem', fontWeight: '600', color: '#1a1a2e', transition: 'transform 0.3s'
-                    }} onMouseEnter={e => e.currentTarget.style.transform = 'translateY(-3px)'} onMouseLeave={e => e.currentTarget.style.transform = 'translateY(0)'}>
-                        <i className="fas fa-map-marker-alt" style={{ color: '#00629b', fontSize: '1.3rem' }}></i> Hyatt Regency, Trivandrum
-                    </div>
+                <div>
+                  <span className="hero-label">Location / Venue</span>
+                  <div className="flex items-center gap-4 mt-2">
+                    <MapPin className="w-8 h-8 text-emerald-500 shrink-0" />
+                    <span className="text-white text-2xl md:text-3xl font-bold leading-tight">{conferenceInfo.venue}</span>
+                  </div>
                 </div>
+              </div>
 
-                {/* Elegant CTAs */}
-                <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap', animation: 'fadeUp 1s ease-out 0.8s both' }}>
-                    <Link to="/call-for-papers" style={{
-                        background: 'linear-gradient(45deg, #2e8b57, #3cb371)',
-                        color: '#fff', padding: '20px 45px', borderRadius: '50px', fontSize: '1.15rem',
-                        fontWeight: '700', textDecoration: 'none', boxShadow: '0 10px 30px rgba(46,139,87,0.3)',
-                        transition: 'transform 0.3s, box-shadow 0.3s'
-                    }} onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 15px 35px rgba(46,139,87,0.4)'; }} onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 10px 30px rgba(46,139,87,0.3)'; }}>
-                        Call for Papers <i className="fas fa-arrow-right" style={{ marginLeft: '10px' }}></i>
-                    </Link>
-                    <Link to="/about" style={{
-                        background: 'rgba(255,255,255,0.5)', color: '#1a1a2e', padding: '20px 45px',
-                        borderRadius: '50px', fontSize: '1.15rem', fontWeight: '700', backdropFilter: 'blur(10px)',
-                        textDecoration: 'none', border: '2px solid rgba(26,26,46,0.1)', transition: 'all 0.3s'
-                    }} onMouseEnter={e => { e.currentTarget.style.background = '#1a1a2e'; e.currentTarget.style.color = '#fff'; }} onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.5)'; e.currentTarget.style.color = '#1a1a2e'; }}>
-                        Discover More
-                    </Link>
-                </div>
-            </div>
+              {/* Action Buttons Group (No Hover Effects as requested) */}
+              <div className="mt-12 flex flex-col gap-4">
+                <Link to="/call-for-papers" className="w-full">
+                  <button className="hero-btn-primary w-full flex items-center justify-center gap-3">
+                    <FileText className="w-6 h-6" />
+                    CALL FOR PAPERS
+                  </button>
+                </Link>
 
-            {/* Bottom edge gradient blend */}
-            <div style={{
-                position: 'absolute', bottom: '0', left: '0', width: '100%', height: '15vh',
-                background: 'linear-gradient(to top, #fafafa 0%, transparent 100%)',
-                zIndex: 5, pointerEvents: 'none'
-            }}>
-            </div>
+                <Link to="/about" className="w-full">
+                  <button className="hero-btn-secondary w-full">
+                    DISCOVER MORE
+                  </button>
+                </Link>
+              </div>
 
-            {/* Inline keyframes for animations */}
-            <style>{`
-                @keyframes float {
-                    0% { transform: translateY(0px) rotate(0deg); }
-                    50% { transform: translateY(-30px) rotate(5deg); }
-                    100% { transform: translateY(0px) rotate(0deg); }
-                }
-                @keyframes fadeUp {
-                    from { opacity: 0; transform: translateY(40px); }
-                    to { opacity: 1; transform: translateY(0); }
-                }
-                @keyframes fadeDown {
-                    from { opacity: 0; transform: translateY(-40px); }
-                    to { opacity: 1; transform: translateY(0); }
-                }
-            `}</style>
-        </section>
-    );
+              {/* Technical Branding Detail */}
+              <div className="absolute top-0 right-0 p-4 opacity-5">
+                <FileText className="w-32 h-32 -mr-8 -mt-8 rotate-12" />
+              </div>
+            </motion.div>
+          </div>
+
+        </div>
+      </div>
+
+      {/* Decorative Technical Line */}
+      <div className="absolute bottom-0 left-0 w-full h-1 bg-emerald-500/30"></div>
+    </section>
+  );
 };
 
 export default Hero;

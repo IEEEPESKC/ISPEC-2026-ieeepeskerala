@@ -19,7 +19,7 @@ const Footer = () => {
                             <strong>IEEE PES Kerala Chapter</strong><br />
                             &amp; IEEE Kerala Section<br /><br />
                             <strong>Venue:</strong><br />
-                            Hyatt Regency Trivandrum,<br />
+                            Thiruvananthapuram ,<br />
                             Kerala, India
                         </p>
                     </div>
