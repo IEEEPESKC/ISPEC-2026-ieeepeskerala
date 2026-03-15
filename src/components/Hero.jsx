@@ -1,11 +1,27 @@
-import React from 'react';
-import { motion } from 'motion/react';
-import { Calendar, MapPin, FileText, ChevronRight } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Calendar, MapPin, FileText, ChevronRight, ChevronLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import backgroundImage from '../assets/image.png';
+import varkalaImage from '../assets/varkala.jpg';
+import mountainImage from '../assets/mountain.png';
+import damImage from '../assets/dam.jpeg';
 
 const Hero = () => {
+  const backgrounds = [backgroundImage, varkalaImage, mountainImage, damImage];
+  const [currentBg, setCurrentBg] = useState(0);
+
+  const nextBg = () => setCurrentBg((prev) => (prev + 1) % backgrounds.length);
+  const prevBg = () => setCurrentBg((prev) => (prev - 1 + backgrounds.length) % backgrounds.length);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      nextBg();
+    }, 5000); // Change image every 5 seconds
+    return () => clearInterval(timer);
+  }, [backgrounds.length]);
+
   const conferenceInfo = {
     title: 'iSPEC 2026',
     subtitle: 'IEEE PES Kerala Chapter',
@@ -16,16 +32,42 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-slate-950 flex items-center">
-      {/* ── BACKGROUND LAYER ── */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src={backgroundImage}
-          alt="Conference Background"
-          className="w-full h-full object-cover"
-        />
-        {/* Deep Overlay */}
-        <div className="absolute inset-0 bg-slate-950/70"></div>
+      {/* ── BACKGROUND LAYER (SLIDER) ── */}
+      <div className="absolute inset-0 z-0 bg-slate-950">
+        <AnimatePresence>
+          <motion.img
+            key={currentBg}
+            src={backgrounds[currentBg]}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            alt="Conference Background bg-slate-950/70"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </AnimatePresence>
+        {/* Deep Overlay to ensure text readability */}
+        <div className="absolute inset-0 bg-slate-950/70 z-10"></div>
       </div>
+        
+      {/* ── Slider Navigation Buttons (Top Level) ── */}
+      <button 
+        onClick={prevBg}
+        className="hero-slider-btn z-50 cursor-pointer"
+        style={{ position: 'absolute', left: '2rem', top: '50%', transform: 'translateY(-50%)' }}
+        aria-label="Previous background"
+      >
+        <ChevronLeft className="w-8 h-8 md:w-10 md:h-10 text-white" />
+      </button>
+      
+      <button 
+        onClick={nextBg}
+        className="hero-slider-btn z-50 cursor-pointer"
+        style={{ position: 'absolute', right: '2rem', top: '50%', transform: 'translateY(-50%)' }}
+        aria-label="Next background"
+      >
+        <ChevronRight className="w-8 h-8 md:w-10 md:h-10 text-white" />
+      </button>
 
       {/* ── MAIN CONTENT ── */}
       <div className="relative z-10 container mx-auto px-6 lg:px-12 py-32">
@@ -65,7 +107,7 @@ const Hero = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="bg-slate-900 border-l-8 border-emerald-500 p-8 md:p-12 shadow-2xl relative overflow-hidden"
+              className="bg-slate-900/40 backdrop-blur-md border-l-8 border-emerald-500 p-8 md:p-12 shadow-2xl relative overflow-hidden"
             >
               {/* Event Details Section */}
               <div className="space-y-8">
