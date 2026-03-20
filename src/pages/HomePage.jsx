@@ -173,24 +173,30 @@ const HomePage = () => {
                             {/* ── Right: News + Sponsors + Supporters ── */}
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '45px' }}>
 
-                                {/* News */}
-                                <div>
-                                    <SectionTitle>Latest News</SectionTitle>
-                                    <div style={{
-                                        background: '#fafafa', borderRadius: '8px', padding: '15px 20px',
-                                        border: '1px solid #eaeaea', display: 'flex', alignItems: 'center',
-                                        boxShadow: '0 2px 10px rgba(0,0,0,0.02)'
-                                    }}>
-                                        <div style={{ marginRight: '15px', color: '#00629b', display: 'flex', alignItems: 'center' }}>
-                                            <i className="fas fa-bullhorn" style={{ fontSize: '1.2rem' }}></i>
+                            {/* Latest News */}
+
+                                    <div className="latest-news-wrapper">
+                                        <SectionTitle>Latest News</SectionTitle>
+                                        
+                                        <div className="news-ticker-container">
+                                            {/* The Icon */}
+                                            <div className="news-icon">
+                                                <i className="fas fa-bullhorn"></i>
+                                            </div>
+                                            
+                                            {/* The Scrolling Track */}
+                                            <div className="news-ticker-track">
+                                                <div className="news-ticker-content">
+                                                    <span>All accepted Papers will be published in IEEE Xplore</span>
+                                                    <span>All accepted Papers will be published in IEEE Xplore</span>
+                                                    <span>All accepted Papers will be published in IEEE Xplore</span>
+                                                    <span>All accepted Papers will be published in IEEE Xplore</span>
+                                                </div>
+                                            </div>
                                         </div>
-                                        {/* eslint-disable-next-line jsx-a11y/no-distracting-elements */}
-                                        <marquee behavior="scroll" direction="left" style={{ color: '#1a1a2e', fontWeight: '600', fontSize: '1.05rem', padding: '5px 0' }}>
-                                            Home screen Papers accepted in conference published in ieee explore
-                                        </marquee>
+                                        
+                                        <div style={{ height: '30px' }}></div>
                                     </div>
-                                    <div style={{ height: '30px' }}></div>
-                                </div>
 
                                 {/* Sponsors */}
                                 <div>
