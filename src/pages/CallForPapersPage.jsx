@@ -173,29 +173,47 @@ const CallForPapersPage = () => {
                         </div>
 
                         {/* Right Column (Sidebar) */}
-                        <div style={{ flex: '0 0 100%', maxWidth: '100%', padding: '0 15px' }} className="col-lg-4 col-md-12">
-                            <h2 style={{ fontSize: '2rem', marginBottom: '20px', color: '#333' }}><span>Important Dates</span></h2>
-                            <div style={{ fontSize: '1.05rem', lineHeight: '1.6', color: '#444' }}>
-                                <p style={{ marginBottom: '15px' }}>
-                                    <strong>Paper Submission</strong><br />
-                                    • Full Paper Deadline: 30 June 2026<br />
-                                    • Acceptance Notification: 30 September 2026<br />
-                                    • Final Paper Submission: 15 October 2026
-                                </p>
-                                <p style={{ marginBottom: '15px' }}>
-                                    <strong>Registration</strong><br />
-                                    • Registration Deadline: 1 November 2026
-                                </p>
-                                <p style={{ marginBottom: '15px' }}>
-                                    <strong>Conference</strong><br />
-                                    • Conference Dates: 4 – 6 December 2026
-                                </p>
-                            </div>
-                        </div>
+{/* Right Column (Sidebar) */}
+<div style={{ flex: '0 0 100%', maxWidth: '100%', padding: '0 15px' }} className="col-lg-4 col-md-12">
+    
+    <h2 style={{ fontSize: '2rem', marginBottom: '20px', color: '#333' }}><span>Important Dates</span></h2>
+    
+    <div style={{ fontSize: '1.05rem', lineHeight: '1.6', color: '#444' }}>
+        <p style={{ marginBottom: '15px' }}>
+            <strong>Paper Submission</strong><br />
+            • Full Paper Deadline: 30 June 2026<br />
+            • Acceptance Notification: 30 September 2026<br />
+            • Final Paper Submission: 15 October 2026
+        </p>
+        <p style={{ marginBottom: '15px' }}>
+            <strong>Registration</strong><br />
+            • Registration Deadline: 1 November 2026
+        </p>
+        <p style={{ marginBottom: '15px' }}>
+            <strong>Conference</strong><br />
+            • Conference Dates: 4 – 6 December 2026
+        </p>
+
+        {/* ── INTEGRATED TICKER ── */}
+        <div className="news-ticker-container" style={{ marginTop: '25px' }}>
+            <div className="news-icon">
+                <i className="fas fa-bullhorn"></i>
+            </div>
+            <div className="news-ticker-track">
+                <div className="news-ticker-content">
+                    <span>All accepted papers will be published in IEEE Xplore.</span>
+                    <span>All accepted papers will be published in IEEE Xplore.</span>
+                    <span>All accepted papers will be published in IEEE Xplore.</span>
+                    <span>All accepted papers will be published in IEEE Xplore.</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
                     </div>
                 </div>
             </div>
-
             <style>{`
                 @media (min-width: 992px) {
                     .col-lg-8 { flex: 0 0 66.666667% !important; max-width: 66.666667% !important; }

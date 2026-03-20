@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer className="footer-isdt-style" style={{ backgroundColor: 'rgb(0, 40, 69)', color: 'rgb(255, 255, 255)', paddingTop: '60px', paddingBottom: '20px', marginTop: '0px' }}>
+        <footer className="footer-isdt-style" style={{ background: 'linear-gradient(180deg, rgb(0, 40, 69) 0%, #004b79 50%, #004643 100%)', 
+        color: 'rgb(255, 255, 255)', 
+        paddingTop: '60px', 
+        paddingBottom: '20px', 
+        marginTop: '0px' }}>
             <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 15px' }}>
 
                 {/* 4 Column Top Section */}
@@ -81,23 +85,43 @@ const Footer = () => {
                 </div>
             </div>
 
-            <style>{`
-                .footer-link:hover { color: #2e8b57 !important; }
-                .social-icon:hover { background: #2e8b57 !important; color: #fff !important; transform: translateY(-2px); }
-                
-                @media (max-width: 991px) {
-                    .footer-isdt-style .col-md-3 {
-                        flex: 0 0 50% !important;
-                        max-width: 50% !important;
-                        margin-bottom: 40px;
+           <style>{`
+                    
+                    .footer-link {
+                        transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+                        display: inline-block; 
                     }
-                }
-                @media (max-width: 767px) {
-                    .footer-isdt-style .col-md-3 {
-                        flex: 0 0 100% !important;
-                        max-width: 100% !important;
+
+                    
+                    .footer-link:hover { 
+                        color: #2e8b57 !important; 
                     }
-                }
+
+                    
+                    .social-icon {
+                        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+                    }
+
+                    .social-icon:hover { 
+                        background: #2e8b57 !important; 
+                        color: #fff !important; 
+                        transform: translateY(-4px); 
+                        box-shadow: 0 4px 12px rgba(46, 139, 87, 0.4); /* Adds a soft glow */
+                    }
+                    
+                    @media (max-width: 991px) {
+                        .footer-isdt-style .col-md-3 {
+                            flex: 0 0 50% !important;
+                            max-width: 50% !important;
+                            margin-bottom: 40px;
+                        }
+                    }
+                    @media (max-width: 767px) {
+                        .footer-isdt-style .col-md-3 {
+                            flex: 0 0 100% !important;
+                            max-width: 100% !important;
+                        }
+                    }
             `}</style>
         </footer>
     );

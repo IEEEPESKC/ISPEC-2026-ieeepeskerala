@@ -27,7 +27,7 @@ body {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
   color: var(--dark);
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: clip;
   background-color: var(--white);
 }
 
@@ -160,8 +160,19 @@ h4,
 }
 
 
+.main-header {
+    position: -webkit-sticky !important; /* Safari support */
+    position: sticky !important;
+    top: 0 !important;
+    left: 0;
+    width: 100%;
+    z-index: 9999; /* Bumped this up to match your old header rule */
+    background-color: white; 
+}
 
-/* Header & Top Bar */
+
+
+
 .ieee-topbar {
   background: #107b47;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
@@ -253,14 +264,6 @@ h4,
 }
 
 /* Navigation */
-
-header {
-  position: relative;
-  top: 0;
-  width: 100%;
-  z-index: 9999;
-}
-
 #main-nav {
   background: var(--glass);
   backdrop-filter: blur(10px);
@@ -1065,7 +1068,7 @@ footer {
 .footer-divider {
   height: 1px;
   background: #333;
-  margin: 40px 0;
+  margin: 40px 0px;
 }
 
 .footer-bottom {
@@ -2267,3 +2270,111 @@ footer {
     padding: 0.75rem;
   }
 }
+
+
+html, body, #root, .App {
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    height: auto !important;
+}
+
+
+/* ─── LATEST NEWS TICKER ─── */
+
+.news-ticker-container {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 0; /* Padding handled by internal elements */
+    border: 1px solid rgba(0, 98, 155, 0.1);
+    display: flex;
+    align-items: center;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+/* Static icon section that sits on top of the scrolling text */
+.news-icon {
+    background:#00a859;
+    color: var(--white);
+    font-size: 1.2rem;
+    padding: 19px 20px;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+}
+
+/* Make the bullhorn pulse slightly */
+.news-icon i {
+    animation: pulseIcon 2s infinite ease-in-out;
+}
+
+.news-ticker-track {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.news-ticker-content {
+    display: flex;
+    width: max-content;
+    animation: smoothTicker 20s linear infinite;
+    padding-left: 20px;
+}
+
+
+.news-ticker-content span {
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 1.05rem;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    
+}
+
+/* Adds a nice green dot before each news item */
+.news-ticker-content span::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #0a6516;
+    border-radius: 50%;
+     opacity: 0.8;
+    box-shadow: 0 0 8px #2ecc71,
+               0 0 12px #2ecc71;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+/* The Animation Math */
+@keyframes smoothTicker {
+    0% { transform: translateX(0); }
+    /* Shifts exactly 50% (which equals exactly 2 sentences) for a flawless loop */
+    100% { transform: translateX(-50%); } 
+}
+
+@keyframes pulseIcon {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+/* Enhance the social icon hover with a smooth fade, slight lift, and NO underline */
+    .social-icon {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        text-decoration: none !important; /* <--- THIS REMOVES THE UNDERLINE */
+    }
+
+    .social-icon:hover { 
+        background: #2e8b57 !important; 
+        color: #fff !important; 
+        transform: translateY(-4px); 
+        box-shadow: 0 4px 12px rgba(46, 139, 87, 0.4); 
+        text-decoration: none !important; /* Keeps it gone on hover just in case */
+    }
