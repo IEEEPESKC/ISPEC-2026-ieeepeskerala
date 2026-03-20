@@ -35,7 +35,6 @@ const committeeData = [
         members: [
             { name: 'Rahul Satheesh', role: 'Secretary IEEE PES Kerala Chapter, Assistant Professor Amrita Viswa Vidhyapeetham' },
             { name: 'Harikumar R', role: 'Associate Professor, Electrical Engg Dept., College of Engineering Trivandrum' },
-            { name: 'Rajiv T', role: 'Professor, Electrical Engineering, College of Engineering, Trivandrum' },
         ]
     },
     {
