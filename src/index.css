@@ -159,36 +159,105 @@ h4,
   font-weight: 700;
 }
 
+
+
 /* Header & Top Bar */
-.top-bar {
-  background: #004b79;
-  color: var(--white);
-  font-size: 0.75rem;
-  padding: 8px 0;
+.ieee-topbar {
+  background: #107b47;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.ieee-links {
+.ieee-topbar-container {
   display: flex;
-  gap: 20px;
   justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 5px 1px;
+  font-size: 13px;
 }
 
-.ieee-links a {
-  color: rgba(255, 255, 255, 0.8);
+/* Links */
+.ieee-topbar a {
+  color: #ffffff;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-weight: bold;
   text-decoration: none;
-  transition: var(--transition);
+  opacity: 0.85;
+  transition: color 0.3s ease;
 }
 
-.ieee-links a:hover {
-  color: var(--white);
+.ieee-topbar a:hover {
+  color: #94d4b7;
+}
+
+/* Decorators */
+.dot-separator {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: #a2ff00;
+  border-radius: 50%;
+  opacity: 0.8;
+  box-shadow: 0 0 8px #2ecc71,
+              0 0 12px #2ecc71;
+}
+
+.ieee-middle-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 55px;
+    background-size: cover;    
+    background-position: center 53%; 
+    background-repeat: no-repeat;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.ieee-middle-bar .conference-title {
+    color: #0f9468; 
+    font-weight: bold;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.1px;
+}
+
+.ieee-middle-bar .nav-right {
+    display: flex;
+    align-items: center;
+    margin-right: 55px;
+}
+
+.ieee-middle-bar .ieee-logo img {
+    height: 35px;
+    width: auto;
+    display: block;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+
+.top-bar,
+.ieee-topbar {
+    display: none !important;
+}
+.ieee-middle-bar {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    padding: 15px 20px;
+  }
+
 }
 
 /* Navigation */
+
 header {
-  position: fixed;
+  position: relative;
   top: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 9999;
 }
 
 #main-nav {
@@ -262,49 +331,63 @@ header {
   position: relative;
 }
 
-.nav-links a {
+.nav-links a,
+.nav-links .dropdown-toggle {
+  position: relative;
   text-decoration: none;
   color: var(--dark);
   font-size: 0.85rem;
   font-weight: 700;
   padding: 10px 15px;
   border-radius: 6px;
+
   transition: var(--transition);
+  cursor: pointer;
+  user-select: none;
 }
 
-.nav-links .dropdown-toggle {
-  font-size: 0.85rem;
-  font-weight: 700;
-  padding: 10px 15px;
-  color: var(--dark);
-  cursor: pointer;
-  border-radius: 6px;
-  transition: var(--transition);
-  user-select: none;
+.nav-links a::after,
+.nav-links .dropdown-toggle::after {
+  content: '';
+  position: absolute;
+  width: 0%;         
+  height: 2px;       
+  bottom: 5px;       
+  left: 50%;        
+  transform: translateX(-50%); 
+  background-color: #00a859; 
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after,
+.nav-links .dropdown-toggle:hover::after {
+  width: calc(100% - 30px);
 }
 
 .nav-links a:hover,
 .nav-links a.active,
 .nav-links .dropdown-toggle:hover {
-  color: var(--primary);
-  background: rgba(0, 98, 155, 0.05);
+  color: #00a859; 
 }
 
-/* Dropdown */
+/* Dropdown Container */
 .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
   background: var(--white);
   min-width: 220px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); 
   border-radius: 8px;
+  border-top: 3px solid #00a859; 
   padding: 10px 0;
   opacity: 0;
   visibility: hidden;
   transform: translateY(10px);
-  transition: var(--transition);
+  transition: all 0.3s ease;
   list-style: none;
+  overflow: hidden; 
 }
 
 .dropdown:hover .dropdown-menu {
@@ -313,14 +396,25 @@ header {
   transform: translateY(0);
 }
 
+/* Dropdown Links */
 .dropdown-menu li a {
   display: block;
-  padding: 8px 20px;
+  padding: 10px 20px;
   border-radius: 0;
+  color: var(--dark);
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
+/* Dropdown Hover Animation */
 .dropdown-menu li a:hover {
-  background: var(--light);
+  background: rgba(0, 168, 89, 0.05); 
+  color: #00a859; 
+  padding-left: 28px; 
+}
+
+.dropdown-menu li a::after {
+  display: none; 
 }
 
 /* ── Hero Section (Green Theme Aesthetic) ── */

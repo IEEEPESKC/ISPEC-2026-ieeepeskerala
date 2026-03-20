@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import ieeeLogo from '../assets/ieee-logo.png';
+import navBg from '../assets/mnavbg.png';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -37,13 +39,30 @@ const Navbar = () => {
 
     return (
         <header>
-            <div className="top-bar">
-                <div className="container-fluid">
-                    <div className="ieee-links">
-                        <a href="https://www.ieee.org" target="_blank" rel="noopener noreferrer">IEEE.org</a>
-                        <a href="https://ieeexplore.ieee.org" target="_blank" rel="noopener noreferrer">IEEE Xplore Digital Library</a>
-                        <a href="https://standards.ieee.org" target="_blank" rel="noopener noreferrer">IEEE Standards</a>
-                        <a href="https://spectrum.ieee.org" target="_blank" rel="noopener noreferrer">IEEE Spectrum</a>
+            <div className="ieee-topbar">
+                <div className="ieee-topbar-container">
+                    <a href="https://www.ieee.org" target="_blank" rel="noreferrer">IEEE.org</a>
+                    <span className="dot-separator"></span>
+                    <a href="https://ieeexplore.ieee.org" target="_blank" rel="noreferrer">IEEE Xplore Digital Library</a>
+                    <span className="dot-separator"></span>
+                    <a href="https://standards.ieee.org" target="_blank" rel="noreferrer">IEEE Standards</a>
+                    <span className="dot-separator"></span>
+                    <a href="https://spectrum.ieee.org" target="_blank" rel="noreferrer">IEEE Spectrum Online</a>
+                    <span className="dot-separator"></span>
+                    <a href="https://www.ieee.org/sitemap.html" target="_blank" rel="noreferrer">More IEEE Sites</a>
+                </div>
+            </div>
+            
+            <div 
+                className="ieee-middle-bar" 
+                style={{ backgroundImage: `url(${navBg})` }}
+            >
+                <div className="conference-title">
+                    2026 IEEE Sustainable Power and Energy Conference
+                </div>
+                <div className="nav-right">
+                    <div className="ieee-logo">
+                        <img src={ieeeLogo} alt="IEEE Logo" />
                     </div>
                 </div>
             </div>
