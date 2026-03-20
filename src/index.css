@@ -246,23 +246,6 @@ h4,
     display: block;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 900px) {
-
-.top-bar,
-.ieee-topbar {
-    display: none !important;
-}
-.ieee-middle-bar {
-    flex-direction: column;
-    gap: 15px;
-    text-align: center;
-    padding: 15px 20px;
-  }
-
-
-}
-
 /* Navigation */
 #main-nav {
   background: var(--glass);
@@ -1094,22 +1077,6 @@ footer {
   display: block;
 }
 
-@media (max-width: 992px) {
-  .footer-contacts {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .organizer-logos {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .org-logo-card {
-    width: 100%;
-    max-width: 300px;
-  }
-}
 
 /* Responsive */
 /* Page Layout Styles */
@@ -1524,17 +1491,7 @@ footer {
   font-size: 1.2rem;
 }
 
-/* Responsive Adjustments for New Sections */
-@media (max-width: 992px) {
-  .welcome-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
 
-  .welcome-banner {
-    min-height: 250px;
-  }
-}
 
 /* Mobile Menu Styles */
 .mobile-menu-btn {
@@ -1587,134 +1544,7 @@ footer {
   transform: rotate(-135deg);
 }
 
-/* Responsive Navigation at 1150px */
-@media screen and (max-width: 1150px) {
-  .nav-links {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 300px;
-    height: 100vh;
-    background: #fff;
-    flex-direction: column;
-    padding-top: 80px;
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 1001;
-    display: flex !important;
-    /* Override display:none */
-    overflow-y: auto;
-  }
 
-  .nav-links.active {
-    transform: translateX(0);
-  }
-
-  .mobile-menu-btn {
-    display: block;
-  }
-
-  .nav-links li {
-    width: 100%;
-    margin: 0;
-    text-align: left;
-  }
-
-  .nav-links a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 25px;
-    font-size: 1.1rem;
-    border-bottom: 1px solid #f0f0f0;
-    color: var(--dark);
-    width: 100%;
-  }
-
-  /* Dropdown Toggle Logic */
-  .nav-links .dropdown-toggle {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 25px;
-    font-size: 1.1rem;
-    border-bottom: 1px solid #f0f0f0;
-    color: var(--dark);
-    width: 100%;
-    cursor: pointer;
-  }
-
-  .nav-links .dropdown-menu {
-    position: static;
-    box-shadow: none;
-    background: #fcfcfc;
-    padding: 0;
-    display: none;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    width: 100%;
-  }
-
-  .nav-links .dropdown-menu.show {
-    display: block;
-  }
-
-  .nav-links .dropdown-menu li {
-    margin: 0;
-  }
-
-  .nav-links .dropdown-menu a {
-    padding: 15px 15px 15px 40px;
-    font-size: 1rem;
-    color: #555;
-    border-bottom: 1px solid #f9f9f9;
-  }
-}
-
-/* About Banner Image Scaling for Medium Screens */
-@media screen and (max-width: 993px) and (min-width: 600px) {
-  .welcome-image img {
-    width: 60% !important;
-    margin: 0 auto;
-    display: block;
-  }
-}
-
-/* ── Expand All button — shimmer + pulse ── */
-.btn-expand-all {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  background: #fff;
-  color: #00629b;
-  border: 1.5px solid #00629b;
-  border-radius: 20px;
-  padding: 6px 16px;
-  font-size: 0.88rem;
-  font-weight: 700;
-  cursor: pointer;
-  overflow: hidden;
-  transition: background 0.25s, color 0.25s, box-shadow 0.25s;
-  animation: btnPulse 2s ease-in-out infinite;
-}
-
-/* shimmer sweep */
-.btn-expand-all::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(120deg,
-      transparent 0%,
-      rgba(0, 98, 155, 0.18) 50%,
-      transparent 100%);
-  animation: shimmerSweep 2s ease-in-out infinite;
-}
 
 @keyframes shimmerSweep {
   0% {
@@ -2284,7 +2114,7 @@ html, body, #root, .App {
 .news-ticker-container {
     background: var(--white);
     border-radius: 12px;
-    padding: 0; /* Padding handled by internal elements */
+    padding: 0; 
     border: 1px solid rgba(0, 98, 155, 0.1);
     display: flex;
     align-items: center;
@@ -2294,7 +2124,7 @@ html, body, #root, .App {
     margin-top: 15px;
 }
 
-/* Static icon section that sits on top of the scrolling text */
+
 .news-icon {
     background:#00a859;
     color: var(--white);
@@ -2306,7 +2136,7 @@ html, body, #root, .App {
     box-shadow: 2px 0 10px rgba(0,0,0,0.1);
 }
 
-/* Make the bullhorn pulse slightly */
+
 .news-icon i {
     animation: pulseIcon 2s infinite ease-in-out;
 }
@@ -2338,7 +2168,7 @@ html, body, #root, .App {
     
 }
 
-/* Adds a nice green dot before each news item */
+
 .news-ticker-content span::before {
     content: '';
     display: inline-block;
@@ -2356,7 +2186,7 @@ html, body, #root, .App {
 /* The Animation Math */
 @keyframes smoothTicker {
     0% { transform: translateX(0); }
-    /* Shifts exactly 50% (which equals exactly 2 sentences) for a flawless loop */
+    
     100% { transform: translateX(-50%); } 
 }
 
@@ -2365,10 +2195,10 @@ html, body, #root, .App {
     50% { transform: scale(1.15); }
     100% { transform: scale(1); }
 }
-/* Enhance the social icon hover with a smooth fade, slight lift, and NO underline */
+
     .social-icon {
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        text-decoration: none !important; /* <--- THIS REMOVES THE UNDERLINE */
+        text-decoration: none !important; 
     }
 
     .social-icon:hover { 
@@ -2376,5 +2206,234 @@ html, body, #root, .App {
         color: #fff !important; 
         transform: translateY(-4px); 
         box-shadow: 0 4px 12px rgba(46, 139, 87, 0.4); 
-        text-decoration: none !important; /* Keeps it gone on hover just in case */
+        text-decoration: none !important; 
     }
+
+    /* Mobile Responsiveness */
+@media (max-width: 900px) {
+
+    .top-bar,
+    .ieee-topbar {
+        display: none !important;
+    }
+    .ieee-middle-bar {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 10px 20px;
+      }
+    .nav-right{
+        margin-left: 25px;
+        margin-right: 25;
+        
+    }
+  }
+
+  @media (max-width: 992px) {
+  .footer-contacts {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .organizer-logos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .org-logo-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Responsive Adjustments for New Sections */
+@media (max-width: 992px) {
+  .welcome-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .welcome-banner {
+    min-height: 250px;
+  }
+}
+
+/* Responsive Navigation at 1150px */
+@media screen and (max-width: 1150px) {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    padding-top: 80px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1001;
+    display: flex !important;
+    /* Override display:none */
+    overflow-y: auto;
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .mobile-menu-btn {
+    display: block;
+    margin-left: 10px;
+    
+  }
+
+  .nav-links li {
+    width: 100%;
+    margin: 0;
+    text-align: left;
+  }
+
+  .nav-links a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #f0f0f0;
+    color: var(--dark);
+    width: 100%;
+  }
+
+  /* Dropdown Toggle Logic */
+  .nav-links .dropdown-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #f0f0f0;
+    color: var(--dark);
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .nav-links .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    background: #fcfcfc;
+    padding: 0;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    width: 100%;
+  }
+  .logo{
+    padding-left: 0px;
+    
+
+  }
+
+  .nav-links .dropdown-menu.show {
+    display: block;
+  }
+
+  .nav-links .dropdown-menu li {
+    margin: 0;
+  }
+
+  .nav-links .dropdown-menu a {
+    padding: 15px 15px 15px 40px;
+    font-size: 1rem;
+    color: #555;
+    border-bottom: 1px solid #f9f9f9;
+  }
+}
+
+/* About Banner Image Scaling for Medium Screens */
+@media screen and (max-width: 993px) and (min-width: 600px) {
+  .welcome-image img {
+    width: 60% !important;
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+/* ── Expand All button — shimmer + pulse ── */
+.btn-expand-all {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #fff;
+  color: #00629b;
+  border: 1.5px solid #00629b;
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background 0.25s, color 0.25s, box-shadow 0.25s;
+  animation: btnPulse 2s ease-in-out infinite;
+}
+
+/* shimmer sweep */
+.btn-expand-all::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg,
+      transparent 0%,
+      rgba(0, 98, 155, 0.18) 50%,
+      transparent 100%);
+  animation: shimmerSweep 2s ease-in-out infinite;
+}
+
+@media (max-width: 992px) {
+    /* --- 1. Fix the Grid Overflow --- */
+    .responsive-home-grid {
+        /* minmax(0, 1fr) forces the grid to stay inside the phone screen */
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 40px !important;
+        width: 100% !important;
+        overflowx: hidden !important; 
+    }
+    
+    /* --- 2. Fix the Images Disappearing --- */
+    .responsive-sponsors {
+        justify-content: center !important;
+    }
+    
+    .responsive-sponsors a,
+    .responsive-sponsors img {
+        flex-shrink: 0 !important; /* Forbids the browser from squishing the logos */
+        max-width: 100% !important;
+    }
+
+    /* --- 3. Fix the Date Boxes Overflowing --- */
+    /* This makes the text wrap and pushes the dates to the next line */
+    .responsive-date-tile {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+        padding: 16px 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .responsive-date-tile > div {
+        align-items: flex-start !important;
+        width: 100% !important;
+    }
+
+    .responsive-date-tile span {
+        white-space: normal !important; /* Allows long text to wrap to a second line */
+        word-wrap: break-word !important;
+        line-height: 1.4 !important;
+    }
+}
