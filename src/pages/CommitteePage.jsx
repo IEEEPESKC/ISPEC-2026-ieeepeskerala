@@ -24,7 +24,7 @@ const committeeData = [
         category: "Technical Program Chairs",
         borderColor: '#2e8b57',
         members: [
-            { name: 'Kumaravel S', role: 'Professor, Electrical Engg. Dept. NIT Calicut' },
+            { name: 'Kumaravel S', role: 'Professor, Electrical Eng. Dept. NIT Calicut' },
             { name: 'Jaison Mathew', role: 'Professor & Head, Electrical Engg. Dept. GEC Thrissur' },
             { name: 'Sobha Manakkal', role: 'Professor & Head, Electrical Engg. Dept, NCERC' },
         ]

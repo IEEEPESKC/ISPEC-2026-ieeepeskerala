@@ -184,10 +184,14 @@ const HomePage = () => {
                                         <div style={{ marginRight: '15px', color: '#00629b', display: 'flex', alignItems: 'center' }}>
                                             <i className="fas fa-bullhorn" style={{ fontSize: '1.2rem' }}></i>
                                         </div>
-                                        {/* eslint-disable-next-line jsx-a11y/no-distracting-elements */}
-                                        <marquee behavior="scroll" direction="left" style={{ color: '#1a1a2e', fontWeight: '600', fontSize: '1.05rem', padding: '5px 0' }}>
-                                            Home screen Papers accepted in conference published in ieee explore
-                                        </marquee>
+                                        <div style={{ flex: 1, overflow: 'hidden', color: '#1a1a2e', fontWeight: '600', fontSize: '1.05rem', padding: '5px 0' }}>
+                                            <div className="marquee-content">
+                                                <div className="marquee-item">Home screen Papers accepted in conference published in ieee explore</div>
+                                                <div className="marquee-item">Home screen Papers accepted in conference published in ieee explore</div>
+                                                <div className="marquee-item">Home screen Papers accepted in conference published in ieee explore</div>
+                                                <div className="marquee-item">Home screen Papers accepted in conference published in ieee explore</div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div style={{ height: '30px' }}></div>
                                 </div>
