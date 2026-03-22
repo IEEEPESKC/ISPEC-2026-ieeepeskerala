@@ -3,14 +3,17 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Calendar, MapPin, FileText, ChevronRight, ChevronLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-import backgroundImage from '../assets/image.png';
-import varkalaImage from '../assets/varkala.jpg';
+import backgroundImage from '../assets/image.jpeg';
 import mountainImage from '../assets/mountain.png';
-import damImage from '../assets/dam.jpeg';
 
 const Hero = () => {
-  const backgrounds = [backgroundImage, varkalaImage, mountainImage, damImage];
+  const backgrounds = [backgroundImage, mountainImage];
   const [currentBg, setCurrentBg] = useState(0);
+  const [isFirstRender, setIsFirstRender] = useState(true);
+
+  useEffect(() => {
+    setIsFirstRender(false);
+  }, []);
 
   const nextBg = () => setCurrentBg((prev) => (prev + 1) % backgrounds.length);
   const prevBg = () => setCurrentBg((prev) => (prev - 1 + backgrounds.length) % backgrounds.length);
@@ -31,14 +34,16 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-slate-950 flex items-center">
+    <section className="relative min-h-screen overflow-hidden flex items-center">
       {/* ── BACKGROUND LAYER (SLIDER) ── */}
-      <div className="absolute inset-0 z-0 bg-slate-950">
-        <AnimatePresence>
+      <div className="absolute inset-0 z-0">
+        {/* Static image behind slider to prevent black flash during initial load */}
+        <img src={backgrounds[0]} className="absolute inset-0 w-full h-full object-cover" alt="Background Placeholder" />
+        <AnimatePresence initial={false}>
           <motion.img
             key={currentBg}
             src={backgrounds[currentBg]}
-            initial={{ opacity: 0 }}
+            initial={{ opacity: isFirstRender ? 1 : 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1.5, ease: "easeInOut" }}
