@@ -46,17 +46,14 @@ const HomePage = () => {
         const handleScroll = () => {
             if (!heroRef.current) return;
             const scrollY = window.scrollY;
-            // Cap the effect at 700px of scroll
             const progress = Math.min(scrollY / 700, 1);
-
-            // Scale out, round corners, and fade out slightly
             heroRef.current.style.transform = `scale(${1 - progress * 0.04})`;
             heroRef.current.style.borderRadius = `${progress * 40}px`;
             heroRef.current.style.opacity = 1 - progress * 0.6;
             heroRef.current.style.filter = `blur(${progress * 4}px)`;
         };
 
-        handleScroll(); // initialize
+        handleScroll();
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
@@ -66,34 +63,18 @@ const HomePage = () => {
             <div className="home-page" style={{ background: '#000' }}>
 
                 {/* ── Sticky Hero Wrapper ── */}
-                <div style={{
-                    position: 'sticky',
-                    top: 0,
-                    zIndex: 0,
-                }}>
-                    <div ref={heroRef} style={{
-                        width: '100%',
-                        overflow: 'hidden',
-                        transformOrigin: 'top center',
-                        willChange: 'transform, opacity, border-radius, filter',
-                    }}>
+                <div style={{ position: 'sticky', top: 0, zIndex: 0 }}>
+                    <div ref={heroRef} style={{ width: '100%', overflow: 'hidden', transformOrigin: 'top center', willChange: 'transform, opacity, border-radius, filter' }}>
                         <Hero />
                     </div>
                 </div>
 
                 {/* ── Content overlapping the hero ── */}
-                <div style={{
-                    position: 'relative',
-                    zIndex: 10,
-                    background: '#fafafa',
-                    borderRadius: '40px 40px 0 0', // rounded top corners sliding over
-                    boxShadow: '0 -20px 50px rgba(0,0,0,0.6)',
-                }}>
-                    {/* ── About Section (Calm & Professional) ── */}
+                <div style={{ position: 'relative', zIndex: 10, background: '#fafafa', borderRadius: '40px 40px 0 0', boxShadow: '0 -20px 50px rgba(0,0,0,0.6)' }}>
+                    
+                    {/* ── About Section ── */}
                     <div style={{ padding: '90px 15px 80px', borderBottom: '1px solid #eaeaea' }}>
                         <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-
-                            {/* Elegant Section Title */}
                             <div style={{ textAlign: 'center', marginBottom: '50px' }}>
                                 <h2 style={{ fontSize: '2.4rem', color: '#1a1a2e', fontWeight: '800', marginBottom: '16px', letterSpacing: '-0.5px' }}>
                                     About iSPEC 2026
@@ -101,17 +82,8 @@ const HomePage = () => {
                                 <div style={{ width: '60px', height: '3px', background: '#2e8b57', margin: '0 auto', borderRadius: '2px' }}></div>
                             </div>
 
-                            {/* Content Grid */}
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
-
-                                {/* Main Paragraphs */}
-                                <div style={{
-                                    background: '#fff',
-                                    padding: '45px 50px',
-                                    borderRadius: '12px',
-                                    boxShadow: '0 4px 20px rgba(0,0,0,0.03)',
-                                    border: '1px solid #f0f0f0'
-                                }}>
+                                <div style={{ background: '#fff', padding: '45px 50px', borderRadius: '12px', boxShadow: '0 4px 20px rgba(0,0,0,0.03)', border: '1px solid #f0f0f0' }}>
                                     <p style={{ fontSize: '1.15rem', lineHeight: '1.8', color: '#333', marginBottom: '24px', fontWeight: '400' }}>
                                         The <strong style={{ color: '#00629b' }}>IEEE Sustainable Power and Energy Conference (iSPEC) 2026</strong> is a premier international forum that brings together researchers, engineers, policymakers, and industry leaders from across the globe to present and discuss the latest advances in <strong>power systems</strong>, <strong>energy technologies</strong>, and <strong>sustainable solutions</strong>.
                                     </p>
@@ -119,50 +91,36 @@ const HomePage = () => {
                                         In 2026, the IEEE iSPEC will be hosted at the iconic <strong>Hyatt Regency Trivandrum, Kerala</strong>. Organized by the <strong>IEEE Power &amp; Energy Society (PES) Kerala Chapter</strong> in association with <strong>IEEE Kerala Section</strong>, iSPEC 2026 promises to be a landmark event in the energy sector, offering a unique opportunity to deepen our understanding of sustainable energy through cross-disciplinary collaboration in an inspiring environment.
                                     </p>
                                 </div>
-
-                                {/* Diversity statement removed */}                            </div>
+                            </div>
                         </div>
                     </div>
 
                     {/* ── Main Content Grid (Calm UI) ── */}
                     <div style={{ background: '#fff', padding: '80px 15px' }}>
-                        <div style={{ maxWidth: '1000px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0, 1.4fr) minmax(0, 1fr)', gap: '60px' }}>
+                        <div className="responsive-home-grid" style={{ maxWidth: '1000px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0, 1.4fr) minmax(0, 1fr)', gap: '60px' }}>
 
                             {/* ── Left: Important Dates ── */}
                             <div>
                                 <SectionTitle>Important Dates</SectionTitle>
                                 <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                                     {importantDates.map((item, i) => (
-                                        <div key={i} style={{
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'space-between',
-                                            padding: '16px 20px',
-                                            background: i === 4 ? '#f4fbf7' : '#fafafa',
-                                            border: '1px solid',
-                                            borderColor: i === 4 ? '#c8f0db' : '#eaeaea',
-                                            borderRadius: '8px',
-                                            transition: 'background-color 0.2s ease',
-                                            cursor: 'default'
+                                        <div key={i} className="responsive-date-tile" style={{ 
+                                            padding: '16px 20px', 
+                                            background: i === 4 ? '#f4fbf7' : '#fafafa', 
+                                            border: '1px solid', 
+                                            borderColor: i === 4 ? '#c8f0db' : '#eaeaea', 
+                                            borderRadius: '8px', 
+                                            transition: 'background-color 0.2s ease', 
+                                            cursor: 'default' 
                                         }}
                                             onMouseEnter={e => e.currentTarget.style.backgroundColor = i === 4 ? '#edf9f2' : '#f5f5f5'}
                                             onMouseLeave={e => e.currentTarget.style.backgroundColor = i === 4 ? '#f4fbf7' : '#fafafa'}
                                         >
                                             <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-                                                <i className={`fas ${item.icon}`} style={{
-                                                    color: i === 4 ? '#2e8b57' : '#666',
-                                                    fontSize: '1.1rem',
-                                                    width: '20px',
-                                                    textAlign: 'center'
-                                                }}></i>
+                                                <i className={`fas ${item.icon}`} style={{ color: i === 4 ? '#2e8b57' : '#666', fontSize: '1.1rem', width: '20px', textAlign: 'center' }}></i>
                                                 <span style={{ fontSize: '1.05rem', color: '#333', fontWeight: '500' }}>{item.label}</span>
                                             </div>
-                                            <span style={{
-                                                fontWeight: '600',
-                                                fontSize: '1rem',
-                                                color: i === 4 ? '#2e8b57' : '#1a1a2e',
-                                                textAlign: 'right'
-                                            }}>
+                                            <span className="date-text" style={{ fontWeight: '600', fontSize: '1rem', color: i === 4 ? '#2e8b57' : '#1a1a2e' }}>
                                                 {item.date}
                                             </span>
                                         </div>
@@ -173,21 +131,21 @@ const HomePage = () => {
                             {/* ── Right: News + Sponsors + Supporters ── */}
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '45px' }}>
 
-                                {/* News */}
-                                <div>
+                                {/* Latest News */}
+                                <div className="latest-news-wrapper">
                                     <SectionTitle>Latest News</SectionTitle>
-                                    <div style={{
-                                        background: '#fafafa', borderRadius: '8px', padding: '15px 20px',
-                                        border: '1px solid #eaeaea', display: 'flex', alignItems: 'center',
-                                        boxShadow: '0 2px 10px rgba(0,0,0,0.02)'
-                                    }}>
-                                        <div style={{ marginRight: '15px', color: '#00629b', display: 'flex', alignItems: 'center' }}>
-                                            <i className="fas fa-bullhorn" style={{ fontSize: '1.2rem' }}></i>
+                                    <div className="news-ticker-container">
+                                        <div className="news-icon">
+                                            <i className="fas fa-bullhorn"></i>
                                         </div>
-                                        {/* eslint-disable-next-line jsx-a11y/no-distracting-elements */}
-                                        <marquee behavior="scroll" direction="left" style={{ color: '#1a1a2e', fontWeight: '600', fontSize: '1.05rem', padding: '5px 0' }}>
-                                            Home screen Papers accepted in conference published in ieee explore
-                                        </marquee>
+                                        <div className="news-ticker-track">
+                                            <div className="news-ticker-content">
+                                                <span>All accepted Papers will be published in IEEE Xplore</span>
+                                                <span>All accepted Papers will be published in IEEE Xplore</span>
+                                                <span>All accepted Papers will be published in IEEE Xplore</span>
+                                                <span>All accepted Papers will be published in IEEE Xplore</span>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div style={{ height: '30px' }}></div>
                                 </div>
@@ -195,16 +153,12 @@ const HomePage = () => {
                                 {/* Sponsors */}
                                 <div>
                                     <SectionTitle>Sponsors</SectionTitle>
-                                    <div style={{
-                                        display: 'flex', flexWrap: 'wrap', gap: '40px', alignItems: 'center'
-                                    }}>
+                                    <div className="responsive-sponsors" style={{ display: 'flex', flexWrap: 'wrap', gap: '40px', alignItems: 'center' }}>
                                         <a href="https://www.ieee.org" target="_blank" rel="noreferrer" style={{ transition: 'opacity 0.2s', opacity: 0.9 }} onMouseEnter={e => e.target.style.opacity = 1} onMouseLeave={e => e.target.style.opacity = 0.9}>
-                                            <img src={ieeeLogo} alt="IEEE"
-                                                style={{ height: '45px', width: 'auto', objectFit: 'contain' }} />
+                                            <img src={ieeeLogo} alt="IEEE" style={{ height: '45px', width: 'auto', objectFit: 'contain' }} />
                                         </a>
                                         <a href="https://www.ieee-pes.org" target="_blank" rel="noreferrer" style={{ transition: 'opacity 0.2s', opacity: 0.9 }} onMouseEnter={e => e.target.style.opacity = 1} onMouseLeave={e => e.target.style.opacity = 0.9}>
-                                            <img src={ieeePesLogo} alt="IEEE PES"
-                                                style={{ height: '75px', width: 'auto', objectFit: 'contain' }} />
+                                            <img src={ieeePesLogo} alt="IEEE PES" style={{ height: '75px', width: 'auto', objectFit: 'contain' }} />
                                         </a>
                                     </div>
                                 </div>
@@ -212,16 +166,12 @@ const HomePage = () => {
                                 {/* Supporters */}
                                 <div>
                                     <SectionTitle>Supporters</SectionTitle>
-                                    <div style={{
-                                        display: 'flex', flexWrap: 'wrap', gap: '40px', alignItems: 'center'
-                                    }}>
+                                    <div className="responsive-sponsors" style={{ display: 'flex', flexWrap: 'wrap', gap: '40px', alignItems: 'center' }}>
                                         <a href="https://ieeekerala.org" target="_blank" rel="noreferrer" style={{ transition: 'opacity 0.2s', opacity: 0.85 }} onMouseEnter={e => e.target.style.opacity = 1} onMouseLeave={e => e.target.style.opacity = 0.85}>
-                                            <img src={ieeeKsLogo} alt="IEEE Kerala Section"
-                                                style={{ height: '45px', width: 'auto', objectFit: 'contain' }} />
+                                            <img src={ieeeKsLogo} alt="IEEE Kerala Section" style={{ height: '45px', width: 'auto', objectFit: 'contain' }} />
                                         </a>
                                         <a href="https://ewh.ieee.org/r10/kerala/pes/" target="_blank" rel="noreferrer" style={{ transition: 'opacity 0.2s', opacity: 0.85 }} onMouseEnter={e => e.target.style.opacity = 1} onMouseLeave={e => e.target.style.opacity = 0.85}>
-                                            <img src={ieeePesKcLogo} alt="IEEE PES Kerala Chapter"
-                                                style={{ height: '85px', width: 'auto', objectFit: 'contain' }} />
+                                            <img src={ieeePesKcLogo} alt="IEEE PES Kerala Chapter" style={{ height: '85px', width: 'auto', objectFit: 'contain' }} />
                                         </a>
                                     </div>
                                 </div>
@@ -230,10 +180,8 @@ const HomePage = () => {
                         </div>
                     </div>
 
-                    {/* Recovered Sections */}
                     <Organisers />
 
-                    {/* Close the overlapping container */}
                 </div>
             </div>
         </>

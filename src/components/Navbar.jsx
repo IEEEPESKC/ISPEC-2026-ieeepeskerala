@@ -38,7 +38,7 @@ const Navbar = () => {
     };
 
     return (
-        <header>
+        <header className="main-header">
             <div className="ieee-topbar">
                 <div className="ieee-topbar-container">
                     <a href="https://www.ieee.org" target="_blank" rel="noreferrer">IEEE.org</a>
