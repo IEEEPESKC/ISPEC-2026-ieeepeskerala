@@ -141,7 +141,7 @@ const HomePage = () => {
                                         </div>
                                         <div className="news-ticker-track">
                                             <div className="news-ticker-content">
-                                                <span>Paper Submission Deadline extended to July 31</span>
+                                                <span>Paper Submission Deadline extended to August 15</span>
                                                 <span>All accepted Papers will be published in IEEE Xplore</span>
                                                 <span>Paper Submission Deadline extended to July 31</span>
                                                 <span>All accepted Papers will be published in IEEE Xplore</span>
