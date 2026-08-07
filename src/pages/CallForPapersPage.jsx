@@ -200,7 +200,7 @@ const CallForPapersPage = () => {
     <div style={{ fontSize: '1.05rem', lineHeight: '1.6', color: '#444' }}>
         <p style={{ marginBottom: '15px' }}>
             <strong>Paper Submission</strong><br />
-            • Full Paper Deadline: 31 July 2026<br />
+            • Full Paper Deadline: 15 August 2026<br />
             • Acceptance Notification: 30 Sep 2026<br />
             • Final Paper Submission: 15 October 2026
         </p>
@@ -220,7 +220,7 @@ const CallForPapersPage = () => {
             </div>
             <div className="news-ticker-track">
                 <div className="news-ticker-content">
-                    <span>Paper Submission Deadline extended to July 31</span>
+                    <span>Paper Submission Deadline extended to August 15</span>
                     <span>All accepted Papers will be published in IEEE Xplore</span>
                     <span>Paper Submission Deadline extended to July 31</span>
                     <span>All accepted Papers will be published in IEEE Xplore</span>

@@ -14,7 +14,7 @@ const importantDates = [
         label: <><span style={{ backgroundColor: '#2e8b57', color: 'white', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', marginRight: '6px', verticalAlign: 'middle' }}>NEW</span>Paper submission open from 20 March 2026</>,
         icon: 'fa-calendar-plus'
     },
-    { date: '31 July 2026', label: 'Full Paper Submission Deadline', icon: 'fa-file-alt' },
+    { date: '15 August  2026', label: 'Full Paper Submission Deadline', icon: 'fa-file-alt' },
     { date: '30 September 2026', label: 'Notification of Acceptance', icon: 'fa-bell' },
     { date: '15 October 2026', label: 'Camera Ready / Final Paper Deadline', icon: 'fa-check-circle' },
     { date: '1 November 2026', label: 'Registration Deadline', icon: 'fa-id-card' },
@@ -141,7 +141,7 @@ const HomePage = () => {
                                         </div>
                                         <div className="news-ticker-track">
                                             <div className="news-ticker-content">
-                                                <span>Paper Submission Deadline extended to July 31</span>
+                                                <span>Paper Submission Deadline extended to August 15</span>
                                                 <span>All accepted Papers will be published in IEEE Xplore</span>
                                                 <span>Paper Submission Deadline extended to July 31</span>
                                                 <span>All accepted Papers will be published in IEEE Xplore</span>
