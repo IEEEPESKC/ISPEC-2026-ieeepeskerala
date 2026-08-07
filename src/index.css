@@ -108,7 +108,7 @@ h4,
 .marquee-content {
   display: flex;
   width: max-content;
-  animation: marquee 20s linear infinite;
+  animation: marquee 25s linear infinite;
   gap: 5rem;
   /* Gap between repeated messages */
 }
@@ -2443,7 +2443,7 @@ html, body, #root, .App {
 .news-ticker-content {
     display: flex;
     width: max-content;
-    animation: smoothTicker 20s linear infinite;
+    animation: smoothTicker 25s linear infinite;
     padding-left: 20px;
 }
 

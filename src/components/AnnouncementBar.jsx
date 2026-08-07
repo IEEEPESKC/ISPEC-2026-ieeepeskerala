@@ -20,6 +20,7 @@ const AnnouncementBar = () => {
                     <span className="badge">NEW</span> Call for Papers for iSPEC 2026 is now open!
                     <a href="/call-for-papers">Learn more &rarr;</a>
                 </span>
+                
             </div>
         </div>
     );

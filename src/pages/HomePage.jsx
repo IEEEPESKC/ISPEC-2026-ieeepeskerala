@@ -141,10 +141,14 @@ const HomePage = () => {
                                         </div>
                                         <div className="news-ticker-track">
                                             <div className="news-ticker-content">
+                                                {/* First set */}
                                                 <span>Paper Submission Deadline extended to August 15</span>
                                                 <span>All accepted Papers will be published in IEEE Xplore</span>
-                                                <span>Paper Submission Deadline extended to July 31</span>
+                                                <span>Accepted and presented papers will be submitted for inclusion into IEEE Xplore subject to meeting IEEE Xplore&apos;s scope and quality requirements</span>
+                                                {/* Duplicate set for seamless loop */}
+                                                <span>Paper Submission Deadline extended to August 15</span>
                                                 <span>All accepted Papers will be published in IEEE Xplore</span>
+                                                <span>Accepted and presented papers will be submitted for inclusion into IEEE Xplore subject to meeting IEEE Xplore&apos;s scope and quality requirements</span>
                                             </div>
                                         </div>
                                     </div>
