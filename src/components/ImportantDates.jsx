@@ -7,7 +7,7 @@ const ImportantDates = () => {
             date: '31st August 2026',
             status: 'active'
         },
-        { label: 'Notification of Acceptance', date: '31st September 2026', status: 'future' },
+        { label: 'Notification of Acceptance', date: '30th September 2026', status: 'future' },
         {
             label: 'Paper submission open from 20 March 2026',
             date: '20th March 2026',

@@ -14,7 +14,7 @@ const importantDates = [
         label: <><span style={{ backgroundColor: '#2e8b57', color: 'white', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', marginRight: '6px', verticalAlign: 'middle' }}>NEW</span>Full Paper Submission Deadline (Final Deadline)</>,
         icon: 'fa-file-alt'
     },
-    { date: '31st September 2026', label: 'Notification of Acceptance', icon: 'fa-bell' },
+    { date: '30th September 2026', label: 'Notification of Acceptance', icon: 'fa-bell' },
     {
         date: '20th March 2026',
         label: 'Paper submission open from 20 March 2026',
