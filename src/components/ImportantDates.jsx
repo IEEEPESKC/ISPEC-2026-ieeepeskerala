@@ -7,6 +7,11 @@ const ImportantDates = () => {
             date: '31st August 2026',
             status: 'active'
         },
+        {
+            label: <><span style={{ backgroundColor: '#2e8b57', color: 'white', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', marginRight: '6px', verticalAlign: 'middle' }}>NEW</span>Paper Submission in Special Sessions Open</>,
+            date: '30th September 2026',
+            status: 'active'
+        },
         { label: 'Notification of Acceptance', date: '30th September 2026', status: 'future' },
         {
             label: 'Paper submission open from 20 March 2026',

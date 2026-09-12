@@ -14,6 +14,11 @@ const importantDates = [
         label: <><span style={{ backgroundColor: '#2e8b57', color: 'white', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', marginRight: '6px', verticalAlign: 'middle' }}>NEW</span>Full Paper Submission Deadline (Final Deadline)</>,
         icon: 'fa-file-alt'
     },
+    {
+        date: '30th September 2026',
+        label: <><span style={{ backgroundColor: '#2e8b57', color: 'white', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', marginRight: '6px', verticalAlign: 'middle' }}>NEW</span>Paper Submission in Special Sessions Open</>,
+        icon: 'fa-folder-open'
+    },
     { date: '30th September 2026', label: 'Notification of Acceptance', icon: 'fa-bell' },
     {
         date: '20th March 2026',
@@ -146,10 +151,12 @@ const HomePage = () => {
                                         <div className="news-ticker-track">
                                             <div className="news-ticker-content">
                                                 {/* First set */}
+                                                <span>Paper Submission in Special Sessions is now open! Deadline: 30 September 2026</span>
                                                 <span>Paper Submission Deadline extended to August 15</span>
                                                 <span>All accepted Papers will be published in IEEE Xplore</span>
                                                 <span>Accepted and presented papers will be submitted for inclusion into IEEE Xplore subject to meeting IEEE Xplore&apos;s scope and quality requirements</span>
                                                 {/* Duplicate set for seamless loop */}
+                                                <span>Paper Submission in Special Sessions is now open! Deadline: 30 September 2026</span>
                                                 <span>Paper Submission Deadline extended to August 15</span>
                                                 <span>All accepted Papers will be published in IEEE Xplore</span>
                                                 <span>Accepted and presented papers will be submitted for inclusion into IEEE Xplore subject to meeting IEEE Xplore&apos;s scope and quality requirements</span>

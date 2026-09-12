@@ -9,16 +9,16 @@ const AnnouncementBar = () => {
                     <a href="/call-for-papers">Learn more &rarr;</a>
                 </span>
                 <span className="marquee-item">
-                    <span className="badge">NEW</span> Call for Papers for iSPEC 2026 is now open!
-                    <a href="/call-for-papers">Learn more &rarr;</a>
+                    <span className="badge">NEW</span> Paper Submission in Special Sessions is now open! Deadline: 30 September 2026
+                    <a href="/special-sessions">View Details &rarr;</a>
                 </span>
                 <span className="marquee-item">
                     <span className="badge">NEW</span> Call for Papers for iSPEC 2026 is now open!
                     <a href="/call-for-papers">Learn more &rarr;</a>
                 </span>
                 <span className="marquee-item">
-                    <span className="badge">NEW</span> Call for Papers for iSPEC 2026 is now open!
-                    <a href="/call-for-papers">Learn more &rarr;</a>
+                    <span className="badge">NEW</span> Paper Submission in Special Sessions is now open! Deadline: 30 September 2026
+                    <a href="/special-sessions">View Details &rarr;</a>
                 </span>
                 
             </div>

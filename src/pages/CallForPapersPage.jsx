@@ -201,6 +201,7 @@ const CallForPapersPage = () => {
         <p style={{ marginBottom: '15px' }}>
             <strong>Paper Submission</strong><br />
             • Full Paper Deadline: 31st August 2026 (Final Deadline)<br />
+            • Paper Submission in Special Sessions Open: 30th September 2026 <span style={{ backgroundColor: '#2e8b57', color: 'white', padding: '1px 5px', borderRadius: '3px', fontSize: '0.7rem', verticalAlign: 'middle' }}>NEW</span><br />
             • Acceptance Notification: 30th September 2026<br />
             • Final Paper Submission: 15 October 2026
         </p>
