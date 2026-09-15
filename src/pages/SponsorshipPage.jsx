@@ -9,7 +9,7 @@ const SponsorshipPage = () => {
         {
             category: 'Title Sponsor',
             emoji: '🥇',
-            amount: 'INR 10,00,000',
+            amount: 'INR 5,00,000',
             color: '#1a1a1a',
             textColor: '#fff',
             stall: '5 m × 3 m',
@@ -23,7 +23,7 @@ const SponsorshipPage = () => {
         {
             category: 'Platinum',
             emoji: '💎',
-            amount: 'INR 5,00,000',
+            amount: 'INR 4,00,000',
             color: '#e5e4e2',
             textColor: '#333',
             stall: '5 m × 2 m',
@@ -258,17 +258,27 @@ const SponsorshipPage = () => {
                             <h3 style={{ fontSize: '1.5rem', color: '#00629b', marginBottom: '20px', fontWeight: 'bold', textAlign: 'center', textTransform: 'uppercase' }}>Contact Information</h3>
                             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '20px' }}>
                                 <div style={{ background: '#f8f9fa', padding: '20px', borderRadius: '10px', textAlign: 'center', borderTop: '4px solid #2e8b57' }}>
-                                    <div style={{ color: '#00629b', fontWeight: 'bold', marginBottom: '8px', textTransform: 'uppercase', fontSize: '0.9rem' }}>Chair</div>
+                                    <div style={{ color: '#00629b', fontWeight: 'bold', marginBottom: '8px', textTransform: 'uppercase', fontSize: '0.9rem' }}>General Chair</div>
                                     <div style={{ fontSize: '1.2rem', fontWeight: 'bold', color: '#333', marginBottom: '5px' }}>Dr. Ajith Gopi</div>
                                     <a href="mailto:ajithgopi@ieee.org" style={{ color: '#2e8b57', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
                                         <i className="fas fa-envelope"></i> ajithgopi@ieee.org
                                     </a>
                                 </div>
                                 <div style={{ background: '#f8f9fa', padding: '20px', borderRadius: '10px', textAlign: 'center', borderTop: '4px solid #2e8b57' }}>
-                                    <div style={{ color: '#00629b', fontWeight: 'bold', marginBottom: '8px', textTransform: 'uppercase', fontSize: '0.9rem' }}>Co-Chair</div>
+                                    <div style={{ color: '#00629b', fontWeight: 'bold', marginBottom: '8px', textTransform: 'uppercase', fontSize: '0.9rem' }}>General Chair</div>
                                     <div style={{ fontSize: '1.2rem', fontWeight: 'bold', color: '#333', marginBottom: '5px' }}>Dr. Boby Philip</div>
                                     <a href="mailto:boby.philip@ieee.org" style={{ color: '#2e8b57', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
                                         <i className="fas fa-envelope"></i> boby.philip@ieee.org
+                                    </a>
+                                </div>
+                                <div style={{ background: '#f8f9fa', padding: '20px', borderRadius: '10px', textAlign: 'center', borderTop: '4px solid #2e8b57' }}>
+                                    <div style={{ color: '#00629b', fontWeight: 'bold', marginBottom: '8px', textTransform: 'uppercase', fontSize: '0.9rem' }}>Treasurer</div>
+                                    <div style={{ fontSize: '1.2rem', fontWeight: 'bold', color: '#333', marginBottom: '5px' }}>Er. Hari Kumar KP</div>
+                                    <a href="mailto:hari_kumarkp@yahoo.com" style={{ color: '#2e8b57', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginBottom: '4px' }}>
+                                        <i className="fas fa-envelope"></i> hari_kumarkp@yahoo.com
+                                    </a>
+                                    <a href="tel:+919446561381" style={{ color: '#2e8b57', textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+                                        <i className="fas fa-phone"></i> +91 9446561381
                                     </a>
                                 </div>
                                 <div style={{ background: '#f8f9fa', padding: '20px', borderRadius: '10px', textAlign: 'center', borderTop: '4px solid #00629b' }}>
