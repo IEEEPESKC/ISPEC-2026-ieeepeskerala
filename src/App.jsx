@@ -22,6 +22,7 @@ const SpecialSessionPage = lazy(() => import('./pages/SpecialSessionPage'))
 const PaperSubmissionPage = lazy(() => import('./pages/PaperSubmissionPage'))
 const ImportantDatesPage = lazy(() => import('./pages/ImportantDatesPage'))
 const CMTAcknowledgmentPage = lazy(() => import('./pages/CMTAcknowledgmentPage'))
+const KeynoteSpeakersPage = lazy(() => import('./pages/KeynoteSpeakersPage'))
 
 // Simple fallback shown while a page chunk loads
 const PageLoader = () => (
@@ -61,6 +62,8 @@ function App() {
           <Route path="/travel" element={<Suspense fallback={<PageLoader />}><TravelPage /></Suspense>} />
           <Route path="/venue" element={<Suspense fallback={<PageLoader />}><VenuePage /></Suspense>} />
           <Route path="/cmt-acknowledgment" element={<Suspense fallback={<PageLoader />}><CMTAcknowledgmentPage /></Suspense>} />
+          <Route path="/keynote-speakers" element={<Suspense fallback={<PageLoader />}><KeynoteSpeakersPage /></Suspense>} />
+          <Route path="/program/keynote-speakers" element={<Suspense fallback={<PageLoader />}><KeynoteSpeakersPage /></Suspense>} />
         </Routes>
       </div>
     </Router>

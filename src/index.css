@@ -2691,7 +2691,7 @@ html, body, #root, .App {
         grid-template-columns: minmax(0, 1fr) !important;
         gap: 40px !important;
         width: 100% !important;
-        overflowx: hidden !important; 
+        overflow-x: hidden !important; 
     }
     
     /* --- 2. Fix the Images Disappearing --- */
@@ -2726,5 +2726,33 @@ html, body, #root, .App {
         word-wrap: break-word !important;
         line-height: 1.4 !important;
     }
+
+    /* --- 4. Keynote Speaker Scroll Responsive --- */
+    .keynote-scroll-card {
+        flex: 0 0 280px !important;
+    }
+}
+
+/* ── Keynote Speakers Scrolling Animation ── */
+@keyframes keynoteScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.keynote-scroll-track {
+    animation: keynoteScroll 20s linear infinite;
+}
+
+.keynote-scroll-container:hover .keynote-scroll-track {
+    animation-play-state: paused;
+}
+
+.keynote-scroll-card:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 12px 35px rgba(0, 98, 155, 0.12) !important;
 }
 
