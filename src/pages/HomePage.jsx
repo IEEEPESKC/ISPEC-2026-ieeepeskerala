@@ -1,4 +1,5 @@
 import React, { useRef, useLayoutEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import ImportantDates from '../components/ImportantDates';
 import Organisers from '../components/Organisers';
@@ -7,6 +8,7 @@ import ieeePesLogo from '../assets/ieee-pes.png';
 import ieeePesKcLogo from '../assets/ieee-pes-kc.png';
 import ieeeKsLogo from '../assets/ieee-ks.png';
 import marbaseliosLogo from '../assets/marbaselioslogo.png';
+import deanSharafiImg from '../assets/dean-sharafi.jpg';
 
 const importantDates = [
     {
@@ -29,6 +31,125 @@ const importantDates = [
     { date: '1 November 2026', label: 'Registration Deadline', icon: 'fa-id-card' },
     { date: '4 – 6 December 2026', label: 'Conference Dates', icon: 'fa-calendar-check' },
 ];
+
+/* ── Keynote Speakers Data ── */
+const keynoteSpeakers = [
+    {
+        name: 'Dean Sharafi',
+        title: 'Strategic Advisor on Energy Transition',
+        org: 'Australian Energy Market Operator (AEMO)',
+        image: deanSharafiImg,
+        link: 'https://ieee-pes.org/about-pes/2025-governing-board/dean-sharafi/',
+        tags: ['IEEE PES Governing Board', 'IEEE PES Treasurer', 'IEEE Distinguished Lecturer'],
+        bio: 'Strategic Advisor on energy transition at AEMO with over thirty years of experience in power system engineering. Served on the IEEE PES Governing Board (2017–2022) as Treasurer, is an Associate Editor for the IEEE Transactions on Power Systems Journal, and is an IEEE Distinguished Lecturer.',
+    },
+    // Add more speakers here as they are confirmed
+];
+
+/* ── Speaker Card Component ── */
+const SpeakerCard = ({ speaker }) => (
+    <div className="keynote-scroll-card" style={{
+        flex: '0 0 340px',
+        background: '#fff',
+        borderRadius: '16px',
+        overflow: 'hidden',
+        boxShadow: '0 6px 24px rgba(0,0,0,0.07)',
+        border: '1px solid #eaeaea',
+        display: 'flex',
+        flexDirection: 'column',
+        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+    }}>
+        {/* Photo Header */}
+        <div style={{
+            background: 'linear-gradient(135deg, #00629b 0%, #004b79 100%)',
+            padding: '30px 20px',
+            textAlign: 'center',
+            position: 'relative',
+        }}>
+            <div style={{
+                width: '120px',
+                height: '120px',
+                borderRadius: '50%',
+                overflow: 'hidden',
+                border: '3px solid rgba(255,255,255,0.3)',
+                boxShadow: '0 6px 20px rgba(0,0,0,0.25)',
+                margin: '0 auto 14px',
+                background: speaker.image ? 'none' : 'rgba(255,255,255,0.1)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+            }}>
+                {speaker.image ? (
+                    <img src={speaker.image} alt={speaker.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                ) : (
+                    <i className="fas fa-user" style={{ fontSize: '3rem', color: 'rgba(255,255,255,0.4)' }}></i>
+                )}
+            </div>
+            <h3 style={{ color: '#fff', fontSize: '1.15rem', fontWeight: '700', margin: '0 0 4px 0' }}>{speaker.name}</h3>
+            <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.8rem', margin: '0 0 2px 0', lineHeight: '1.3' }}>{speaker.title}</p>
+            <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.75rem', margin: '0', fontWeight: '500' }}>{speaker.org}</p>
+        </div>
+
+        {/* Body */}
+        <div style={{ padding: '20px', flex: 1, display: 'flex', flexDirection: 'column' }}>
+            {speaker.tags && (
+                <div style={{ display: 'flex', gap: '5px', flexWrap: 'wrap', marginBottom: '12px' }}>
+                    {speaker.tags.map((tag, i) => (
+                        <span key={i} style={{
+                            background: '#f0f7fb',
+                            color: '#00629b',
+                            padding: '3px 10px',
+                            borderRadius: '20px',
+                            fontSize: '0.65rem',
+                            fontWeight: '600',
+                            border: '1px solid #d6eaf5',
+                        }}>{tag}</span>
+                    ))}
+                </div>
+            )}
+            <p style={{ fontSize: '0.9rem', lineHeight: '1.65', color: '#555', margin: 0, flex: 1 }}>
+                {speaker.bio}
+            </p>
+
+            {speaker.link && (
+                <a
+                    href={speaker.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '6px',
+                        marginTop: '14px',
+                        padding: '7px 14px',
+                        background: '#f0f7fb',
+                        color: '#00629b',
+                        border: '1px solid #bce1f5',
+                        borderRadius: '6px',
+                        fontSize: '0.75rem',
+                        fontWeight: '600',
+                        textDecoration: 'none',
+                        transition: 'all 0.2s ease',
+                    }}
+                    onMouseEnter={(e) => {
+                        e.currentTarget.style.background = '#00629b';
+                        e.currentTarget.style.color = '#fff';
+                        e.currentTarget.style.borderColor = '#00629b';
+                    }}
+                    onMouseLeave={(e) => {
+                        e.currentTarget.style.background = '#f0f7fb';
+                        e.currentTarget.style.color = '#00629b';
+                        e.currentTarget.style.borderColor = '#bce1f5';
+                    }}
+                >
+                    <span>View IEEE PES Profile</span>
+                    <i className="fas fa-external-link-alt" style={{ fontSize: '0.7rem' }}></i>
+                </a>
+            )}
+        </div>
+    </div>
+);
 
 const SectionTitle = ({ children }) => (
     <div style={{ marginBottom: '24px' }}>
@@ -105,6 +226,82 @@ const HomePage = () => {
                         </div>
                     </div>
 
+                    {/* ── Keynote Speakers Scrolling Window ── */}
+                    <div style={{ padding: '80px 0', borderBottom: '1px solid #eaeaea', background: '#fff' }}>
+                        <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 15px' }}>
+                            <div style={{ textAlign: 'center', marginBottom: '50px' }}>
+                                <h2 style={{ fontSize: '2.4rem', color: '#1a1a2e', fontWeight: '800', marginBottom: '16px', letterSpacing: '-0.5px' }}>
+                                    Keynote Speakers
+                                </h2>
+                                <div style={{ width: '60px', height: '3px', background: '#2e8b57', margin: '0 auto', borderRadius: '2px' }}></div>
+                            </div>
+                        </div>
+                        {/* Single speaker = centered card, multiple = scrolling strip */}
+                        {keynoteSpeakers.length === 1 ? (
+                            <div style={{ maxWidth: '380px', margin: '0 auto', padding: '0 15px' }}>
+                                <SpeakerCard speaker={keynoteSpeakers[0]} />
+                            </div>
+                        ) : (
+                            <div className="keynote-scroll-container" style={{
+                                overflow: 'hidden',
+                                width: '100%',
+                                position: 'relative',
+                                padding: '10px 0',
+                            }}>
+                                {/* Fade edges */}
+                                <div style={{ position: 'absolute', top: 0, left: 0, bottom: 0, width: '80px', background: 'linear-gradient(to right, #fff, transparent)', zIndex: 2, pointerEvents: 'none' }}></div>
+                                <div style={{ position: 'absolute', top: 0, right: 0, bottom: 0, width: '80px', background: 'linear-gradient(to left, #fff, transparent)', zIndex: 2, pointerEvents: 'none' }}></div>
+
+                                <div className="keynote-scroll-track" style={{
+                                    display: 'flex',
+                                    gap: '30px',
+                                    width: 'max-content',
+                                }}>
+                                    {keynoteSpeakers.map((speaker, i) => (
+                                        <SpeakerCard key={`a-${i}`} speaker={speaker} />
+                                    ))}
+                                    {keynoteSpeakers.map((speaker, i) => (
+                                        <SpeakerCard key={`b-${i}`} speaker={speaker} />
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Link to Full Keynote Speakers Page */}
+                        <div style={{ textAlign: 'center', marginTop: '30px' }}>
+                            <Link
+                                to="/keynote-speakers"
+                                style={{
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    gap: '8px',
+                                    background: '#00629b',
+                                    color: '#fff',
+                                    padding: '9px 20px',
+                                    borderRadius: '25px',
+                                    fontSize: '0.85rem',
+                                    fontWeight: '600',
+                                    textDecoration: 'none',
+                                    boxShadow: '0 3px 10px rgba(0,98,155,0.2)',
+                                    transition: 'all 0.2s ease',
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.background = '#004b79';
+                                    e.currentTarget.style.transform = 'translateY(-2px)';
+                                    e.currentTarget.style.boxShadow = '0 6px 16px rgba(0,98,155,0.3)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.background = '#00629b';
+                                    e.currentTarget.style.transform = 'translateY(0)';
+                                    e.currentTarget.style.boxShadow = '0 3px 10px rgba(0,98,155,0.2)';
+                                }}
+                            >
+                                <span>Detailed Speaker Info</span>
+                                <i className="fas fa-arrow-right" style={{ fontSize: '0.75rem' }}></i>
+                            </Link>
+                        </div>
+                    </div>
+
                     {/* ── Main Content Grid (Calm UI) ── */}
                     <div style={{ background: '#fff', padding: '80px 15px' }}>
                         <div className="responsive-home-grid" style={{ maxWidth: '1000px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'minmax(0, 1.4fr) minmax(0, 1fr)', gap: '60px' }}>
@@ -151,11 +348,13 @@ const HomePage = () => {
                                         <div className="news-ticker-track">
                                             <div className="news-ticker-content">
                                                 {/* First set */}
+                                                <span>🎤 Keynote Speaker Announced: Dean Sharafi, Strategic Advisor — AEMO, Australia</span>
                                                 <span>Paper Submission in Special Sessions is now open! Deadline: 30 September 2026</span>
                                                 <span>Paper Submission Deadline extended to August 15</span>
                                                 <span>All accepted Papers will be published in IEEE Xplore</span>
                                                 <span>Accepted and presented papers will be submitted for inclusion into IEEE Xplore subject to meeting IEEE Xplore&apos;s scope and quality requirements</span>
                                                 {/* Duplicate set for seamless loop */}
+                                                <span>🎤 Keynote Speaker Announced: Dean Sharafi, Strategic Advisor — AEMO, Australia</span>
                                                 <span>Paper Submission in Special Sessions is now open! Deadline: 30 September 2026</span>
                                                 <span>Paper Submission Deadline extended to August 15</span>
                                                 <span>All accepted Papers will be published in IEEE Xplore</span>
