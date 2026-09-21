@@ -38,10 +38,11 @@ const keynoteSpeakers = [
         name: 'Dean Sharafi',
         title: 'Strategic Advisor on Energy Transition',
         org: 'Australian Energy Market Operator (AEMO)',
+        pesRole: 'Treasurer, IEEE PES',
         image: deanSharafiImg,
         link: 'https://ieee-pes.org/about-pes/2025-governing-board/dean-sharafi/',
         tags: ['IEEE PES Governing Board', 'IEEE PES Treasurer', 'IEEE Distinguished Lecturer'],
-        bio: 'Strategic Advisor on energy transition at AEMO with over thirty years of experience in power system engineering. Served on the IEEE PES Governing Board (2017–2022) as Treasurer, is an Associate Editor for the IEEE Transactions on Power Systems Journal, and is an IEEE Distinguished Lecturer.',
+        bio: 'Strategic Advisor on energy transition at AEMO with over thirty years of experience in power system engineering, serves on the IEEE PES Governing Board (2017–2026), is an Associate Editor for the IEEE Transactions on Power Systems Journal, and is an IEEE Distinguished Lecturer.',
     },
     // Add more speakers here as they are confirmed
 ];
@@ -87,7 +88,10 @@ const SpeakerCard = ({ speaker }) => (
             </div>
             <h3 style={{ color: '#fff', fontSize: '1.15rem', fontWeight: '700', margin: '0 0 4px 0' }}>{speaker.name}</h3>
             <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.8rem', margin: '0 0 2px 0', lineHeight: '1.3' }}>{speaker.title}</p>
-            <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.75rem', margin: '0', fontWeight: '500' }}>{speaker.org}</p>
+            <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.75rem', margin: '0 0 2px 0', fontWeight: '500' }}>{speaker.org}</p>
+            {speaker.pesRole && (
+                <p style={{ color: '#c8f0db', fontSize: '0.78rem', margin: '3px 0 0 0', fontWeight: '600' }}>{speaker.pesRole}</p>
+            )}
         </div>
 
         {/* Body */}
