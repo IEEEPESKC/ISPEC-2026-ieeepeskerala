@@ -34,13 +34,13 @@ const KeynoteSpeakersPage = () => {
                                 <p style={{ fontSize: '1.1rem', color: '#00629b', fontWeight: '600', margin: '0 0 6px 0' }}>
                                     Strategic Advisor on Energy Transition
                                 </p>
-                                <p style={{ fontSize: '1rem', color: '#2e8b57', fontWeight: '700', margin: '0 0 10px 0' }}>
-                                    <i className="fas fa-award" style={{ marginRight: '8px' }}></i>
-                                    IEEE PES Treasurer
-                                </p>
-                                <p style={{ fontSize: '0.98rem', color: '#555', margin: '0 0 16px 0', fontWeight: '500' }}>
+                                <p style={{ fontSize: '0.98rem', color: '#555', margin: '0 0 6px 0', fontWeight: '500' }}>
                                     <i className="fas fa-building" style={{ color: '#00629b', marginRight: '8px' }}></i>
                                     Australian Energy Market Operator (AEMO)
+                                </p>
+                                <p style={{ fontSize: '1rem', color: '#2e8b57', fontWeight: '700', margin: '0 0 16px 0' }}>
+                                    <i className="fas fa-award" style={{ marginRight: '8px' }}></i>
+                                    Treasurer, IEEE PES
                                 </p>
                                 <a
                                     href="https://ieee-pes.org/about-pes/2025-governing-board/dean-sharafi/"
@@ -98,7 +98,7 @@ const KeynoteSpeakersPage = () => {
                                     Dean Sharafi is the Strategic Advisor on energy transition at the Australian Energy Market Operator (AEMO). Dean holds a degree in Applied Physics, a degree in Electrical Engineering and a degree in Business Management. He has over thirty years of experience in power system engineering which includes Power System Protection, High Voltage Systems, Asset Management and Power System and Electricity Market Operation.
                                 </p>
                                 <p style={{ margin: 0 }}>
-                                    Dean is a senior member of the IEEE and has been involved with IEEE Power and Energy Society for twenty years including serving at the Governing Board from 2017 to 2022.
+                                    Dean is a senior member of the IEEE and has been involved with IEEE Power and Energy Society for twenty years including serving at the Governing Board from 2017 to 2026.
                                 </p>
                                 <p style={{ margin: 0 }}>
                                     Dean has published many papers on power system protection, condition monitoring, asset management and power system operations. He lectured for a decade as a Sessional Academic on Power System Earthing at Curtin University in Western Australia.
@@ -123,9 +123,9 @@ const KeynoteSpeakersPage = () => {
                                 color: '#4b5563',
                                 fontSize: '0.95rem'
                             }}>
-                                <li><strong>IEEE PES Treasurer</strong></li>
+                                <li><strong>Treasurer, IEEE PES</strong></li>
                                 <li>Strategic Advisor on Energy Transition, Australian Energy Market Operator (AEMO)</li>
-                                <li>IEEE PES Governing Board Member (2017–2022)</li>
+                                <li>IEEE PES Governing Board Member (2017–2026)</li>
                                 <li>Associate Editor, IEEE Transactions on Power Systems Journal</li>
                                 <li>IEEE Distinguished Lecturer &amp; IEEE Senior Member</li>
                                 <li>Former Sessional Academic (Power System Earthing), Curtin University</li>
