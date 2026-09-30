@@ -42,10 +42,30 @@ const PaperSubmissionPage = () => {
                                 </p>
                                 <p>Each submission will undergo a peer-review process based on originality, relevance to the conference scope, technical quality and soundness, adequacy of literature review and validation of results, as well as organization and writing quality.</p>
 
-                                <h2 style={{ margin: '30px 0 8px 0', padding: '2px', fontSize: '2rem', color: '#333' }}>Camera-Ready Paper</h2>
-                                <p>
-                                    Detailed instructions for preparing and submitting the camera-ready version of accepted papers will be provided after the review process.<br />
-                                    <em>(To be announced)</em>
+                                <h2 style={{ margin: '30px 0 8px 0', padding: '2px', fontSize: '2rem', color: '#333' }}>Final Camera-Ready Paper Submission</h2>
+                                <ol style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
+                                    <li style={{ marginBottom: '12px' }}>
+                                        Submit the final paper in IEEE two-column format as a .pdf file not exceeding six (6) A4 size pages (maximum size 3 MB). Two extra pages can be added with additional page charges.  However, the paper cannot be more than eight (8) pages under any circumstances. The paper template can be downloaded from following link:<br />
+                                        <a href="https://www.ieee.org/conferences/publishing/templates.html" target="_blank" rel="noopener noreferrer" style={{ color: '#00629b' }}>
+                                            IEEE - Manuscript Templates for Conference Proceedings
+                                        </a>
+                                    </li>
+                                    <li style={{ marginBottom: '12px' }}>
+                                        Authors are fully responsible for the plagiarism check of the final manuscript to be uploaded in IEEE Xplore. More details can be found{' '}
+                                        <a href="https://www.ieee.org/publications/rights/plagiarism/plagiarism.html" target="_blank" rel="noopener noreferrer" style={{ color: '#00629b', fontWeight: 'bold', textDecoration: 'underline' }}>here.</a>
+                                    </li>
+                                    <li style={{ marginBottom: '12px' }}>
+                                        Paper title, authors name, and authors order should not be changed while submitting the final manuscript.
+                                    </li>
+                                    <li style={{ marginBottom: '12px' }}>
+                                        The accepted papers will be published in the conference proceedings and IEEE Xplore, only if at least one author registers (full registration) and presents the paper in the conference.
+                                    </li>
+                                    <li style={{ marginBottom: '12px' }}>
+                                        Carefully address the reviewers' comments in camera-ready final paper.
+                                    </li>
+                                </ol>
+                                <p style={{ marginTop: '14px', color: '#c0392b', fontWeight: '600' }}>
+                                     Last date for submission of  Final Camera-Ready Paper Submission: <strong>October 31, 2026</strong>
                                 </p>
 
                                 <h2 style={{ margin: '30px 0 8px 0', padding: '2px', fontSize: '2rem', color: '#333' }}>Presentation Requirement</h2>
