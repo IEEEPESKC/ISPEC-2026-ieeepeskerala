@@ -13,6 +13,11 @@ import deanSharafiImg from '../assets/dean-sharafi.jpg';
 const importantDates = [
     {
         date: '31st August 2026',
+        label: <span style={{ color: '#c0392b', fontWeight: '700' }}>Paper Submission Closed</span>,
+        icon: 'fa-times-circle'
+    },
+    {
+        date: '31st August 2026',
         label: <><span style={{ backgroundColor: '#2e8b57', color: 'white', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', marginRight: '6px', verticalAlign: 'middle' }}>NEW</span>Full Paper Submission Deadline (Final Deadline)</>,
         icon: 'fa-file-alt'
     },
