@@ -64,8 +64,59 @@ const PaperSubmissionPage = () => {
                                         Carefully address the reviewers' comments in camera-ready final paper.
                                     </li>
                                 </ol>
+                                <p style={{ marginTop: '8px', color: '#c0392b', fontStyle: 'italic' }}>
+                                    Kindly note that IEEE Copyright Notice or Footer Number for iSPEC2026 is not needed.
+                                </p>
                                 <p style={{ marginTop: '14px', color: '#c0392b', fontWeight: '600' }}>
                                      Last date for submission of  Final Camera-Ready Paper Submission: <strong>October 31, 2026</strong>
+                                </p>
+
+                                {/* PDF eXpress Section */}
+                                <h2 style={{ margin: '30px 0 8px 0', padding: '2px', fontSize: '2rem', color: '#333' }}>Check Final Paper in PDF eXpress</h2>
+                                <p>
+                                    Log in to the{' '}
+                                    <a href="https://ieee-pdf-express.org/account/login?ReturnUrl=%2F" target="_blank" rel="noopener noreferrer" style={{ color: '#00629b' }}>
+                                        IEEE PDF eXpress website
+                                    </a>
+                                </p>
+                                <p>First-time users should do the following:</p>
+                                <ol type="I" style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
+                                    <li style={{ marginBottom: '8px' }}>Select the <strong>New Users</strong></li>
+                                    <li style={{ marginBottom: '8px' }}>
+                                        Enter the following:
+                                        <ul style={{ paddingLeft: '20px', marginTop: '6px' }}>
+                                            <li><strong>66762X</strong> for the Conference ID. For PEDES 2026, the conference ID is <strong>66762X</strong>.</li>
+                                            <li>Your email address</li>
+                                            <li>A password</li>
+                                        </ul>
+                                    </li>
+                                    <li style={{ marginBottom: '8px' }}>Continue to enter information as prompted.</li>
+                                    <li style={{ marginBottom: '8px' }}>An online confirmation will be displayed, and an email confirmation will be sent verifying your account setup.</li>
+                                </ol>
+                                <p>
+                                    Previous users of PDF eXpress need to follow the above steps, but should enter the same password that was used for previous conferences. Verify that your contact information is valid. Use <strong>66762X</strong> for the Conference ID.
+                                </p>
+                                <p>
+                                    Before submission of final camera ready version of paper generated using IEEE PDF eXpress, please change the file name to <strong>PID-XXXX</strong>. For example: <em>"PID-0136"</em> (where XXXX is your paper ID in CMT).
+                                </p>
+
+                                {/* Copyright Form Section */}
+                                <h2 style={{ margin: '30px 0 8px 0', padding: '2px', fontSize: '2rem', color: '#333' }}>Submission of the copyright form to IEEE</h2>
+                                <ul style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
+                                    <li style={{ marginBottom: '10px' }}>Authors should carefully review the details of the paper before submitting the copyright form.</li>
+                                    <li style={{ marginBottom: '10px' }}>Once the final camera-ready paper (which must have passed the PDF Check in IEEE PDF eXpress) is uploaded, click on the <strong>'Submit IEEE copyright form'</strong> link in the Author Console of the conference.</li>
+                                    <li style={{ marginBottom: '10px' }}>Afterward, the IEEE Copyright Form Submission page will open. You must read the instructions before proceeding.</li>
+                                    <li style={{ marginBottom: '10px' }}>You need to go to the IEEE Copyright Web Site to submit the IEEE Copyright Form. Upon completion, there is an option to download the completed IEEE Copyright Form in PDF (the corresponding author will also receive the copyright form via email). Be sure to download a copy of the completed form. When you are finished submitting this form, you will be redirected back to the Author Console.</li>
+                                    <li style={{ marginBottom: '10px' }}>Once you have the file, you can either drag and drop it into the dotted region or click <strong>'Upload from Computer'</strong> to upload the file. Then click <strong>'Save.'</strong></li>
+                                </ul>
+                                <p>
+                                    More details can be found{' '}
+                                    <a href="https://cmt3.research.microsoft.com/docs/help/author/camera-ready-submission.html#ieee-copyright" target="_blank" rel="noopener noreferrer" style={{ color: '#00629b' }}>here</a>.
+                                </p>
+                                <p style={{ marginTop: '16px' }}>
+                                    <a href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FISPEC2026" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', padding: '10px 20px', backgroundColor: '#00629b', color: '#fff', borderRadius: '6px', textDecoration: 'none', fontWeight: '600', fontSize: '1rem' }}>
+                                        Link to Submit Final Camera-Ready Paper
+                                    </a>
                                 </p>
 
                                 <h2 style={{ margin: '30px 0 8px 0', padding: '2px', fontSize: '2rem', color: '#333' }}>Presentation Requirement</h2>
