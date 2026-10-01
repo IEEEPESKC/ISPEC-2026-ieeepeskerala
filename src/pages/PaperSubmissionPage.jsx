@@ -45,7 +45,7 @@ const PaperSubmissionPage = () => {
                                 <h2 style={{ margin: '30px 0 8px 0', padding: '2px', fontSize: '2rem', color: '#333' }}>Final Camera-Ready Paper Submission</h2>
                                 <ol style={{ paddingLeft: '20px', lineHeight: '1.8' }}>
                                     <li style={{ marginBottom: '12px' }}>
-                                        Submit the final paper in IEEE two-column format as a .pdf file not exceeding six (6) A4 size pages (maximum size 3 MB). Two extra pages can be added with additional page charges.  However, the paper cannot be more than eight (8) pages under any circumstances. The paper template can be downloaded from following link:<br />
+                                        Submit the final paper in IEEE two-column format as a .pdf file not exceeding six (6) A4 size pages (maximum size 5 MB). Two extra pages can be added with additional page charges. The paper template can be downloaded from following link:<br />
                                         <a href="https://www.ieee.org/conferences/publishing/templates.html" target="_blank" rel="noopener noreferrer" style={{ color: '#00629b' }}>
                                             IEEE - Manuscript Templates for Conference Proceedings
                                         </a>
@@ -57,9 +57,7 @@ const PaperSubmissionPage = () => {
                                     <li style={{ marginBottom: '12px' }}>
                                         Paper title, authors name, and authors order should not be changed while submitting the final manuscript.
                                     </li>
-                                    <li style={{ marginBottom: '12px' }}>
-                                        The accepted papers will be published in the conference proceedings and IEEE Xplore, only if at least one author registers (full registration) and presents the paper in the conference.
-                                    </li>
+
                                     <li style={{ marginBottom: '12px' }}>
                                         Carefully address the reviewers' comments in camera-ready final paper.
                                     </li>
@@ -85,7 +83,7 @@ const PaperSubmissionPage = () => {
                                     <li style={{ marginBottom: '8px' }}>
                                         Enter the following:
                                         <ul style={{ paddingLeft: '20px', marginTop: '6px' }}>
-                                            <li><strong>66762X</strong> for the Conference ID. For PEDES 2026, the conference ID is <strong>66762X</strong>.</li>
+                                            <li><strong>66762X</strong> for the Conference ID. For ISPEC 2026, the conference ID is <strong>66762X</strong>.</li>
                                             <li>Your email address</li>
                                             <li>A password</li>
                                         </ul>
