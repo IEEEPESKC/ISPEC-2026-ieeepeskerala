@@ -11,6 +11,7 @@ import marbaseliosLogo from '../assets/marbaselioslogo.png';
 import deanSharafiImg from '../assets/dean-sharafi.jpg';
 import sushilSooneeImg from '../assets/sushil-kumar-soonee.jpg';
 import rasaraSamarasingheImg from '../assets/rasara-samarasinghe.jpg';
+import sudhakarKumarasamyImg from '../assets/sudhakar-kumarasamy.jpg';
 
 const importantDates = [
     {
@@ -70,6 +71,16 @@ const keynoteSpeakers = [
         link: null,
         tags: ['IEEE PES Sri Lanka Chapter Chair', 'PhD — RMIT University, Australia', 'Director, Engineering Research Unit'],
         bio: 'Senior Lecturer at the University of Moratuwa and Chair of IEEE PES Sri Lanka Chapter. Her research focuses on reliability, condition assessment, and intelligent asset management of power-system insulation and high-voltage equipment, with growing interests in AI-driven predictive maintenance and digitalised power systems.',
+    },
+    {
+        name: 'Dr. Sudhakar Kumarasamy',
+        title: 'Associate Professor & Principal Research Fellow',
+        org: 'Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA), Malaysia',
+        pesRole: '',
+        image: sudhakarKumarasamyImg,
+        link: null,
+        tags: ['Clarivate Highly Cited Researcher (Top 1%)', 'Stanford Top 2% Scientists', 'Certified Energy Manager'],
+        bio: 'Associate Professor at UMPSA with 18+ years of academic and research experience. Clarivate Highly Cited Researcher (Top 1%) in 2025 and listed among Stanford\'s World Top 2% Scientists for seven consecutive years. Expert in sustainable energy transitions, energy modelling, electric mobility, and climate-resilient low-carbon technologies. Has published over 265 peer-reviewed articles.',
     },
 ];
 

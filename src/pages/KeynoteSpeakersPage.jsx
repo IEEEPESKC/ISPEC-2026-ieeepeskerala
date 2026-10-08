@@ -3,6 +3,7 @@ import PageLayout from '../components/PageLayout';
 import deanSharafiImg from '../assets/dean-sharafi.jpg';
 import sushilSooneeImg from '../assets/sushil-kumar-soonee.jpg';
 import rasaraSamarasingheImg from '../assets/rasara-samarasinghe.jpg';
+import sudhakarKumarasamyImg from '../assets/sudhakar-kumarasamy.jpg';
 
 const KeynoteSpeakersPage = () => {
     return (
@@ -362,6 +363,113 @@ const KeynoteSpeakersPage = () => {
                                 <li>PhD, RMIT University, Australia</li>
                                 <li>BSc in Electrical Engineering, University of Moratuwa</li>
                                 <li>Research Areas: Condition monitoring, partial-discharge detection, reliability-centred maintenance, HV asset diagnostics, AI-driven predictive maintenance</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    {/* Speaker 4: Dr. Sudhakar Kumarasamy */}
+                    <div style={{
+                        background: '#fff',
+                        borderRadius: '12px',
+                        border: '1px solid #e8eef3',
+                        boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
+                        padding: '40px 45px',
+                        marginTop: '40px',
+                    }}>
+                        {/* Header & Photo Row */}
+                        <div style={{
+                            display: 'flex',
+                            gap: '40px',
+                            alignItems: 'center',
+                            flexWrap: 'wrap-reverse',
+                            justifyContent: 'space-between',
+                            borderBottom: '1px solid #edf2f7',
+                            paddingBottom: '30px',
+                            marginBottom: '30px',
+                        }}>
+                            <div style={{ flex: '1 1 420px' }}>
+                                <h2 style={{ fontSize: '2.2rem', fontWeight: '800', color: '#1a1a2e', margin: '0 0 8px 0' }}>
+                                    Dr. Sudhakar Kumarasamy
+                                </h2>
+                                <p style={{ fontSize: '1.1rem', color: '#00629b', fontWeight: '600', margin: '0 0 6px 0' }}>
+                                    Associate Professor &amp; Principal Research Fellow
+                                </p>
+                                <p style={{ fontSize: '0.98rem', color: '#555', margin: '0 0 16px 0', fontWeight: '500' }}>
+                                    <i className="fas fa-building" style={{ color: '#00629b', marginRight: '8px' }}></i>
+                                    Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA), Malaysia
+                                </p>
+                            </div>
+
+                            <div style={{ flex: '0 0 200px', margin: '0 auto' }}>
+                                <img
+                                    src={sudhakarKumarasamyImg}
+                                    alt="Dr. Sudhakar Kumarasamy"
+                                    style={{
+                                        width: '190px',
+                                        height: '220px',
+                                        objectFit: 'cover',
+                                        objectPosition: 'top',
+                                        borderRadius: '8px',
+                                        boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
+                                        display: 'block',
+                                    }}
+                                />
+                            </div>
+                        </div>
+
+                        {/* Biography */}
+                        <div>
+                            <h3 style={{
+                                fontSize: '1.4rem',
+                                fontWeight: '700',
+                                color: '#1a1a2e',
+                                margin: '0 0 16px 0',
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '10px'
+                            }}>
+                                <i className="fas fa-user" style={{ color: '#00629b', fontSize: '1.1rem' }}></i>
+                                Biography
+                            </h3>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', color: '#374151' }}>
+                                <p style={{ margin: 0 }}>
+                                    Dr. Sudhakar Kumarasamy is an Associate Professor at the Faculty of Mechanical and Automotive Engineering Technology and Principal Research Fellow at Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA), Malaysia. He completed his primary, secondary, and tertiary education in India before specialising in sustainable energy transitions, environmental sustainability, energy modelling, electric mobility, sustainability assessment, and climate-resilient low-carbon technologies.
+                                </p>
+                                <p style={{ margin: 0 }}>
+                                    With over 18 years of academic and research experience, he has held academic, research, and visiting appointments at universities across Austria, Belgium, India, Indonesia, Lithuania, Nepal, Romania, Russia, and Vietnam, fostering international collaborations in sustainable energy research. He has supervised more than 15 PhD students and 45 Master's students, published over 265 peer-reviewed articles, and authored more than 10 technical books.
+                                </p>
+                                <p style={{ margin: 0 }}>
+                                    His professional achievements include recognition as a Clarivate Highly Cited Researcher (Top 1%) in 2025 and inclusion among Stanford University's World's Top 2% Scientists for seven consecutive years. He serves as an Associate Editor for <em>Frontiers in Energy Research</em> (Solar Energy) and <em>Energy Engineering</em>.
+                                </p>
+                                <p style={{ margin: 0 }}>
+                                    He is a Certified Energy Manager and Energy Auditor (Bureau of Energy Efficiency, Government of India), a Chartered Solar Engineer, and a Chartered Mechanical Engineer (CEng). He is also the Founder of the ICFGS Foundation and the proponent of Sustainalism, an interdisciplinary framework promoting sustainability, climate action, and global well-being through integrated scientific and societal solutions.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Key Highlights */}
+                        <div style={{ marginTop: '30px', paddingTop: '24px', borderTop: '1px solid #edf2f7' }}>
+                            <h4 style={{ fontSize: '1.05rem', fontWeight: '700', color: '#1a1a2e', marginBottom: '12px' }}>
+                                Key Positions &amp; Affiliations
+                            </h4>
+                            <ul style={{
+                                paddingLeft: '20px',
+                                margin: 0,
+                                display: 'flex',
+                                flexDirection: 'column',
+                                gap: '8px',
+                                color: '#4b5563',
+                                fontSize: '0.95rem'
+                            }}>
+                                <li><strong>Clarivate Highly Cited Researcher (Top 1%), 2025</strong></li>
+                                <li><strong>Stanford University World's Top 2% Scientists</strong> — Seven consecutive years</li>
+                                <li>Associate Professor &amp; Principal Research Fellow, UMPSA, Malaysia</li>
+                                <li>Associate Editor, <em>Frontiers in Energy Research</em> (Solar Energy) &amp; <em>Energy Engineering</em></li>
+                                <li>Certified Energy Manager &amp; Energy Auditor, Bureau of Energy Efficiency, Government of India</li>
+                                <li>Chartered Solar Engineer &amp; Chartered Mechanical Engineer (CEng)</li>
+                                <li>Founder, ICFGS Foundation</li>
+                                <li>Research Areas: Sustainable energy transitions, energy modelling, electric mobility, climate-resilient low-carbon technologies</li>
                             </ul>
                         </div>
 
