@@ -1,4 +1,4 @@
-import React, { useRef, useLayoutEffect } from 'react';
+import React, { useRef, useLayoutEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
 import ImportantDates from '../components/ImportantDates';
@@ -9,6 +9,8 @@ import ieeePesKcLogo from '../assets/ieee-pes-kc.png';
 import ieeeKsLogo from '../assets/ieee-ks.png';
 import marbaseliosLogo from '../assets/marbaselioslogo.png';
 import deanSharafiImg from '../assets/dean-sharafi.jpg';
+import sushilSooneeImg from '../assets/sushil-kumar-soonee.jpg';
+import rasaraSamarasingheImg from '../assets/rasara-samarasinghe.jpg';
 
 const importantDates = [
     {
@@ -49,7 +51,26 @@ const keynoteSpeakers = [
         tags: ['IEEE PES Governing Board', 'IEEE PES Treasurer', 'IEEE Distinguished Lecturer'],
         bio: 'Strategic Advisor on energy transition at AEMO with over thirty years of experience in power system engineering, serves on the IEEE PES Governing Board (2017–2026), is an Associate Editor for the IEEE Transactions on Power Systems Journal, and is an IEEE Distinguished Lecturer.',
     },
-    // Add more speakers here as they are confirmed
+    {
+        name: 'Sushil Kumar Soonee',
+        title: 'Former and Founder Chief Executive Officer',
+        org: 'Power System Operation Corporation Ltd. (POSOCO)',
+        pesRole: '',
+        image: sushilSooneeImg,
+        link: null,
+        tags: ['Life Fellow, IEI', 'Fellow IEEE', 'Distinguished Alumnus IIT Kharagpur', 'Fellow INAE', 'Foreign Member NAE USA'],
+        bio: 'Four decades of experience in Power System Operation across various Regional Grids of India. Worked extensively towards Grid Integration leading to the National Grid and SAARC Grid. Expert in Electricity Markets, Open Access, Renewable Energy integration, Transmission Pricing and Ancillary Services.',
+    },
+    {
+        name: 'Dr. Rasara Samarasinghe',
+        title: 'Senior Lecturer, Dept. of Electrical Engineering',
+        org: 'University of Moratuwa, Sri Lanka',
+        pesRole: 'Chair, IEEE PES Sri Lanka Chapter',
+        image: rasaraSamarasingheImg,
+        link: null,
+        tags: ['IEEE PES Sri Lanka Chapter Chair', 'PhD — RMIT University, Australia', 'Director, Engineering Research Unit'],
+        bio: 'Senior Lecturer at the University of Moratuwa and Chair of IEEE PES Sri Lanka Chapter. Her research focuses on reliability, condition assessment, and intelligent asset management of power-system insulation and high-voltage equipment, with growing interests in AI-driven predictive maintenance and digitalised power systems.',
+    },
 ];
 
 /* ── Speaker Card Component ── */
@@ -160,6 +181,93 @@ const SpeakerCard = ({ speaker }) => (
     </div>
 );
 
+/* ── Speaker Carousel Component ── */
+const SpeakerCarousel = ({ speakers }) => {
+    const [slide, setSlide] = useState(0);
+    const perPage = 2;
+    const totalSlides = Math.ceil(speakers.length / perPage);
+    const prev = () => setSlide(s => (s - 1 + totalSlides) % totalSlides);
+    const next = () => setSlide(s => (s + 1) % totalSlides);
+    const visible = speakers.slice(slide * perPage, slide * perPage + perPage);
+
+    return (
+        <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 40px' }}>
+            <div style={{ position: 'relative' }}>
+                {/* Cards row */}
+                <div style={{
+                    display: 'flex',
+                    gap: '30px',
+                    justifyContent: 'center',
+                    minHeight: '520px',
+                    alignItems: 'stretch',
+                }}>
+                    {visible.map((speaker, i) => (
+                        <SpeakerCard key={slide * perPage + i} speaker={speaker} />
+                    ))}
+                </div>
+
+                {/* Prev arrow */}
+                {totalSlides > 1 && (
+                    <button onClick={prev} style={{
+                        position: 'absolute', top: '50%', left: '-40px',
+                        transform: 'translateY(-50%)',
+                        background: '#00629b', color: '#fff',
+                        border: 'none', borderRadius: '50%',
+                        width: '40px', height: '40px',
+                        fontSize: '1rem', cursor: 'pointer',
+                        boxShadow: '0 4px 12px rgba(0,98,155,0.3)',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        transition: 'background 0.2s',
+                        zIndex: 2,
+                    }}
+                    onMouseEnter={e => e.currentTarget.style.background = '#004b79'}
+                    onMouseLeave={e => e.currentTarget.style.background = '#00629b'}
+                    >
+                        <i className="fas fa-chevron-left"></i>
+                    </button>
+                )}
+
+                {/* Next arrow */}
+                {totalSlides > 1 && (
+                    <button onClick={next} style={{
+                        position: 'absolute', top: '50%', right: '-40px',
+                        transform: 'translateY(-50%)',
+                        background: '#00629b', color: '#fff',
+                        border: 'none', borderRadius: '50%',
+                        width: '40px', height: '40px',
+                        fontSize: '1rem', cursor: 'pointer',
+                        boxShadow: '0 4px 12px rgba(0,98,155,0.3)',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        transition: 'background 0.2s',
+                        zIndex: 2,
+                    }}
+                    onMouseEnter={e => e.currentTarget.style.background = '#004b79'}
+                    onMouseLeave={e => e.currentTarget.style.background = '#00629b'}
+                    >
+                        <i className="fas fa-chevron-right"></i>
+                    </button>
+                )}
+            </div>
+
+            {/* Dot indicators */}
+            {totalSlides > 1 && (
+                <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginTop: '28px' }}>
+                    {Array.from({ length: totalSlides }).map((_, i) => (
+                        <button key={i} onClick={() => setSlide(i)} style={{
+                            width: slide === i ? '24px' : '10px',
+                            height: '10px',
+                            borderRadius: '5px',
+                            background: slide === i ? '#00629b' : '#d1d5db',
+                            border: 'none', cursor: 'pointer', padding: 0,
+                            transition: 'all 0.3s ease',
+                        }} />
+                    ))}
+                </div>
+            )}
+        </div>
+    );
+};
+
 const SectionTitle = ({ children }) => (
     <div style={{ marginBottom: '24px' }}>
         <h3 style={{
@@ -235,7 +343,7 @@ const HomePage = () => {
                         </div>
                     </div>
 
-                    {/* ── Keynote Speakers Scrolling Window ── */}
+                    {/* ── Keynote Speakers Carousel ── */}
                     <div style={{ padding: '80px 0', borderBottom: '1px solid #eaeaea', background: '#fff' }}>
                         <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 15px' }}>
                             <div style={{ textAlign: 'center', marginBottom: '50px' }}>
@@ -245,36 +353,8 @@ const HomePage = () => {
                                 <div style={{ width: '60px', height: '3px', background: '#2e8b57', margin: '0 auto', borderRadius: '2px' }}></div>
                             </div>
                         </div>
-                        {/* Single speaker = centered card, multiple = scrolling strip */}
-                        {keynoteSpeakers.length === 1 ? (
-                            <div style={{ maxWidth: '380px', margin: '0 auto', padding: '0 15px' }}>
-                                <SpeakerCard speaker={keynoteSpeakers[0]} />
-                            </div>
-                        ) : (
-                            <div className="keynote-scroll-container" style={{
-                                overflow: 'hidden',
-                                width: '100%',
-                                position: 'relative',
-                                padding: '10px 0',
-                            }}>
-                                {/* Fade edges */}
-                                <div style={{ position: 'absolute', top: 0, left: 0, bottom: 0, width: '80px', background: 'linear-gradient(to right, #fff, transparent)', zIndex: 2, pointerEvents: 'none' }}></div>
-                                <div style={{ position: 'absolute', top: 0, right: 0, bottom: 0, width: '80px', background: 'linear-gradient(to left, #fff, transparent)', zIndex: 2, pointerEvents: 'none' }}></div>
-
-                                <div className="keynote-scroll-track" style={{
-                                    display: 'flex',
-                                    gap: '30px',
-                                    width: 'max-content',
-                                }}>
-                                    {keynoteSpeakers.map((speaker, i) => (
-                                        <SpeakerCard key={`a-${i}`} speaker={speaker} />
-                                    ))}
-                                    {keynoteSpeakers.map((speaker, i) => (
-                                        <SpeakerCard key={`b-${i}`} speaker={speaker} />
-                                    ))}
-                                </div>
-                            </div>
-                        )}
+                        {/* Carousel */}
+                        <SpeakerCarousel speakers={keynoteSpeakers} />
 
                         {/* Link to Full Keynote Speakers Page */}
                         <div style={{ textAlign: 'center', marginTop: '30px' }}>
