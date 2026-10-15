@@ -3,17 +3,16 @@ import React from 'react';
 const ImportantDates = () => {
     const dates = [
         {
-            label: <>
-                <span style={{ backgroundColor: '#2e8b57', color: 'white', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', marginRight: '6px', verticalAlign: 'middle' }}>NEW</span>
-                Full Paper Submission Deadline (Final Deadline)
-            </>,
-            date: '31st August 2026',
-            status: 'active'
-        },
-        {
             label: <span style={{ color: '#c0392b', fontWeight: '700' }}>Paper Submission Closed</span>,
             date: '31st August 2026',
             status: 'closed'
+        },
+        { label: 'Registration Deadline', date: '1 November 2026', status: 'future' },
+        { label: 'Conference Dates', date: '4 – 6 December 2026', status: 'future' },
+        {
+            label: <><span style={{ backgroundColor: '#2e8b57', color: 'white', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', marginRight: '6px', verticalAlign: 'middle' }}>NEW</span>Camera Ready Paper Submission (Extended)</>,
+            date: '31st October 2026',
+            status: 'active'
         },
         {
             label: <><span style={{ backgroundColor: '#2e8b57', color: 'white', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', marginRight: '6px', verticalAlign: 'middle' }}>NEW</span>Paper Submission in Special Sessions Open</>,
@@ -22,13 +21,19 @@ const ImportantDates = () => {
         },
         { label: 'Notification of Acceptance', date: '30th September 2026', status: 'future' },
         {
+            label: <>
+                <span style={{ backgroundColor: '#2e8b57', color: 'white', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', marginRight: '6px', verticalAlign: 'middle' }}>NEW</span>
+                Full Paper Submission Deadline (Final Deadline)
+            </>,
+            date: '31st August 2026',
+            status: 'active'
+        },
+
+        {
             label: 'Paper submission open from 20 March 2026',
             date: '20th March 2026',
             status: 'active'
         },
-        { label: 'Final Paper Submission', date: '15 October 2026', status: 'future' },
-        { label: 'Registration Deadline', date: '1 November 2026', status: 'future' },
-        { label: 'Conference Dates', date: '4 – 6 December 2026', status: 'future' },
     ];
 
     return (
