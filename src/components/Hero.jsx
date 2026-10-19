@@ -25,7 +25,6 @@ const keynoteSpeakers = [
     org: 'Australian Energy Market Operator (AEMO)',
     image: deanSharafiImg,
     sessionTitle: 'Energy Transition Strategies for a Decarbonised Power Grid',
-    date: 'Dec 4, 2026',
   },
   {
     num: '02',
@@ -33,7 +32,6 @@ const keynoteSpeakers = [
     org: 'Power System Operation Corporation Ltd. (POSOCO)',
     image: sushilSooneeImg,
     sessionTitle: 'National Grid Integration and Power System Operation Challenges in India',
-    date: 'Dec 5, 2026',
   },
   {
     num: '03',
@@ -41,7 +39,6 @@ const keynoteSpeakers = [
     org: 'University of Moratuwa, Sri Lanka',
     image: rasaraSamarasingheImg,
     sessionTitle: 'From Reliability to Resilience: Intelligent Asset Management for a Sustainable and Future-Ready Power Grid',
-    date: 'Dec 5, 2026',
   },
   {
     num: '04',
@@ -49,7 +46,6 @@ const keynoteSpeakers = [
     org: 'Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA), Malaysia',
     image: sudhakarKumarasamyImg,
     sessionTitle: 'Sustainable Energy Transitions, Climate-Resilient Technologies and Low-Carbon Pathways',
-    date: 'Dec 6, 2026',
   },
 ];
 
@@ -57,18 +53,18 @@ const keynoteSpeakers = [
 const KeynoteCard = ({ speaker }) => (
   <div
     style={{
-      flex: '1 1 260px',
-      minWidth: '240px',
-      maxWidth: '315px',
-      background: 'rgba(15, 23, 42, 0.85)',
+      flex: '1 1 240px',
+      minWidth: 'min(240px, 100%)',
+      maxWidth: '300px',
+      background: 'rgba(15, 23, 42, 0.88)',
       backdropFilter: 'blur(16px)',
       WebkitBackdropFilter: 'blur(16px)',
       border: '1px solid rgba(255, 255, 255, 0.14)',
       borderRadius: '18px',
-      padding: '30px 24px',
+      padding: '24px 20px',
       display: 'flex',
       flexDirection: 'column',
-      gap: '16px',
+      gap: '14px',
       boxShadow: '0 20px 45px rgba(0, 0, 0, 0.5)',
       transition: 'transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease',
     }}
@@ -79,7 +75,7 @@ const KeynoteCard = ({ speaker }) => (
       e.currentTarget.style.boxShadow = '0 22px 45px rgba(0, 0, 0, 0.65), 0 0 24px rgba(16, 185, 129, 0.2)';
     }}
     onMouseLeave={(e) => {
-      e.currentTarget.style.background = 'rgba(15, 23, 42, 0.85)';
+      e.currentTarget.style.background = 'rgba(15, 23, 42, 0.88)';
       e.currentTarget.style.transform = 'translateY(0)';
       e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.14)';
       e.currentTarget.style.boxShadow = '0 20px 45px rgba(0, 0, 0, 0.5)';
@@ -88,8 +84,8 @@ const KeynoteCard = ({ speaker }) => (
     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
       <div
         style={{
-          width: '74px',
-          height: '74px',
+          width: '68px',
+          height: '68px',
           borderRadius: '50%',
           overflow: 'hidden',
           border: '3px solid rgba(52, 211, 153, 0.55)',
@@ -122,12 +118,13 @@ const KeynoteCard = ({ speaker }) => (
         style={{
           background: '#10b981',
           color: '#fff',
-          fontSize: '0.68rem',
+          fontSize: '0.65rem',
           fontWeight: '700',
           letterSpacing: '0.08em',
-          padding: '5px 10px',
+          padding: '4px 9px',
           borderRadius: '6px',
           textTransform: 'uppercase',
+          whiteSpace: 'nowrap',
         }}
       >
         KEYNOTE {speaker.num}
@@ -135,21 +132,21 @@ const KeynoteCard = ({ speaker }) => (
     </div>
 
     <div>
-      <h3 style={{ color: '#fff', fontSize: '1.15rem', fontWeight: '700', margin: '0 0 6px 0', lineHeight: '1.3' }}>
+      <h3 style={{ color: '#fff', fontSize: '1.05rem', fontWeight: '700', margin: '0 0 5px 0', lineHeight: '1.3' }}>
         {speaker.name}
       </h3>
-      <p style={{ color: '#34d399', fontSize: '0.82rem', margin: 0, lineHeight: '1.45', fontWeight: '500' }}>
+      <p style={{ color: '#34d399', fontSize: '0.78rem', margin: 0, lineHeight: '1.45', fontWeight: '500' }}>
         {speaker.org}
       </p>
     </div>
 
     <div style={{ height: '1px', background: 'rgba(255,255,255,0.12)' }} />
 
-    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '6px' }}>
+    <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '5px' }}>
       <p
         style={{
           color: 'rgba(255,255,255,0.5)',
-          fontSize: '0.66rem',
+          fontSize: '0.63rem',
           fontWeight: '700',
           letterSpacing: '0.08em',
           margin: 0,
@@ -161,7 +158,7 @@ const KeynoteCard = ({ speaker }) => (
       <p
         style={{
           color: 'rgba(255,255,255,0.9)',
-          fontSize: '0.84rem',
+          fontSize: '0.8rem',
           lineHeight: '1.5',
           margin: 0,
           fontStyle: 'italic',
@@ -174,18 +171,17 @@ const KeynoteCard = ({ speaker }) => (
     <div
       style={{
         display: 'flex',
-        justifyContent: 'space-between',
+        justifyContent: 'flex-end',
         alignItems: 'center',
         marginTop: 'auto',
-        paddingTop: '8px',
+        paddingTop: '6px',
       }}
     >
-      <span style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.78rem' }}>{speaker.date}</span>
       <Link
         to="/keynote-speakers"
         style={{
           color: '#34d399',
-          fontSize: '0.82rem',
+          fontSize: '0.8rem',
           fontWeight: '600',
           textDecoration: 'none',
           display: 'flex',
@@ -196,7 +192,7 @@ const KeynoteCard = ({ speaker }) => (
         onMouseEnter={(e) => (e.currentTarget.style.color = '#6ee7b7')}
         onMouseLeave={(e) => (e.currentTarget.style.color = '#34d399')}
       >
-        Bio &amp; Abstract <ChevronRight style={{ width: '15px', height: '15px' }} />
+        Bio &amp; Abstract <ChevronRight style={{ width: '14px', height: '14px' }} />
       </Link>
     </div>
   </div>
@@ -208,26 +204,66 @@ const KeynoteCard = ({ speaker }) => (
 const Hero = () => {
   const backgrounds = [backgroundImage, mountainImage];
   const [slide, setSlide] = useState(0);
+  const [direction, setDirection] = useState(1);
   const [isFirstRender, setIsFirstRender] = useState(true);
+  const touchStartX = React.useRef(null);
 
   useEffect(() => {
     setIsFirstRender(false);
   }, []);
 
-  const next = () => setSlide((s) => (s + 1) % TOTAL_SLIDES);
-  const prev = () => setSlide((s) => (s - 1 + TOTAL_SLIDES) % TOTAL_SLIDES);
+  const goTo = (target, dir) => {
+    setDirection(dir);
+    setSlide(target);
+  };
 
-  // Auto-advance every 6s
+  const next = () => goTo((slide + 1) % TOTAL_SLIDES, 1);
+  const prev = () => goTo((slide - 1 + TOTAL_SLIDES) % TOTAL_SLIDES, -1);
+
+  // Touch swipe support
+  const onTouchStart = (e) => { touchStartX.current = e.touches[0].clientX; };
+  const onTouchEnd = (e) => {
+    if (touchStartX.current === null) return;
+    const diff = touchStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) diff > 0 ? next() : prev();
+    touchStartX.current = null;
+  };
+
+  // Auto-advance every 6s — resets when slide changes
   useEffect(() => {
-    const timer = setInterval(next, 6000);
+    const timer = setInterval(() => {
+      setDirection(1);
+      setSlide((s) => (s + 1) % TOTAL_SLIDES);
+    }, 6000);
     return () => clearInterval(timer);
-  }, []);
+  }, [slide]);
 
   const conferenceInfo = {
     subtitle: 'IEEE PES Kerala Chapter',
     theme: '"Integrated Pathways in Sustainable Power and Energy for Carbon Neutrality"',
     date: 'Dec 4 – 6, 2026',
     venue: 'Mar Baselios College of Engineering and Technology, Thiruvananthapuram, Keralam , India',
+  };
+
+  /* Slide animation variants — smooth horizontal crossfade */
+  const slideVariants = {
+    enter: (dir) => ({
+      x: dir > 0 ? 80 : -80,
+      opacity: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+    },
+    exit: (dir) => ({
+      x: dir > 0 ? -80 : 80,
+      opacity: 0,
+    }),
+  };
+
+  const slideTransition = {
+    x: { type: 'tween', duration: 0.45, ease: [0.25, 0.46, 0.45, 0.94] },
+    opacity: { duration: 0.35, ease: 'easeOut' },
   };
 
   return (
@@ -243,26 +279,33 @@ const Hero = () => {
             initial={{ opacity: isFirstRender ? 1 : 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
             alt="Conference Background"
             className="absolute inset-0 w-full h-full object-cover"
           />
         </AnimatePresence>
 
-        {/* Horizontal Linear Gradient — original: dark left, transparent right */}
+        {/* Horizontal gradient — stronger on mobile for readability */}
         <div
           className="absolute inset-0 z-10"
           style={{
-            background: 'linear-gradient(to right, rgba(2, 6, 23, 0.8) 0%, rgba(2, 6, 23, 0.6) 30%, rgba(2, 6, 23, 0.1) 85%, transparent 100%)'
+            background: 'linear-gradient(to right, rgba(2, 6, 23, 0.92) 0%, rgba(2, 6, 23, 0.75) 40%, rgba(2, 6, 23, 0.25) 80%, rgba(2, 6, 23, 0.15) 100%)'
           }}
         ></div>
       </div>
 
-      {/* ── Slider Navigation Buttons — original z-50, original sizes ── */}
+      {/* ── Slider Navigation Buttons ── */}
       <button
         onClick={prev}
-        className="hero-slider-btn z-50 cursor-pointer !hidden md:!block"
-        style={{ position: 'absolute', left: '2rem', top: '50%', transform: 'translateY(-50%)' }}
+        className="hero-slider-btn cursor-pointer !hidden md:!flex items-center justify-center"
+        style={{
+          position: 'absolute',
+          left: '2rem',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          zIndex: 100,
+          pointerEvents: 'auto',
+        }}
         aria-label="Previous slide"
       >
         <ChevronLeft className="w-8 h-8 md:w-10 md:h-10 text-white" />
@@ -270,25 +313,40 @@ const Hero = () => {
 
       <button
         onClick={next}
-        className="hero-slider-btn z-50 cursor-pointer !hidden md:!block"
-        style={{ position: 'absolute', right: '2rem', top: '50%', transform: 'translateY(-50%)' }}
+        className="hero-slider-btn cursor-pointer !hidden md:!flex items-center justify-center"
+        style={{
+          position: 'absolute',
+          right: '2rem',
+          top: '50%',
+          transform: 'translateY(-50%)',
+          zIndex: 100,
+          pointerEvents: 'auto',
+        }}
         aria-label="Next slide"
       >
         <ChevronRight className="w-8 h-8 md:w-10 md:h-10 text-white" />
       </button>
 
       {/* ── SLIDE CONTENT ── */}
-      <div className="relative z-10 w-full">
-        <AnimatePresence mode="wait" initial={false}>
+      <div
+        className="relative w-full"
+        style={{ zIndex: 10, pointerEvents: 'none' }}
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+      >
+        <AnimatePresence mode="wait" initial={false} custom={direction}>
           {slide === 0 ? (
-            /* ── Slide 0: Conference Info — original layout restored exactly ── */
+            /* ── Slide 0: Conference Info ── */
             <motion.div
               key="hero-slide-conference"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3, ease: 'easeOut' }}
+              custom={direction}
+              variants={slideVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={slideTransition}
               className="container mx-auto px-6 lg:px-12 pt-16 pb-32"
+              style={{ pointerEvents: 'auto' }}
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
@@ -378,13 +436,28 @@ const Hero = () => {
             /* ── Slide 1: Keynote Speakers ONLY (Separate slide) ── */
             <motion.div
               key="hero-slide-keynotes"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.3, ease: 'easeOut' }}
+              custom={direction}
+              variants={slideVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={slideTransition}
               className="container mx-auto px-6 lg:px-12 pt-16 pb-32"
+              style={{ pointerEvents: 'auto' }}
             >
-              <div className="flex gap-4 lg:gap-6 justify-center flex-wrap items-stretch max-w-7xl mx-auto w-full">
+              <div
+                style={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: '16px',
+                  justifyContent: 'center',
+                  alignItems: 'stretch',
+                  width: '100%',
+                  maxWidth: '1280px',
+                  margin: '0 auto',
+                  padding: '0 8px',
+                }}
+              >
                 {keynoteSpeakers.map((speaker, i) => (
                   <KeynoteCard key={i} speaker={speaker} />
                 ))}

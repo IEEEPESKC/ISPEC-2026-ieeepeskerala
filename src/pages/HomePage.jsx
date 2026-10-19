@@ -49,7 +49,6 @@ const keynoteSpeakers = [
         org: 'Australian Energy Market Operator (AEMO)',
         image: deanSharafiImg,
         sessionTitle: 'Energy Transition Strategies for a Decarbonised Power Grid',
-        date: 'Dec 4, 2026',
         link: '/keynote-speakers',
     },
     {
@@ -58,7 +57,7 @@ const keynoteSpeakers = [
         org: 'Power System Operation Corporation Ltd. (POSOCO)',
         image: sushilSooneeImg,
         sessionTitle: 'National Grid Integration and Power System Operation Challenges in India',
-        date: 'Dec 5, 2026',
+      
         link: '/keynote-speakers',
     },
     {
@@ -67,7 +66,6 @@ const keynoteSpeakers = [
         org: 'University of Moratuwa, Sri Lanka',
         image: rasaraSamarasingheImg,
         sessionTitle: '"From Reliability to Resilience: Intelligent Asset Management for a Sustainable and Future-Ready Power Grid"',
-        date: 'Dec 5, 2026',
         link: '/keynote-speakers',
     },
     {
@@ -76,7 +74,6 @@ const keynoteSpeakers = [
         org: 'Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA), Malaysia',
         image: sudhakarKumarasamyImg,
         sessionTitle: 'Sustainable Energy Transitions, Climate-Resilient Technologies and Low-Carbon Pathways',
-        date: 'Dec 6, 2026',
         link: '/keynote-speakers',
     },
 ];
@@ -156,9 +153,8 @@ const KeynoteCard = ({ speaker, index }) => (
             </p>
         </div>
 
-        {/* Footer: date + link */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 'auto', paddingTop: '8px' }}>
-            <span style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.78rem' }}>{speaker.date}</span>
+        {/* Footer: link */}
+        <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', marginTop: 'auto', paddingTop: '8px' }}>
             <Link
                 to={speaker.link}
                 style={{ color: '#4dd9ac', fontSize: '0.78rem', fontWeight: '600', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '4px' }}
