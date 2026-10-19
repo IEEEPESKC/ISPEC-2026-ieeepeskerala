@@ -10,6 +10,7 @@ const committeeData = [
             { name: 'B. S. Manoj', role: 'Chair, IEEE Kerala Section' },
             { name: 'Mohammed Kasim', role: 'Past Chair, IEEE Kerala Section' },
             { name: 'Suhair A', role: 'Past Chair IEEE PES Kerala Chapter' },
+            { name: 'S. Viswanatha Rao', role: 'MBCET Representative' },
         ]
     },
     {
@@ -21,12 +22,20 @@ const committeeData = [
         ]
     },
     {
+        category: "Organizing Chair (Host Institution)",
+        borderColor: '#b8860b',
+        members: [
+            { name: 'Elizabeth Varghese', role: 'Associate Professor MBCET' },
+        ]
+    },
+    {
         category: "Technical Program Chairs",
         borderColor: '#2e8b57',
         members: [
             { name: 'Kumaravel S', role: 'Professor, Electrical Eng. Dept. NIT Calicut' },
             { name: 'Jaison Mathew', role: 'Professor & Head, Electrical Engg. Dept. GEC Thrissur' },
             { name: 'Sobha Manakkal', role: 'Professor & Head, Electrical Engg. Dept, NCERC' },
+            { name: 'Nisha G. K', role: 'Professor MBCET' },
         ]
     },
     {
@@ -44,6 +53,8 @@ const committeeData = [
             { name: 'Nandan S', role: 'Secretary IEEE Kerala Section' },
             { name: 'Vishnu S', role: 'Treasurer IEEE PES Kerala Chapter' },
             { name: 'Biju S S', role: 'Retd. Deputy CE KSEB, Grant Thornton Bharat, India' },
+            { name: 'Johnson Y', role: 'Assistant Professor KTU Schools' },
+            { name: 'Shalu George K', role: 'Associate Professor MBCET' },
         ]
     },
     {
@@ -52,6 +63,20 @@ const committeeData = [
         members: [
             { name: 'Harikumar K P', role: 'Vice Chair, IEEE PES Kerala Chapter' },
             { name: 'Sabiq P V', role: 'Treasurer, IEEE Kerala Section' },
+        ]
+    },
+    {
+        category: "Local Arrangements Convener",
+        borderColor: '#b8860b',
+        members: [
+            { name: 'Soumya A V', role: 'Associate Professor MBCET' },
+        ]
+    },
+    {
+        category: "Local Arrangements Co-Convener",
+        borderColor: '#b8860b',
+        members: [
+            { name: 'Sandhya P', role: 'Assistant Professor MBCET' },
         ]
     },
     {

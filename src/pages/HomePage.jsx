@@ -44,34 +44,37 @@ const importantDates = [
 /* ── Keynote Speakers Data ── */
 const keynoteSpeakers = [
     {
+        num: '01',
         name: 'Dean Sharafi',
-        title: 'Strategic Advisor on Energy Transition',
         org: 'Australian Energy Market Operator (AEMO)',
-        pesRole: 'Treasurer, IEEE PES',
         image: deanSharafiImg,
-        link: 'https://ieee-pes.org/about-pes/2025-governing-board/dean-sharafi/',
-        tags: ['IEEE PES Governing Board', 'IEEE PES Treasurer', 'IEEE Distinguished Lecturer'],
-        bio: 'Strategic Advisor on energy transition at AEMO with over thirty years of experience in power system engineering, serves on the IEEE PES Governing Board (2017–2026), is an Associate Editor for the IEEE Transactions on Power Systems Journal, and is an IEEE Distinguished Lecturer.',
+        sessionTitle: 'Energy Transition Strategies for a Decarbonised Power Grid',
+        link: '/keynote-speakers',
     },
     {
+        num: '02',
         name: 'Sushil Kumar Soonee',
-        title: 'Former and Founder Chief Executive Officer',
         org: 'Power System Operation Corporation Ltd. (POSOCO)',
-        pesRole: '',
         image: sushilSooneeImg,
-        link: null,
-        tags: ['Life Fellow, IEI', 'Fellow IEEE', 'Distinguished Alumnus IIT Kharagpur', 'Fellow INAE', 'Foreign Member NAE USA'],
-        bio: 'Four decades of experience in Power System Operation across various Regional Grids of India. Worked extensively towards Grid Integration leading to the National Grid and SAARC Grid. Expert in Electricity Markets, Open Access, Renewable Energy integration, Transmission Pricing and Ancillary Services.',
+        sessionTitle: 'National Grid Integration and Power System Operation Challenges in India',
+      
+        link: '/keynote-speakers',
     },
     {
+        num: '03',
         name: 'Dr. Rasara Samarasinghe',
-        title: 'Senior Lecturer, Dept. of Electrical Engineering',
         org: 'University of Moratuwa, Sri Lanka',
-        pesRole: 'Chair, IEEE PES Sri Lanka Chapter',
         image: rasaraSamarasingheImg,
-        link: null,
-        tags: ['IEEE PES Sri Lanka Chapter Chair', 'PhD — RMIT University, Australia', 'Director, Engineering Research Unit'],
-        bio: 'Senior Lecturer at the University of Moratuwa and Chair of IEEE PES Sri Lanka Chapter. Her research focuses on reliability, condition assessment, and intelligent asset management of power-system insulation and high-voltage equipment, with growing interests in AI-driven predictive maintenance and digitalised power systems.',
+        sessionTitle: '"From Reliability to Resilience: Intelligent Asset Management for a Sustainable and Future-Ready Power Grid"',
+        link: '/keynote-speakers',
+    },
+    {
+        num: '04',
+        name: 'Dr. Sudhakar Kumarasamy',
+        org: 'Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA), Malaysia',
+        image: sudhakarKumarasamyImg,
+        sessionTitle: 'Sustainable Energy Transitions, Climate-Resilient Technologies and Low-Carbon Pathways',
+        link: '/keynote-speakers',
     },
     {
         name: 'Dr. Sudhakar Kumarasamy',
@@ -85,200 +88,94 @@ const keynoteSpeakers = [
     },
 ];
 
-/* ── Speaker Card Component ── */
-const SpeakerCard = ({ speaker }) => (
-    <div className="keynote-scroll-card" style={{
-        flex: '0 0 340px',
-        background: '#fff',
-        borderRadius: '16px',
-        overflow: 'hidden',
-        boxShadow: '0 6px 24px rgba(0,0,0,0.07)',
-        border: '1px solid #eaeaea',
-        display: 'flex',
-        flexDirection: 'column',
-        transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-    }}>
-        {/* Photo Header */}
-        <div style={{
-            background: 'linear-gradient(135deg, #00629b 0%, #004b79 100%)',
-            padding: '30px 20px',
-            textAlign: 'center',
-            position: 'relative',
-        }}>
+/* ── Keynote Card (dark style matching screenshot) ── */
+const KeynoteCard = ({ speaker, index }) => (
+    <div
+        className="keynote-dark-card"
+        style={{
+            flex: '1 1 220px',
+            minWidth: '200px',
+            maxWidth: '280px',
+            background: 'rgba(255,255,255,0.05)',
+            border: '1px solid rgba(255,255,255,0.1)',
+            borderRadius: '12px',
+            padding: '30px 30px 30px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '14px',
+            transition: 'background 0.25s, transform 0.25s',
+            cursor: 'default',
+        }}
+        onMouseEnter={e => {
+            e.currentTarget.style.background = 'rgba(255,255,255,0.09)';
+            e.currentTarget.style.transform = 'translateY(-4px)';
+        }}
+        onMouseLeave={e => {
+            e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
+            e.currentTarget.style.transform = 'translateY(0)';
+        }}
+    >
+        {/* Badge + Photo row */}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+            {/* Circular photo */}
             <div style={{
-                width: '120px',
-                height: '120px',
-                borderRadius: '50%',
-                overflow: 'hidden',
-                border: '3px solid rgba(255,255,255,0.3)',
-                boxShadow: '0 6px 20px rgba(0,0,0,0.25)',
-                margin: '0 auto 14px',
-                background: speaker.image ? 'none' : 'rgba(255,255,255,0.1)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
+                width: '72px', height: '72px', borderRadius: '50%',
+                overflow: 'hidden', border: '2px solid rgba(255,255,255,0.25)',
+                flexShrink: 0,
             }}>
-                {speaker.image ? (
-                    <img src={speaker.image} alt={speaker.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                ) : (
-                    <i className="fas fa-user" style={{ fontSize: '3rem', color: 'rgba(255,255,255,0.4)' }}></i>
-                )}
+                {speaker.image
+                    ? <img src={speaker.image} alt={speaker.name} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }} />
+                    : <div style={{ width: '100%', height: '100%', background: 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><i className="fas fa-user" style={{ color: 'rgba(255,255,255,0.4)', fontSize: '1.8rem' }} /></div>
+                }
             </div>
-            <h3 style={{ color: '#fff', fontSize: '1.15rem', fontWeight: '700', margin: '0 0 4px 0' }}>{speaker.name}</h3>
-            <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.8rem', margin: '0 0 2px 0', lineHeight: '1.3' }}>{speaker.title}</p>
-            <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.75rem', margin: '0 0 2px 0', fontWeight: '500' }}>{speaker.org}</p>
-            {speaker.pesRole && (
-                <p style={{ color: '#c8f0db', fontSize: '0.78rem', margin: '3px 0 0 0', fontWeight: '600' }}>{speaker.pesRole}</p>
-            )}
+            {/* Keynote number badge */}
+            <span style={{
+                background: '#2bbd8e',
+                color: '#fff',
+                fontSize: '0.65rem',
+                fontWeight: '700',
+                letterSpacing: '0.08em',
+                padding: '3px 8px',
+                borderRadius: '4px',
+            }}>KEYNOTE {speaker.num}</span>
         </div>
 
-        {/* Body */}
-        <div style={{ padding: '20px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-            {speaker.tags && (
-                <div style={{ display: 'flex', gap: '5px', flexWrap: 'wrap', marginBottom: '12px' }}>
-                    {speaker.tags.map((tag, i) => (
-                        <span key={i} style={{
-                            background: '#f0f7fb',
-                            color: '#00629b',
-                            padding: '3px 10px',
-                            borderRadius: '20px',
-                            fontSize: '0.65rem',
-                            fontWeight: '600',
-                            border: '1px solid #d6eaf5',
-                        }}>{tag}</span>
-                    ))}
-                </div>
-            )}
-            <p style={{ fontSize: '0.9rem', lineHeight: '1.65', color: '#555', margin: 0, flex: 1 }}>
-                {speaker.bio}
+        {/* Name */}
+        <div>
+            <h3 style={{ color: '#fff', fontSize: '1.05rem', fontWeight: '700', margin: '0 0 4px 0', lineHeight: '1.3' }}>
+                {speaker.name}
+            </h3>
+            <p style={{ color: '#4dd9ac', fontSize: '0.78rem', margin: 0, lineHeight: '1.4', fontWeight: '500' }}>
+                {speaker.org}
             </p>
+        </div>
 
-            {speaker.link && (
-                <a
-                    href={speaker.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        gap: '6px',
-                        marginTop: '14px',
-                        padding: '7px 14px',
-                        background: '#f0f7fb',
-                        color: '#00629b',
-                        border: '1px solid #bce1f5',
-                        borderRadius: '6px',
-                        fontSize: '0.75rem',
-                        fontWeight: '600',
-                        textDecoration: 'none',
-                        transition: 'all 0.2s ease',
-                    }}
-                    onMouseEnter={(e) => {
-                        e.currentTarget.style.background = '#00629b';
-                        e.currentTarget.style.color = '#fff';
-                        e.currentTarget.style.borderColor = '#00629b';
-                    }}
-                    onMouseLeave={(e) => {
-                        e.currentTarget.style.background = '#f0f7fb';
-                        e.currentTarget.style.color = '#00629b';
-                        e.currentTarget.style.borderColor = '#bce1f5';
-                    }}
-                >
-                    <span>View IEEE PES Profile</span>
-                    <i className="fas fa-external-link-alt" style={{ fontSize: '0.7rem' }}></i>
-                </a>
-            )}
+        {/* Divider */}
+        <div style={{ height: '1px', background: 'rgba(255,255,255,0.12)' }} />
+
+        {/* Session */}
+        <div style={{ flex: 1 }}>
+            <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.68rem', fontWeight: '700', letterSpacing: '0.08em', margin: '0 0 5px 0', textTransform: 'uppercase' }}>
+                Keynote Session:
+            </p>
+            <p style={{ color: 'rgba(255,255,255,0.82)', fontSize: '0.82rem', lineHeight: '1.5', margin: 0, fontStyle: 'italic' }}>
+                "{speaker.sessionTitle}"
+            </p>
+        </div>
+
+        {/* Footer: link */}
+        <div style={{ display: 'flex', justifyContent: 'flex-end', alignItems: 'center', marginTop: 'auto', paddingTop: '8px' }}>
+            <Link
+                to={speaker.link}
+                style={{ color: '#4dd9ac', fontSize: '0.78rem', fontWeight: '600', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '4px' }}
+                onMouseEnter={e => e.currentTarget.style.textDecoration = 'underline'}
+                onMouseLeave={e => e.currentTarget.style.textDecoration = 'none'}
+            >
+                Bio & Abstract <i className="fas fa-arrow-right" style={{ fontSize: '0.65rem' }} />
+            </Link>
         </div>
     </div>
 );
-
-/* ── Speaker Carousel Component ── */
-const SpeakerCarousel = ({ speakers }) => {
-    const [slide, setSlide] = useState(0);
-    const perPage = 2;
-    const totalSlides = Math.ceil(speakers.length / perPage);
-    const prev = () => setSlide(s => (s - 1 + totalSlides) % totalSlides);
-    const next = () => setSlide(s => (s + 1) % totalSlides);
-    const visible = speakers.slice(slide * perPage, slide * perPage + perPage);
-
-    return (
-        <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 40px' }}>
-            <div style={{ position: 'relative' }}>
-                {/* Cards row */}
-                <div style={{
-                    display: 'flex',
-                    gap: '30px',
-                    justifyContent: 'center',
-                    minHeight: '520px',
-                    alignItems: 'stretch',
-                }}>
-                    {visible.map((speaker, i) => (
-                        <SpeakerCard key={slide * perPage + i} speaker={speaker} />
-                    ))}
-                </div>
-
-                {/* Prev arrow */}
-                {totalSlides > 1 && (
-                    <button onClick={prev} style={{
-                        position: 'absolute', top: '50%', left: '-40px',
-                        transform: 'translateY(-50%)',
-                        background: '#00629b', color: '#fff',
-                        border: 'none', borderRadius: '50%',
-                        width: '40px', height: '40px',
-                        fontSize: '1rem', cursor: 'pointer',
-                        boxShadow: '0 4px 12px rgba(0,98,155,0.3)',
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        transition: 'background 0.2s',
-                        zIndex: 2,
-                    }}
-                    onMouseEnter={e => e.currentTarget.style.background = '#004b79'}
-                    onMouseLeave={e => e.currentTarget.style.background = '#00629b'}
-                    >
-                        <i className="fas fa-chevron-left"></i>
-                    </button>
-                )}
-
-                {/* Next arrow */}
-                {totalSlides > 1 && (
-                    <button onClick={next} style={{
-                        position: 'absolute', top: '50%', right: '-40px',
-                        transform: 'translateY(-50%)',
-                        background: '#00629b', color: '#fff',
-                        border: 'none', borderRadius: '50%',
-                        width: '40px', height: '40px',
-                        fontSize: '1rem', cursor: 'pointer',
-                        boxShadow: '0 4px 12px rgba(0,98,155,0.3)',
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        transition: 'background 0.2s',
-                        zIndex: 2,
-                    }}
-                    onMouseEnter={e => e.currentTarget.style.background = '#004b79'}
-                    onMouseLeave={e => e.currentTarget.style.background = '#00629b'}
-                    >
-                        <i className="fas fa-chevron-right"></i>
-                    </button>
-                )}
-            </div>
-
-            {/* Dot indicators */}
-            {totalSlides > 1 && (
-                <div style={{ display: 'flex', justifyContent: 'center', gap: '8px', marginTop: '28px' }}>
-                    {Array.from({ length: totalSlides }).map((_, i) => (
-                        <button key={i} onClick={() => setSlide(i)} style={{
-                            width: slide === i ? '24px' : '10px',
-                            height: '10px',
-                            borderRadius: '5px',
-                            background: slide === i ? '#00629b' : '#d1d5db',
-                            border: 'none', cursor: 'pointer', padding: 0,
-                            transition: 'all 0.3s ease',
-                        }} />
-                    ))}
-                </div>
-            )}
-        </div>
-    );
-};
 
 const SectionTitle = ({ children }) => (
     <div style={{ marginBottom: '24px' }}>
@@ -355,53 +252,6 @@ const HomePage = () => {
                         </div>
                     </div>
 
-                    {/* ── Keynote Speakers Carousel ── */}
-                    <div style={{ padding: '80px 0', borderBottom: '1px solid #eaeaea', background: '#fff' }}>
-                        <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 15px' }}>
-                            <div style={{ textAlign: 'center', marginBottom: '50px' }}>
-                                <h2 style={{ fontSize: '2.4rem', color: '#1a1a2e', fontWeight: '800', marginBottom: '16px', letterSpacing: '-0.5px' }}>
-                                    Keynote Speakers
-                                </h2>
-                                <div style={{ width: '60px', height: '3px', background: '#2e8b57', margin: '0 auto', borderRadius: '2px' }}></div>
-                            </div>
-                        </div>
-                        {/* Carousel */}
-                        <SpeakerCarousel speakers={keynoteSpeakers} />
-
-                        {/* Link to Full Keynote Speakers Page */}
-                        <div style={{ textAlign: 'center', marginTop: '30px' }}>
-                            <Link
-                                to="/keynote-speakers"
-                                style={{
-                                    display: 'inline-flex',
-                                    alignItems: 'center',
-                                    gap: '8px',
-                                    background: '#00629b',
-                                    color: '#fff',
-                                    padding: '9px 20px',
-                                    borderRadius: '25px',
-                                    fontSize: '0.85rem',
-                                    fontWeight: '600',
-                                    textDecoration: 'none',
-                                    boxShadow: '0 3px 10px rgba(0,98,155,0.2)',
-                                    transition: 'all 0.2s ease',
-                                }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.background = '#004b79';
-                                    e.currentTarget.style.transform = 'translateY(-2px)';
-                                    e.currentTarget.style.boxShadow = '0 6px 16px rgba(0,98,155,0.3)';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.background = '#00629b';
-                                    e.currentTarget.style.transform = 'translateY(0)';
-                                    e.currentTarget.style.boxShadow = '0 3px 10px rgba(0,98,155,0.2)';
-                                }}
-                            >
-                                <span>Detailed Speaker Info</span>
-                                <i className="fas fa-arrow-right" style={{ fontSize: '0.75rem' }}></i>
-                            </Link>
-                        </div>
-                    </div>
 
                     {/* ── Main Content Grid (Calm UI) ── */}
                     <div style={{ background: '#fff', padding: '80px 15px' }}>
