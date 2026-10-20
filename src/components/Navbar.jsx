@@ -105,6 +105,7 @@ const Navbar = () => {
                                 <li><Link to="/student-support" onClick={closeMenu}>Student Support Fund</Link></li> */}
                                 <li><Link to="/important-dates" onClick={closeMenu}>Important Dates</Link></li>
                                 <li><Link to="/submission" onClick={closeMenu}>Paper Submission</Link></li>
+                                <li><Link to="/visa-information" onClick={closeMenu}>Visa Information</Link></li>
                             </ul>
                         </li>
                         <li className="dropdown">
@@ -113,6 +114,7 @@ const Navbar = () => {
                             </span>
                             <ul className={`dropdown-menu ${openDropdown === 'program' ? 'show' : ''}`}>
                                 <li><Link to="/keynote-speakers" onClick={closeMenu}>Keynote Speakers</Link></li>
+                                <li><Link to="/technical-programme" onClick={closeMenu}>Technical Programme</Link></li>
                             </ul>
                         </li>
                         <li><Link to="/registration" onClick={closeMenu}>REGISTRATION</Link></li>

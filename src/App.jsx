@@ -23,6 +23,8 @@ const PaperSubmissionPage = lazy(() => import('./pages/PaperSubmissionPage'))
 const ImportantDatesPage = lazy(() => import('./pages/ImportantDatesPage'))
 const CMTAcknowledgmentPage = lazy(() => import('./pages/CMTAcknowledgmentPage'))
 const KeynoteSpeakersPage = lazy(() => import('./pages/KeynoteSpeakersPage'))
+const VisaInformation = lazy(() => import('./pages/VisaInformation'))
+const TechnicalProgrammePage = lazy(() => import('./pages/TechnicalProgrammePage'))
 
 // Simple fallback shown while a page chunk loads
 const PageLoader = () => (
@@ -64,6 +66,11 @@ function App() {
           <Route path="/cmt-acknowledgment" element={<Suspense fallback={<PageLoader />}><CMTAcknowledgmentPage /></Suspense>} />
           <Route path="/keynote-speakers" element={<Suspense fallback={<PageLoader />}><KeynoteSpeakersPage /></Suspense>} />
           <Route path="/program/keynote-speakers" element={<Suspense fallback={<PageLoader />}><KeynoteSpeakersPage /></Suspense>} />
+          <Route path="/visa-information" element={<Suspense fallback={<PageLoader />}><VisaInformation /></Suspense>} />
+          <Route path="/Visa-information" element={<Suspense fallback={<PageLoader />}><VisaInformation /></Suspense>} />
+          <Route path="/technical-programme" element={<Suspense fallback={<PageLoader />}><TechnicalProgrammePage /></Suspense>} />
+          <Route path="/technical-program" element={<Suspense fallback={<PageLoader />}><TechnicalProgrammePage /></Suspense>} />
+          <Route path="/program/technical-programme" element={<Suspense fallback={<PageLoader />}><TechnicalProgrammePage /></Suspense>} />
         </Routes>
       </div>
     </Router>
