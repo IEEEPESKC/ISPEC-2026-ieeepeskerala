@@ -5,7 +5,7 @@ const AnnouncementBar = () => {
         <div className="announcement-bar marquee-container">
             <div className="marquee-content">
                 <span className="marquee-item">
-                    <span className="badge">NEW</span> 🎤 Keynote Speaker Announced: Dean Sharafi — Strategic Advisor, AEMO Australia
+                    <span className="badge">NEW</span> 🎤 Keynote Speaker Announced: Dean Sharafi — Executive Advisor, Energy Transition
                 </span>
                 <span className="marquee-item">
                     <span className="badge">NEW</span> Paper Submission in Special Sessions is now open! Deadline: 30 September 2026
@@ -16,7 +16,7 @@ const AnnouncementBar = () => {
                     <a href="/special-sessions">View Details &rarr;</a>
                 </span>
                 <span className="marquee-item">
-                    <span className="badge">NEW</span> 🎤 Keynote Speaker Announced: Dean Sharafi — Strategic Advisor, AEMO Australia
+                    <span className="badge">NEW</span> 🎤 Keynote Speaker Announced: Dean Sharafi — Executive Advisor, Energy Transition
                 </span>
                 <span className="marquee-item">
                     <span className="badge">NEW</span> Paper Submission in Special Sessions is now open! Deadline: 30 September 2026

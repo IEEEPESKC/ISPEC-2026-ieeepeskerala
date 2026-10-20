@@ -35,11 +35,11 @@ const KeynoteSpeakersPage = () => {
                                     Dean Sharafi
                                 </h2>
                                 <p style={{ fontSize: '1.1rem', color: '#00629b', fontWeight: '600', margin: '0 0 6px 0' }}>
-                                    Strategic Advisor on Energy Transition
+                                    Executive Advisor – Energy Transition
                                 </p>
                                 <p style={{ fontSize: '0.98rem', color: '#555', margin: '0 0 6px 0', fontWeight: '500' }}>
                                     <i className="fas fa-building" style={{ color: '#00629b', marginRight: '8px' }}></i>
-                                    Australian Energy Market Operator (AEMO)
+                                    IEEE PES Governing Board Member
                                 </p>
                                 <p style={{ fontSize: '1rem', color: '#2e8b57', fontWeight: '700', margin: '0 0 16px 0' }}>
                                     <i className="fas fa-award" style={{ marginRight: '8px' }}></i>
@@ -96,18 +96,12 @@ const KeynoteSpeakersPage = () => {
                                 <i className="fas fa-user" style={{ color: '#00629b', fontSize: '1.1rem' }}></i>
                                 Biography
                             </h3>
-                            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', color: '#374151' }}>
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', color: '#374151', lineHeight: '1.7', fontSize: '1.02rem' }}>
                                 <p style={{ margin: 0 }}>
-                                    Dean Sharafi is the Strategic Advisor on energy transition at the Australian Energy Market Operator (AEMO). Dean holds a degree in Applied Physics, a degree in Electrical Engineering and a degree in Business Management. He has over thirty years of experience in power system engineering which includes Power System Protection, High Voltage Systems, Asset Management and Power System and Electricity Market Operation.
+                                    Dean Sharafi is an Executive Advisor specialising in energy transition, working with companies and start-ups internationally. He holds degrees in Applied Physics, Electrical Engineering and Business Management, and brings approximately 30 years of experience in power system engineering, including senior leadership positions with Western Power and the Australian Energy Market Operator. His expertise spans power system protection, high-voltage systems, asset management, power system operations and electricity market operations.
                                 </p>
                                 <p style={{ margin: 0 }}>
-                                    Dean is a senior member of the IEEE and has been involved with IEEE Power and Energy Society for twenty years including serving at the Governing Board from 2017 to 2026.
-                                </p>
-                                <p style={{ margin: 0 }}>
-                                    Dean has published many papers on power system protection, condition monitoring, asset management and power system operations. He lectured for a decade as a Sessional Academic on Power System Earthing at Curtin University in Western Australia.
-                                </p>
-                                <p style={{ margin: 0 }}>
-                                    Dean is an Associate Editor for the IEEE Transactions on Power Systems Journal and an IEEE Distinguished Lecturer.
+                                    Dean is a member of the Australian Institute of Management, CIGRE and Engineers Australia, and is a Senior Member of the IEEE. Over the past two decades, he has contributed extensively to IEEE Power &amp; Energy Society initiatives and CIGRE working groups. He served on the Governing Board of the IEEE Power &amp; Energy Society from 2017 to 2022 and is currently the Society's Treasurer. Dean is also an Associate Editor for the IEEE Transactions on Power Systems and an IEEE Distinguished Lecturer. He has supported a range of organisations in engaging with Asia-Pacific delegations seeking insight from Australia’s experience in energy transition and renewable energy integration.
                                 </p>
                             </div>
                         </div>
@@ -126,12 +120,13 @@ const KeynoteSpeakersPage = () => {
                                 color: '#4b5563',
                                 fontSize: '0.95rem'
                             }}>
-                                <li><strong>Treasurer, IEEE PES</strong></li>
-                                <li>Strategic Advisor on Energy Transition, Australian Energy Market Operator (AEMO)</li>
-                                <li>IEEE PES Governing Board Member (2017–2026)</li>
-                                <li>Associate Editor, IEEE Transactions on Power Systems Journal</li>
+                                <li><strong>Treasurer, IEEE Power &amp; Energy Society (IEEE PES)</strong></li>
+                                <li>Executive Advisor – Energy Transition (Working internationally with companies and start-ups)</li>
+                                <li>Former Senior Leadership, Western Power &amp; Australian Energy Market Operator (AEMO)</li>
+                                <li>Former Governing Board Member, IEEE Power &amp; Energy Society (2017–2022)</li>
+                                <li>Associate Editor, IEEE Transactions on Power Systems</li>
                                 <li>IEEE Distinguished Lecturer &amp; IEEE Senior Member</li>
-                                <li>Former Sessional Academic (Power System Earthing), Curtin University</li>
+                                <li>Member, Australian Institute of Management (AIM), CIGRE &amp; Engineers Australia</li>
                             </ul>
                         </div>
 

@@ -22,7 +22,7 @@ const keynoteSpeakers = [
   {
     num: '01',
     name: 'Dean Sharafi',
-    org: 'Australian Energy Market Operator (AEMO)',
+    org: 'Executive Advisor – Energy Transition',
     image: deanSharafiImg,
     sessionTitle: 'Energy Transition Strategies for a Decarbonised Power Grid',
   },

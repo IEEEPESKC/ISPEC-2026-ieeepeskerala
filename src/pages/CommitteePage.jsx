@@ -10,7 +10,7 @@ const committeeData = [
             { name: 'B. S. Manoj', role: 'Chair, IEEE Kerala Section' },
             { name: 'Mohammed Kasim', role: 'Past Chair, IEEE Kerala Section' },
             { name: 'Suhair A', role: 'Past Chair IEEE PES Kerala Chapter' },
-            { name: 'S. Viswanatha Rao', role: 'MBCET Representative' },
+            { name: 'S. Viswanatha Rao', role: 'Principal MBCET' },
         ]
     },
     {

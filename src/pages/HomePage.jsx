@@ -46,7 +46,7 @@ const keynoteSpeakers = [
     {
         num: '01',
         name: 'Dean Sharafi',
-        org: 'Australian Energy Market Operator (AEMO)',
+        org: 'Executive Advisor – Energy Transition',
         image: deanSharafiImg,
         sessionTitle: 'Energy Transition Strategies for a Decarbonised Power Grid',
         link: '/keynote-speakers',
@@ -300,14 +300,14 @@ const HomePage = () => {
                                             <div className="news-ticker-content">
                                                 {/* First set */}
                                                 <span>📄 Camera Ready Paper Submission deadline extended to <strong>31st October 2026</strong>!</span>
-                                                <span>🎤 Keynote Speaker Announced: Dean Sharafi, Strategic Advisor — AEMO, Australia</span>
+                                                <span>🎤 Keynote Speaker Announced: Dean Sharafi, Executive Advisor — Energy Transition</span>
                                                 <span>Paper Submission in Special Sessions is now open! Deadline: 30 September 2026</span>
                                                 <span>Paper Submission Deadline extended to August 15</span>
                                                 <span>All accepted Papers will be published in IEEE Xplore</span>
                                                 <span>Accepted and presented papers will be submitted for inclusion into IEEE Xplore subject to meeting IEEE Xplore&apos;s scope and quality requirements</span>
                                                 {/* Duplicate set for seamless loop */}
                                                 <span>📄 Camera Ready Paper Submission deadline extended to <strong>31st October 2026</strong>!</span>
-                                                <span>🎤 Keynote Speaker Announced: Dean Sharafi, Strategic Advisor — AEMO, Australia</span>
+                                                <span>🎤 Keynote Speaker Announced: Dean Sharafi, Executive Advisor — Energy Transition</span>
                                                 <span>Paper Submission in Special Sessions is now open! Deadline: 30 September 2026</span>
                                                 <span>Paper Submission Deadline extended to August 15</span>
                                                 <span>All accepted Papers will be published in IEEE Xplore</span>
