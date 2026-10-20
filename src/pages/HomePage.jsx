@@ -76,6 +76,16 @@ const keynoteSpeakers = [
         sessionTitle: 'Sustainable Energy Transitions, Climate-Resilient Technologies and Low-Carbon Pathways',
         link: '/keynote-speakers',
     },
+    {
+        name: 'Dr. Sudhakar Kumarasamy',
+        title: 'Associate Professor & Principal Research Fellow',
+        org: 'Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA), Malaysia',
+        pesRole: '',
+        image: sudhakarKumarasamyImg,
+        link: null,
+        tags: ['Clarivate Highly Cited Researcher (Top 1%)', 'Stanford Top 2% Scientists', 'Certified Energy Manager'],
+        bio: 'Associate Professor at UMPSA with 18+ years of academic and research experience. Clarivate Highly Cited Researcher (Top 1%) in 2025 and listed among Stanford\'s World Top 2% Scientists for seven consecutive years. Expert in sustainable energy transitions, energy modelling, electric mobility, and climate-resilient low-carbon technologies. Has published over 265 peer-reviewed articles.',
+    },
 ];
 
 /* ── Keynote Card (dark style matching screenshot) ── */
