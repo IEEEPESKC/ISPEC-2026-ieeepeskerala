@@ -282,6 +282,33 @@ const RegistrationPage = () => {
                         The conference does not compensate for booking cancellations, loss, theft, or damages.
                     </p>
 
+                    {/* ── Register Button ── */}
+                    <div style={{ textAlign: 'center' }}>
+                        <a
+                            href="https://forms.gle/crBFHBUEUh2QndXw8"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '10px',
+                                background: '#00629b',
+                                color: '#fff',
+                                padding: '14px 44px',
+                                borderRadius: '6px',
+                                fontSize: '1.05rem',
+                                fontWeight: '700',
+                                textDecoration: 'none',
+                                transition: 'background 0.2s ease',
+                            }}
+                            onMouseEnter={e => e.currentTarget.style.background = '#004a7c'}
+                            onMouseLeave={e => e.currentTarget.style.background = '#00629b'}
+                        >
+                            <span>Register Here</span>
+                            <i className="fas fa-external-link-alt" style={{ fontSize: '0.9rem' }}></i>
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </PageLayout>
