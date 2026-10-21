@@ -140,10 +140,36 @@ const RegistrationPage = () => {
 
                     {/* Intro */}
                     <p style={{ marginBottom: '8px' }}>The registration and payment site is now open.</p>
-                    <p style={{ marginBottom: '40px', color: '#4b5563' }}>
+                    <p style={{ marginBottom: '20px', color: '#4b5563' }}>
                         All registration fees include applicable taxes. For online registration, payment methods are
                         credit card, debit card, or net banking (the sender is responsible for all banking fees).
                     </p>
+                    <div style={{ marginBottom: '40px' }}>
+                        <a
+                            href="https://forms.gle/crBFHBUEUh2QndXw8"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '8px',
+                                background: '#00629b',
+                                color: '#fff',
+                                padding: '11px 26px',
+                                borderRadius: '6px',
+                                fontSize: '0.98rem',
+                                fontWeight: '700',
+                                textDecoration: 'none',
+                                transition: 'background 0.2s ease',
+                                boxShadow: '0 2px 4px rgba(0,0,0,0.08)'
+                            }}
+                            onMouseEnter={e => e.currentTarget.style.background = '#004a7c'}
+                            onMouseLeave={e => e.currentTarget.style.background = '#00629b'}
+                        >
+                            <span>Register Here</span>
+                            <i className="fas fa-external-link-alt" style={{ fontSize: '0.85rem' }}></i>
+                        </a>
+                    </div>
 
                     {/* ── Registration Fees ── */}
                     <SectionHeading>Registration Fees</SectionHeading>
@@ -250,35 +276,11 @@ const RegistrationPage = () => {
 
                     {/* ── Disclaimer ── */}
                     <SectionHeading>Disclaimer</SectionHeading>
-                    <p style={{ marginBottom: '56px', color: '#4b5563' }}>
+                    <p style={{ color: '#4b5563' }}>
                         Every effort will be made to deliver the program as published. The conference reserves the right
                         to make changes without prior notice. Participants are advised to obtain personal travel insurance.
                         The conference does not compensate for booking cancellations, loss, theft, or damages.
                     </p>
-
-                    {/* ── Register Button ── */}
-                    <div style={{ textAlign: 'center' }}>
-                        <a
-                            href=""
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{
-                                display: 'inline-block',
-                                background: '#00629b',
-                                color: '#fff',
-                                padding: '14px 44px',
-                                borderRadius: '6px',
-                                fontSize: '1.05rem',
-                                fontWeight: '700',
-                                textDecoration: 'none',
-                                transition: 'background 0.2s ease',
-                            }}
-                            onMouseEnter={e => e.currentTarget.style.background = '#004a7c'}
-                            onMouseLeave={e => e.currentTarget.style.background = '#00629b'}
-                        >
-                            Register here
-                        </a>
-                    </div>
 
                 </div>
             </div>
