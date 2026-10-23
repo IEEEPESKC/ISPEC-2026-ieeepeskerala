@@ -35,17 +35,17 @@ const keynoteSpeakers = [
   },
   {
     num: '03',
-    name: 'Dr. Rasara Samarasinghe',
-    org: 'University of Moratuwa, Sri Lanka',
-    image: rasaraSamarasingheImg,
-    sessionTitle: 'From Reliability to Resilience: Intelligent Asset Management for a Sustainable and Future-Ready Power Grid',
-  },
-  {
-    num: '04',
     name: 'Dr. Sudhakar Kumarasamy',
     org: 'Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA), Malaysia',
     image: sudhakarKumarasamyImg,
     sessionTitle: 'Sustainable Energy Transitions, Climate-Resilient Technologies and Low-Carbon Pathways',
+  },
+  {
+    num: '04',
+    name: 'Dr. Rasara Samarasinghe',
+    org: 'University of Moratuwa, Sri Lanka',
+    image: rasaraSamarasingheImg,
+    sessionTitle: 'From Reliability to Resilience: Intelligent Asset Management for a Sustainable and Future-Ready Power Grid',
   },
 ];
 
