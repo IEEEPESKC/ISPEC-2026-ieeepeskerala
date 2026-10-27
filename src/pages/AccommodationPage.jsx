@@ -23,35 +23,21 @@ const AccommodationPage = () => {
                             Hotels near College (within 5km)
                         </h2>
 
-                        <ol style={{ paddingLeft: '1.4rem', lineHeight: '1.6', color: '#222', fontSize: '0.97rem' }}>
-                            <li style={{ marginBottom: '1rem' }}>
-                                <strong>Treebo Park</strong><br />
-                                Address: CH Centre, Chalakuzhy Rd, near Medical Chalakkuzhi<br />
-                                <a href="https://maps.app.goo.gl/xhvQQmedpdcCHrCYA" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>Google Maps</a>
-                                {' | '}
-                                <a href="https://tinyurl.com/3ywbpfx9" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>Booking Link</a>
+                        <ol style={{ paddingLeft: '1.6rem', lineHeight: '2.2', color: '#222', fontSize: '0.97rem' }}>
+                            <li>
+                                <a href="https://maps.app.goo.gl/xhvQQmedpdcCHrCYA" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>Treebo Park</a>: CH Centre, Chalakuzhy Rd, near Medical Chalakkuzhi
                             </li>
-                            <li style={{ marginBottom: '1rem' }}>
-                                <strong>Hotel Pattom Royal</strong><br />
-                                Address: Pattom Junction, MG Road / Pattom Road, Thiruvananthapuram, Kerala 695004<br />
-                                <a href="https://pattomroyal.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>pattomroyal.com</a>
+                            <li>
+                                <a href="https://pattomroyal.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>Hotel Pattom Royal</a>: Pattom Junction, MG Road / Pattom Road, Thiruvananthapuram, Kerala 695004
                             </li>
-                            <li style={{ marginBottom: '1rem' }}>
-                                <strong>Biverah Hotel &amp; Suites</strong><br />
-                                Location: Kumarapuram – Pattom Road, near the Government Medical College, Thiruvananthapuram<br />
-                                <a href="https://www.booking.com/hotel/in/biverah-amp-suites.html" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>Booking.com</a>
+                            <li>
+                                <a href="https://www.booking.com/hotel/in/biverah-amp-suites.html" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>Biverah Hotel &amp; Suites</a>: Kumarapuram – Pattom Road, near the Government Medical College, Thiruvananthapuram
                             </li>
-                            <li style={{ marginBottom: '1rem' }}>
-                                <strong>Hotel Chothys Park</strong><br />
-                                Address: Ulloor Rd, Kesavadasapuram, Thiruvananthapuram, Kerala 695004<br />
-                                <a href="https://maps.app.goo.gl/96yjSjTGRUbpVQkf6" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>Google Maps</a>
-                                {' | '}
-                                <a href="https://chothyspark.in/" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>chothyspark.in</a>
+                            <li>
+                                <a href="https://chothyspark.in/" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>Hotel Chothys Park</a>: Ulloor Rd, Kesavadasapuram, Thiruvananthapuram, Kerala 695004
                             </li>
-                            <li style={{ marginBottom: '1rem' }}>
-                                <strong>Hotel Chinnus</strong><br />
-                                Address: Chinnu's Ln, NSP Nagar, Kesavadasapuram, Thiruvananthapuram, Kerala 695004<br />
-                                <a href="https://maps.app.goo.gl/mcMkbkU59zj9qSvr7" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>Google Maps</a>
+                            <li>
+                                <a href="https://maps.app.goo.gl/mcMkbkU59zj9qSvr7" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>Hotel Chinnus</a>: Chinnu's Ln, NSP Nagar, Kesavadasapuram, Thiruvananthapuram, Kerala 695004
                             </li>
                         </ol>
                     </section>
@@ -64,41 +50,21 @@ const AccommodationPage = () => {
                             Hotels near Thiruvananthapuram Central Railway Station (within 5km)
                         </h2>
 
-                        <ol style={{ paddingLeft: '1.4rem', lineHeight: '1.6', color: '#222', fontSize: '0.97rem' }}>
-                            <li style={{ marginBottom: '1rem' }}>
-                                <strong>Majestic Inn</strong><br />
-                                Address: Myladikadavu Brg, Valiasala gramam, Thiruvananthapuram, Kerala 695036<br />
-                                <a href="https://maps.app.goo.gl/FcWUJAV2jG4q8jAz8" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>Google Maps</a>
-                                {' | '}
-                                <a href="https://tinyurl.com/t2z8z7xu" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>Booking Link</a>
+                        <ol style={{ paddingLeft: '1.6rem', lineHeight: '2.2', color: '#222', fontSize: '0.97rem' }}>
+                            <li>
+                                <a href="https://maps.app.goo.gl/FcWUJAV2jG4q8jAz8" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>Majestic Inn</a>: Myladikadavu Brg, Valiasala gramam, Thiruvananthapuram, Kerala 695036
                             </li>
-                            <li style={{ marginBottom: '1rem' }}>
-                                <strong>Hotel Venkateswara</strong><br />
-                                Address: Aristo Rd, near New Theatre Road, Thampanoor, Thiruvananthapuram, Kerala 695014<br />
-                                <a href="https://maps.app.goo.gl/4oFZBfBHgBLwZECt9" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>Google Maps</a>
-                                {' | '}
-                                <a href="https://www.hotelvenkateswara.in/" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>hotelvenkateswara.in</a>
+                            <li>
+                                <a href="https://www.hotelvenkateswara.in/" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>Hotel Venkateswara</a>: Aristo Rd, near New Theatre Road, Thampanoor, Thiruvananthapuram, Kerala 695014
                             </li>
-                            <li style={{ marginBottom: '1rem' }}>
-                                <strong>Hotel Goodland Residency</strong><br />
-                                Address: Manorama Rd, opposite Desabhimani Malayala, Aristo Junction, Thampanoor, Thiruvananthapuram<br />
-                                <a href="https://maps.app.goo.gl/bwAPQUCUWhUParvq9" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>Google Maps</a>
-                                {' | '}
-                                <a href="https://www.goodlandresidency.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>goodlandresidency.com</a>
+                            <li>
+                                <a href="https://www.goodlandresidency.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>Hotel Goodland Residency</a>: Manorama Rd, opposite Desabhimani Malayala, Aristo Junction, Thampanoor, Thiruvananthapuram
                             </li>
-                            <li style={{ marginBottom: '1rem' }}>
-                                <strong>Hotel Brown Palace</strong><br />
-                                Address: Manjalikulam Rd, Overbridge, Santhi Nagar, Thampanoor, Thiruvananthapuram<br />
-                                <a href="https://maps.app.goo.gl/sx3vp2SUr3iiwUHGA" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>Google Maps</a>
-                                {' | '}
-                                <a href="https://brownpalace.co.in/" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>brownpalace.co.in</a>
+                            <li>
+                                <a href="https://brownpalace.co.in/" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>Hotel Brown Palace</a>: Manjalikulam Rd, Overbridge, Santhi Nagar, Thampanoor, Thiruvananthapuram
                             </li>
-                            <li style={{ marginBottom: '1rem' }}>
-                                <strong>Hotel Prathiba Heritage</strong><br />
-                                Address: Dharmalayam Road, Opposite Ayurveda College, Pulimoodu, Thiruvananthapuram<br />
-                                <a href="https://maps.app.goo.gl/qxRbEYRHpyVqZ72o7" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>Google Maps</a>
-                                {' | '}
-                                <a href="https://www.prathibaheritage.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>prathibaheritage.com</a>
+                            <li>
+                                <a href="https://www.prathibaheritage.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#0070c0' }}>Hotel Prathiba Heritage</a>: Dharmalayam Road, Opposite Ayurveda College, Pulimoodu, Thiruvananthapuram
                             </li>
                         </ol>
                     </section>
