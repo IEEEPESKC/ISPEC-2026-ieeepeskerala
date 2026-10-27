@@ -129,7 +129,9 @@ const Navbar = () => {
                                 <li><Link to="/travel" onClick={closeMenu}>Travel to Thiruvananthapuram</Link></li>
                             </ul>
                         </li>
+                        <li><Link to="/accommodation" onClick={closeMenu}>ACCOMMODATION</Link></li>
                         <li><Link to="/contact" onClick={closeMenu}>CONTACT</Link></li>
+
                     </ul>
                     <div className={`mobile-menu-btn ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
                         <span></span>
