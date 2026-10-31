@@ -10,15 +10,11 @@ const ImportantDates = () => {
         { label: 'Registration Deadline', date: '1 November 2026', status: 'future' },
         { label: 'Conference Dates', date: '4 – 6 December 2026', status: 'future' },
         {
-            label: <><span style={{ backgroundColor: '#2e8b57', color: 'white', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', marginRight: '6px', verticalAlign: 'middle' }}>NEW</span>Camera Ready Paper Submission (Extended)</>,
-            date: '31st October 2026',
+            label: <><span style={{ backgroundColor: '#e74c3c', color: 'white', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', marginRight: '6px', verticalAlign: 'middle' }}>HARD DEADLINE</span>Camera Ready Paper Submission</>,
+            date: <><s style={{ color: '#999', fontWeight: 'normal', fontSize: '1.2rem' }}>31st Oct 2026</s><br /><span style={{ color: '#c0392b', fontWeight: '800' }}>10th Nov 2026</span></>,
             status: 'active'
         },
-        {
-            label: <><span style={{ backgroundColor: '#2e8b57', color: 'white', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', marginRight: '6px', verticalAlign: 'middle' }}>NEW</span>Paper Submission in Special Sessions Open</>,
-            date: '30th September 2026',
-            status: 'active'
-        },
+
         { label: 'Notification of Acceptance', date: '30th September 2026', status: 'future' },
         {
             label: <>

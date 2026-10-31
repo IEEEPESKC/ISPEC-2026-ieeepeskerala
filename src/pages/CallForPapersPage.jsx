@@ -203,11 +203,12 @@ const CallForPapersPage = () => {
             • Full Paper Deadline: 31st August 2026 (Final Deadline)<br />
             • Paper Submission in Special Sessions Open: 30th September 2026 <span style={{ backgroundColor: '#2e8b57', color: 'white', padding: '1px 5px', borderRadius: '3px', fontSize: '0.7rem', verticalAlign: 'middle' }}>NEW</span><br />
             • Acceptance Notification: 30th September 2026<br />
-            • Camera Ready Paper Submission (Extended): 31st October 2026 <span style={{ backgroundColor: '#2e8b57', color: 'white', padding: '1px 5px', borderRadius: '3px', fontSize: '0.7rem', verticalAlign: 'middle' }}>NEW</span>
+            • Camera Ready Paper Submission: <s style={{ color: '#e74c3c' }}>31st Oct 2026</s>&nbsp;<span style={{ color: '#2e8b57', fontWeight: '700' }}>10th Nov 2026</span>
         </p>
         <p style={{ marginBottom: '15px' }}>
             <strong>Registration</strong><br />
-            • Registration Deadline: 1 November 2026
+            • Early-bird Registration: up to 10th November 2026<br />
+            • Standard Registration: 11th – 15th November 2026
         </p>
         <p style={{ marginBottom: '15px' }}>
             <strong>Conference</strong><br />

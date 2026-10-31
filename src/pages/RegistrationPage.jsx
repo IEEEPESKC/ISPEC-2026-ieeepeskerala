@@ -60,11 +60,11 @@ const FeeTable = ({ caption, rows }) => (
                         </th>
                         <th style={{ padding: '12px 16px', textAlign: 'center', color: '#fff', fontWeight: '700', fontSize: '0.85rem' }}>
                             Early Bird<br />
-                            <span style={{ fontWeight: '400', fontSize: '0.78rem', opacity: 0.85 }}>(Up to 31 Oct 2026)</span>
+                            <span style={{ fontWeight: '400', fontSize: '0.78rem', opacity: 0.85 }}>(Up to 10th Nov 2026)</span>
                         </th>
                         <th style={{ padding: '12px 16px', textAlign: 'center', color: '#fff', fontWeight: '700', fontSize: '0.85rem' }}>
                             Regular<br />
-                            <span style={{ fontWeight: '400', fontSize: '0.78rem', opacity: 0.85 }}>(1–15 Nov 2026)</span>
+                            <span style={{ fontWeight: '400', fontSize: '0.78rem', opacity: 0.85 }}>(11–15 Nov 2026)</span>
                         </th>
                     </tr>
                 </thead>
@@ -163,8 +163,8 @@ const RegistrationPage = () => {
                     {/* ── Registration Period ── */}
                     <SectionHeading>Registration Period</SectionHeading>
                     <ul style={{ paddingLeft: '20px', marginBottom: '48px', color: '#374151', lineHeight: '2' }}>
-                        <li><strong>Early-bird Registration:</strong> until 31 October 2026</li>
-                        <li><strong>Standard Registration:</strong> 1 November 2026 – 15 November 2026</li>
+                        <li><strong>Early-bird Registration:</strong> up to 10 November 2026</li>
+                        <li><strong>Standard Registration:</strong> 11 November 2026 – 15 November 2026</li>
                         <li><strong>Onsite Registration:</strong> 3 or 4 December 2026</li>
                     </ul>
 
