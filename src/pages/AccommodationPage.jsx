@@ -3,9 +3,6 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import PageHeader from '../components/PageHeader';
 
-
-
-
 const AccommodationPage = () => {
     return (
         <div className="page-wrapper">

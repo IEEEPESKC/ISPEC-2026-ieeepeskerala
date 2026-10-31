@@ -19,14 +19,10 @@ const importantDates = [
         label: <span style={{ color: '#c0392b', fontWeight: '700' }}>Paper Submission Closed</span>,
         icon: 'fa-times-circle'
     },
-    { date: '1 November 2026', label: 'Registration Deadline', icon: 'fa-id-card' },
+    { date: <span style={{ color: '#2e8b57', fontWeight: '700' }}>10th Nov 2026</span>, label: 'Early Bird Registration Ends', icon: 'fa-id-card' },
     { date: '4 – 6 December 2026', label: 'Conference Dates', icon: 'fa-calendar-check' },
-    { date: '31st October 2026', label: <><span style={{ backgroundColor: '#2e8b57', color: 'white', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', marginRight: '6px', verticalAlign: 'middle' }}>NEW</span>Camera Ready Paper Submission (Extended)</>, icon: 'fa-check-circle' },
-    {
-        date: '30th September 2026',
-        label: <><span style={{ backgroundColor: '#2e8b57', color: 'white', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', marginRight: '6px', verticalAlign: 'middle' }}>NEW</span>Paper Submission in Special Sessions Open</>,
-        icon: 'fa-folder-open'
-    },
+    { date: <><s style={{ color: '#e74c3c', fontWeight: 'normal', fontSize: '0.9em' }}>31st Oct 2026</s>&nbsp;&nbsp;<span style={{ color: '#2e8b57', fontWeight: '700' }}>10th Nov 2026</span></>, label: 'Camera Ready Paper Submission', icon: 'fa-check-circle' },
+
     { date: '30th September 2026', label: 'Notification of Acceptance', icon: 'fa-bell' },
     {
         date: '31st August 2026',
