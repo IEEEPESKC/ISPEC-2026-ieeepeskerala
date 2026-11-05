@@ -61,7 +61,7 @@ const keynoteSpeakers = [
         name: 'Dr. Sudhakar Kumarasamy',
         org: 'Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA), Malaysia',
         image: sudhakarKumarasamyImg,
-        sessionTitle: 'Sustainable Energy Transitions, Climate-Resilient Technologies and Low-Carbon Pathways',
+        sessionTitle: 'Sustainability to Sustainalism for Global Transition: Regenerative Economies, Energy Resilience and Societal Responsibility',
         link: '/keynote-speakers',
     },
     {

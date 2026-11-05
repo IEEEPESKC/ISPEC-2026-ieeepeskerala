@@ -175,6 +175,18 @@ const KeynoteSpeakersPage = () => {
                                     <i className="fas fa-building" style={{ color: '#00629b', marginRight: '8px' }}></i>
                                     Power System Operation Corporation Ltd. (POSOCO)
                                 </p>
+                                <div style={{
+                                    background: '#f0f7ff',
+                                    borderLeft: '3px solid #00629b',
+                                    borderRadius: '0 6px 6px 0',
+                                    padding: '12px 16px',
+                                    marginTop: '16px',
+                                }}>
+                                    <p style={{ fontSize: '0.85rem', color: '#00629b', fontWeight: '700', margin: '0 0 4px 0', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Keynote Title</p>
+                                    <p style={{ fontSize: '0.95rem', color: '#1a1a2e', fontWeight: '600', margin: 0, fontStyle: 'italic' }}>
+                                        "National Grid Integration and Power System Operation Challenges in India"
+                                    </p>
+                                </div>
                             </div>
 
                             <div style={{ flex: '0 0 200px', margin: '0 auto' }}>
@@ -282,6 +294,18 @@ const KeynoteSpeakersPage = () => {
                                     <i className="fas fa-building" style={{ color: '#00629b', marginRight: '8px' }}></i>
                                     Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA), Malaysia
                                 </p>
+                                <div style={{
+                                    background: '#f0f7ff',
+                                    borderLeft: '3px solid #00629b',
+                                    borderRadius: '0 6px 6px 0',
+                                    padding: '12px 16px',
+                                    marginTop: '16px',
+                                }}>
+                                    <p style={{ fontSize: '0.85rem', color: '#00629b', fontWeight: '700', margin: '0 0 4px 0', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Keynote Title</p>
+                                    <p style={{ fontSize: '0.95rem', color: '#1a1a2e', fontWeight: '600', margin: 0, fontStyle: 'italic' }}>
+                                        "Sustainability to Sustainalism for Global Transition: Regenerative Economies, Energy Resilience and Societal Responsibility"
+                                    </p>
+                                </div>
                             </div>
 
                             <div style={{ flex: '0 0 200px', margin: '0 auto' }}>
