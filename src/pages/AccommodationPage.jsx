@@ -14,6 +14,93 @@ const AccommodationPage = () => {
 
 
 
+                    {/* ── Student Accommodation ── */}
+                    <section style={{ marginBottom: '2.5rem' }}>
+                        <h2 style={{ fontSize: '1.35rem', fontWeight: '700', marginBottom: '1.2rem', color: '#1a1a2e' }}>
+                            Accommodation for Outstation Student Participants
+                        </h2>
+
+                        <p style={{ color: '#374151', fontSize: '0.97rem', lineHeight: '1.8', marginBottom: '1rem' }}>
+                            Accommodation can be arranged for outstation student participants during the conference at:
+                        </p>
+
+                        <div style={{
+                            background: '#f0f7ff',
+                            borderLeft: '4px solid #00629b',
+                            borderRadius: '0 8px 8px 0',
+                            padding: '14px 18px',
+                            marginBottom: '1.4rem',
+                        }}>
+                            <p style={{ margin: 0, fontWeight: '700', fontSize: '1rem' }}>
+                                <a
+                                    href="https://www.google.com/maps/search/Mar+Gregorios+Renewal+Centre,+Nalanchira,+Thiruvananthapuram"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    style={{
+                                        color: '#00629b',
+                                        textDecoration: 'underline',
+                                        fontWeight: '700',
+                                        fontSize: '1rem',
+                                    }}
+                                >
+                                    <i className="fas fa-map-marker-alt" style={{ color: '#e63946', fontSize: '1rem', marginRight: '6px' }}></i>
+                                    Mar Gregorios Renewal Centre
+                                </a>
+                            </p>
+                            <p style={{ margin: '4px 0 0 0', color: '#555', fontSize: '0.95rem' }}>
+                                Mar Ivanios Vidya Nagar, Nalanchira, Thiruvananthapuram
+                            </p>
+                        </div>
+
+                        <h3 style={{ fontSize: '1.05rem', fontWeight: '700', color: '#1a1a2e', marginBottom: '0.6rem' }}>
+                            How to Apply
+                        </h3>
+                        <p style={{ color: '#374151', fontSize: '0.97rem', lineHeight: '1.8', marginBottom: '0.8rem' }}>
+                            Participants who wish to avail of the accommodation facility are requested to fill in the accommodation request form on or before <strong>15 November 2026</strong>.
+                        </p>
+
+                        <a
+                            href="https://forms.gle/ktmzdzTMN4xHMtke6"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                display: 'inline-block',
+                                background: '#00629b',
+                                color: '#fff',
+                                padding: '10px 22px',
+                                borderRadius: '6px',
+                                fontWeight: '600',
+                                fontSize: '0.95rem',
+                                textDecoration: 'none',
+                                marginBottom: '1.4rem',
+                            }}
+                        >
+                            Fill Accommodation Request Form
+                        </a>
+
+                        <p style={{ color: '#374151', fontSize: '0.95rem', lineHeight: '1.8', marginBottom: '1.2rem' }}>
+                            Accommodation will be allotted on a <strong>first-come, first-served basis</strong>, subject to availability. Confirmation will be communicated by email to the registered address.
+                        </p>
+
+                        <div style={{
+                            background: '#f9f9f9',
+                            border: '1px solid #e0e0e0',
+                            borderRadius: '8px',
+                            padding: '14px 18px',
+                        }}>
+                            <p style={{ margin: '0 0 6px 0', fontWeight: '700', color: '#1a1a2e', fontSize: '0.95rem' }}>
+                                For any queries, please contact:
+                            </p>
+                            <p style={{ margin: 0, color: '#374151', fontSize: '0.95rem', lineHeight: '1.8' }}>
+                                <strong>Mr. Aswin R B</strong><br />
+                                Assistant Professor, Department of EEE, MBCET<br />
+                                Phone: <a href="tel:9447329628" style={{ color: '#00629b', textDecoration: 'none' }}>9447329628</a>
+                            </p>
+                        </div>
+                    </section>
+
+                    <hr style={{ border: 'none', borderTop: '1px solid #ddd', marginBottom: '2.5rem' }} />
+
                     {/* ── Hotels near College ── */}
                     <section style={{ marginBottom: '2.5rem' }}>
                         <h2 style={{ fontSize: '1.35rem', fontWeight: '700', marginBottom: '1.2rem' }}>
