@@ -141,7 +141,7 @@ const RegistrationPage = () => {
                     {/* Intro */}
                     <p style={{ marginBottom: '8px' }}>The registration and payment site is now open.</p>
                     <p style={{ marginBottom: '40px', color: '#4b5563' }}>
-                        All registration fees include applicable taxes. For online registration, payment methods are
+                        All the registration fees mentioned here are excluding taxes. For online registration, payment methods are
                         credit card, debit card, or net banking (the sender is responsible for all banking fees).
                     </p>
 
