@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --primary: #00629b;
   /* IEEE Blue */
   --secondary: #2e8b57;
@@ -21,6 +21,9 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
+  max-width: 100vw;
+  width: 100%;
 }
 
 body {
@@ -29,6 +32,9 @@ body {
   line-height: 1.6;
   overflow-x: clip;
   background-color: var(--white);
+  max-width: 100vw;
+  width: 100%;
+  position: relative;
 }
 
 h1,
@@ -2392,10 +2398,10 @@ textarea,
     padding: 0.75rem;
   }
 }
-html, body, #root, .App {
-    overflow-x: visible !important;
-    overflow-y: visible !important;
-    height: auto !important;
+html, body, #root, .App, .app, .page-wrapper {
+    overflow-x: clip;
+    max-width: 100vw;
+    width: 100%;
 }
 
 
@@ -2563,12 +2569,12 @@ html, body, #root, .App {
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     z-index: 1001;
-    display: flex !important;
-    /* Override display:none */
+    display: none !important;
     overflow-y: auto;
   }
 
   .nav-links.active {
+    display: flex !important;
     transform: translateX(0);
   }
 
@@ -2755,4 +2761,34 @@ html, body, #root, .App {
     transform: translateY(-6px) !important;
     box-shadow: 0 12px 35px rgba(0, 98, 155, 0.12) !important;
 }
+
+/* ── Global Mobile Overflow Prevention (All Pages) ── */
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: 0 16px !important;
+    }
+    .countdown-container {
+        gap: 10px !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+    }
+    .countdown-item {
+        min-width: 70px !important;
+        padding: 10px 12px !important;
+    }
+    .countdown-item .count {
+        font-size: 1.6rem !important;
+    }
+    .ieee-middle-bar .conference-title {
+        font-size: 1.15rem !important;
+        line-height: 1.35 !important;
+        word-break: break-word !important;
+    }
+    .nav-right {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        justify-content: center !important;
+    }
+}
+
 

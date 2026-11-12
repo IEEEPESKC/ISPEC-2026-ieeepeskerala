@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+﻿import React, { useEffect, useRef } from 'react';
 
 const CursorTrail = () => {
     const containerRef = useRef(null);
@@ -68,9 +68,12 @@ const CursorTrail = () => {
         <div
             ref={containerRef}
             style={{
-                position: 'absolute',
+                position: 'fixed',
                 top: 0,
                 left: 0,
+                width: '100%',
+                height: '100%',
+                overflow: 'hidden',
                 pointerEvents: 'none',
                 zIndex: 999999
             }}
