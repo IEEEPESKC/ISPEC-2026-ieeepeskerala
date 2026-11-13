@@ -436,13 +436,41 @@ const getRowStyle = (type) => {
 };
 
 const TechnicalProgrammePage = () => {
+    // Two main view modes: 'master' (Master Conference Schedule) and 'technical' (Technical Track Schedule)
+    const [activeScheduleView, setActiveScheduleView] = useState('master');
+
+    // Filter for Master Schedule: 'all', 'day1', 'day2', 'day3'
     const [selectedDay, setSelectedDay] = useState('all');
+
+    // Filter for Technical Track Schedule: 'all', 'day1', 'day2'
+    const [selectedTechnicalDay, setSelectedTechnicalDay] = useState('all');
+
+    // Filter for individual tracks inside Technical Track Schedule: 'all' or track index string '0', '1', etc.
     const [selectedTrackDay1, setSelectedTrackDay1] = useState('all');
     const [selectedTrackDay2, setSelectedTrackDay2] = useState('all');
 
     const filteredDays = selectedDay === 'all'
         ? scheduleData
         : scheduleData.filter(d => d.id === selectedDay);
+
+    const goToTechnicalTrack = (dayKey, trackIndex) => {
+        setActiveScheduleView('technical');
+        setSelectedTechnicalDay(dayKey);
+        if (dayKey === 'day1') {
+            setSelectedTrackDay1(trackIndex !== undefined ? String(trackIndex) : 'all');
+        } else if (dayKey === 'day2') {
+            setSelectedTrackDay2(trackIndex !== undefined ? String(trackIndex) : 'all');
+        }
+        setTimeout(() => {
+            const targetId = trackIndex !== undefined ? `track-${dayKey}-${trackIndex}` : `session-${dayKey}`;
+            const targetEl = document.getElementById(targetId);
+            if (targetEl) {
+                targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                window.scrollTo({ top: 120, behavior: 'smooth' });
+            }
+        }, 80);
+    };
 
     return (
         <PageLayout title="Technical Programme">
@@ -487,8 +515,8 @@ const TechnicalProgrammePage = () => {
                         background: 'linear-gradient(135deg, #1e3a5f 0%, #0d233a 100%)',
                         color: '#fff',
                         borderRadius: '12px',
-                        padding: '22px 20px',
-                        marginBottom: '20px',
+                        padding: '24px 20px',
+                        marginBottom: '22px',
                         textAlign: 'center',
                         boxShadow: '0 4px 15px rgba(30, 58, 95, 0.12)',
                     }}>
@@ -503,10 +531,12 @@ const TechnicalProgrammePage = () => {
                             textTransform: 'uppercase',
                             marginBottom: '8px'
                         }}>
-                            Conference Schedule
+                            Conference Programme
                         </span>
-                        <h2 style={{ margin: '0 0 8px 0', fontSize: '1.4rem', fontWeight: '800', letterSpacing: '0.3px', lineHeight: '1.3' }}>
-                            IEEE ISPEC 2026 — Master Conference Schedule
+                        <h2 style={{ margin: '0 0 8px 0', fontSize: '1.45rem', fontWeight: '800', letterSpacing: '0.3px', lineHeight: '1.3' }}>
+                            {activeScheduleView === 'master'
+                                ? 'IEEE iSPEC 2026 — Master Conference Schedule'
+                                : 'IEEE iSPEC 2026 — Technical Track Schedule'}
                         </h2>
                         <p style={{ margin: 0, fontSize: '0.9rem', color: '#cbd5e1', lineHeight: '1.6' }}>
                             Theme: Integrated Pathways in Sustainable Power and Energy for Carbon Neutrality<br />
@@ -514,131 +544,376 @@ const TechnicalProgrammePage = () => {
                         </p>
                     </div>
 
-                    {/* Day Filter Tabs */}
+                    {/* ═══════════════════════════════════════════
+                        TWO MAIN NAVIGATION BUTTONS
+                    ═══════════════════════════════════════════ */}
                     <div style={{
                         display: 'flex',
+                        justifyContent: 'center',
+                        gap: '12px',
+                        marginBottom: '26px',
                         flexWrap: 'wrap',
-                        alignItems: 'center',
-                        gap: '10px',
-                        background: '#f8fafc',
-                        border: '1px solid #e2e8f0',
-                        borderRadius: '10px',
-                        padding: '10px 14px',
-                        marginBottom: '20px',
                     }}>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                            {[
-                                { id: 'all', label: 'All Days' },
-                                { id: 'day1', label: 'Day 1 (4 Dec)' },
-                                { id: 'day2', label: 'Day 2 (5 Dec)' },
-                                { id: 'day3', label: 'Day 3 (6 Dec)' },
-                            ].map((tab) => {
-                                const isActive = selectedDay === tab.id;
-                                return (
-                                    <button
-                                        key={tab.id}
-                                        type="button"
-                                        onClick={() => setSelectedDay(tab.id)}
-                                        style={{
-                                            background: isActive ? '#00629b' : '#fff',
-                                            color: isActive ? '#fff' : '#334155',
-                                            border: `1px solid ${isActive ? '#00629b' : '#cbd5e1'}`,
-                                            padding: '6px 14px',
-                                            borderRadius: '6px',
-                                            fontSize: '0.85rem',
-                                            fontWeight: '600',
-                                            cursor: 'pointer',
-                                            transition: 'all 0.2s ease',
-                                        }}
-                                    >
-                                        {tab.label}
-                                    </button>
-                                );
-                            })}
-                        </div>
+                        <button
+                            type="button"
+                            onClick={() => setActiveScheduleView('master')}
+                            style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '8px',
+                                padding: '12px 24px',
+                                borderRadius: '8px',
+                                fontSize: '0.95rem',
+                                fontWeight: '700',
+                                cursor: 'pointer',
+                                transition: 'all 0.2s ease',
+                                border: activeScheduleView === 'master' ? '2px solid #00629b' : '1px solid #cbd5e1',
+                                background: activeScheduleView === 'master' ? '#00629b' : '#ffffff',
+                                color: activeScheduleView === 'master' ? '#ffffff' : '#1e293b',
+                                boxShadow: activeScheduleView === 'master' ? '0 4px 14px rgba(0, 98, 155, 0.25)' : '0 1px 4px rgba(0,0,0,0.05)',
+                            }}
+                        >
+                            <i className="fa fa-calendar-alt"></i>
+                            Master Conference Schedule
+                        </button>
+                        <button
+                            type="button"
+                            onClick={() => {
+                                setActiveScheduleView('technical');
+                                setSelectedTechnicalDay('all');
+                                setSelectedTrackDay1('all');
+                                setSelectedTrackDay2('all');
+                            }}
+                            style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '8px',
+                                padding: '12px 24px',
+                                borderRadius: '8px',
+                                fontSize: '0.95rem',
+                                fontWeight: '700',
+                                cursor: 'pointer',
+                                transition: 'all 0.2s ease',
+                                border: activeScheduleView === 'technical' ? '2px solid #00629b' : '1px solid #cbd5e1',
+                                background: activeScheduleView === 'technical' ? '#00629b' : '#ffffff',
+                                color: activeScheduleView === 'technical' ? '#ffffff' : '#1e293b',
+                                boxShadow: activeScheduleView === 'technical' ? '0 4px 14px rgba(0, 98, 155, 0.25)' : '0 1px 4px rgba(0,0,0,0.05)',
+                            }}
+                        >
+                            <i className="fa fa-file-alt"></i>
+                            Technical Track Schedule
+                        </button>
                     </div>
 
-                    {/* Conference Tables */}
-                    {filteredDays.map((day) => (
-                        <div key={day.id} style={{ marginBottom: '35px' }}>
-                            <div style={dayHeaderStyle}>{day.title}</div>
-                            <div className="schedule-table-wrapper">
-                                <table style={{ width: '100%', minWidth: '720px', borderCollapse: 'collapse', fontSize: '0.84rem' }}>
-                                    <thead>
-                                        <tr>
-                                            <th style={{ ...headerStyle, width: '160px' }}>Time Slot</th>
-                                            <th style={{ ...headerStyle, width: '200px' }}>Session / Event</th>
-                                            <th style={headerStyle}>Description &amp; Key Highlights</th>
-                                            <th style={{ ...headerStyle, width: '180px' }}>Venue / Track</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {day.items.map((item, idx) => {
-                                            const rowBg = getRowStyle(item.type);
+                    {/* ═══════════════════════════════════════════
+                        VIEW 1: MASTER CONFERENCE SCHEDULE
+                    ═══════════════════════════════════════════ */}
+                    {activeScheduleView === 'master' && (
+                        <>
+                            {/* Day Filter Tabs */}
+                            <div style={{
+                                display: 'flex',
+                                flexWrap: 'wrap',
+                                alignItems: 'center',
+                                gap: '10px',
+                                background: '#f8fafc',
+                                border: '1px solid #e2e8f0',
+                                borderRadius: '10px',
+                                padding: '10px 14px',
+                                marginBottom: '20px',
+                            }}>
+                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                                    {[
+                                        { id: 'all', label: 'All Days' },
+                                        { id: 'day1', label: 'Day 1 (4 Dec)' },
+                                        { id: 'day2', label: 'Day 2 (5 Dec)' },
+                                        { id: 'day3', label: 'Day 3 (6 Dec)' },
+                                    ].map((tab) => {
+                                        const isActive = selectedDay === tab.id;
+                                        return (
+                                            <button
+                                                key={tab.id}
+                                                type="button"
+                                                onClick={() => setSelectedDay(tab.id)}
+                                                style={{
+                                                    background: isActive ? '#00629b' : '#fff',
+                                                    color: isActive ? '#fff' : '#334155',
+                                                    border: `1px solid ${isActive ? '#00629b' : '#cbd5e1'}`,
+                                                    padding: '6px 14px',
+                                                    borderRadius: '6px',
+                                                    fontSize: '0.85rem',
+                                                    fontWeight: '600',
+                                                    cursor: 'pointer',
+                                                    transition: 'all 0.2s ease',
+                                                }}
+                                            >
+                                                {tab.label}
+                                            </button>
+                                        );
+                                    })}
+                                </div>
+                            </div>
 
-                                            if (item.isMultiTrack && item.tracks) {
-                                                return (
-                                                    <React.Fragment key={idx}>
-                                                        {item.tracks.map((trackItem, tIdx) => (
-                                                            <tr key={tIdx} style={rowBg}>
-                                                                {tIdx === 0 && (
-                                                                    <>
-                                                                        <td
-                                                                            style={{ ...timeStyle, verticalAlign: 'top', paddingTop: '14px' }}
-                                                                            rowSpan={item.tracks.length}
-                                                                        >
-                                                                            {item.time}
+                            {/* Conference Tables */}
+                            {filteredDays.map((day) => (
+                                <div key={day.id} style={{ marginBottom: '35px' }}>
+                                    <div style={dayHeaderStyle}>{day.title}</div>
+                                    <div className="schedule-table-wrapper">
+                                        <table style={{ width: '100%', minWidth: '720px', borderCollapse: 'collapse', fontSize: '0.84rem' }}>
+                                            <thead>
+                                                <tr>
+                                                    <th style={{ ...headerStyle, width: '160px' }}>Time Slot</th>
+                                                    <th style={{ ...headerStyle, width: '200px' }}>Session / Event</th>
+                                                    <th style={headerStyle}>Description &amp; Key Highlights</th>
+                                                    <th style={{ ...headerStyle, width: '180px' }}>Venue / Track</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {day.items.map((item, idx) => {
+                                                    const rowBg = getRowStyle(item.type);
+
+                                                    if (item.isMultiTrack && item.tracks) {
+                                                        return (
+                                                            <React.Fragment key={idx}>
+                                                                {item.tracks.map((trackItem, tIdx) => (
+                                                                    <tr key={tIdx} style={rowBg}>
+                                                                        {tIdx === 0 && (
+                                                                            <>
+                                                                                <td
+                                                                                    style={{ ...timeStyle, verticalAlign: 'top', paddingTop: '14px' }}
+                                                                                    rowSpan={item.tracks.length}
+                                                                                >
+                                                                                    {item.time}
+                                                                                </td>
+                                                                                <td
+                                                                                    style={{ ...eventStyle, verticalAlign: 'top', paddingTop: '14px' }}
+                                                                                    rowSpan={item.tracks.length}
+                                                                                >
+                                                                                    <div style={{ fontWeight: '800', color: '#1e3a5f' }}>{item.event}</div>
+                                                                                    <div style={{ marginTop: '8px' }}>
+                                                                                        <button
+                                                                                            type="button"
+                                                                                            onClick={() => goToTechnicalTrack(item.sessionKey || day.id)}
+                                                                                            title={`View all papers in ${item.event}`}
+                                                                                            style={{
+                                                                                                background: '#e0f2fe',
+                                                                                                color: '#0284c7',
+                                                                                                border: '1px solid #bae6fd',
+                                                                                                padding: '4px 9px',
+                                                                                                borderRadius: '5px',
+                                                                                                fontSize: '0.74rem',
+                                                                                                fontWeight: '700',
+                                                                                                cursor: 'pointer',
+                                                                                                display: 'inline-flex',
+                                                                                                alignItems: 'center',
+                                                                                                gap: '4px',
+                                                                                                whiteSpace: 'nowrap',
+                                                                                                transition: 'all 0.15s ease',
+                                                                                            }}
+                                                                                            onMouseEnter={(e) => {
+                                                                                                e.currentTarget.style.background = '#0284c7';
+                                                                                                e.currentTarget.style.color = '#fff';
+                                                                                            }}
+                                                                                            onMouseLeave={(e) => {
+                                                                                                e.currentTarget.style.background = '#e0f2fe';
+                                                                                                e.currentTarget.style.color = '#0284c7';
+                                                                                            }}
+                                                                                        >
+                                                                                            View All Papers &rarr;
+                                                                                        </button>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </>
+                                                                        )}
+                                                                        <td style={cellStyle}>
+                                                                            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', flexWrap: 'wrap' }}>
+                                                                                <span
+                                                                                    onClick={() => goToTechnicalTrack(item.sessionKey || day.id, tIdx)}
+                                                                                    style={{
+                                                                                        fontWeight: '700',
+                                                                                        color: '#1e3a5f',
+                                                                                        cursor: 'pointer',
+                                                                                        transition: 'color 0.15s ease',
+                                                                                    }}
+                                                                                    onMouseEnter={(e) => (e.currentTarget.style.color = '#00629b')}
+                                                                                    onMouseLeave={(e) => (e.currentTarget.style.color = '#1e3a5f')}
+                                                                                    title={`Click to view paper schedule for ${trackItem.track}`}
+                                                                                >
+                                                                                    {trackItem.track}
+                                                                                </span>
+                                                                                <button
+                                                                                    type="button"
+                                                                                    onClick={() => goToTechnicalTrack(item.sessionKey || day.id, tIdx)}
+                                                                                    title={`View paper schedule for ${trackItem.track}`}
+                                                                                    style={{
+                                                                                        background: '#f0f9ff',
+                                                                                        color: '#0284c7',
+                                                                                        border: '1px solid #bae6fd',
+                                                                                        padding: '3px 8px',
+                                                                                        borderRadius: '4px',
+                                                                                        fontSize: '0.75rem',
+                                                                                        fontWeight: '700',
+                                                                                        cursor: 'pointer',
+                                                                                        whiteSpace: 'nowrap',
+                                                                                        transition: 'all 0.15s ease',
+                                                                                    }}
+                                                                                    onMouseEnter={(e) => {
+                                                                                        e.currentTarget.style.background = '#0284c7';
+                                                                                        e.currentTarget.style.color = '#fff';
+                                                                                    }}
+                                                                                    onMouseLeave={(e) => {
+                                                                                        e.currentTarget.style.background = '#f0f9ff';
+                                                                                        e.currentTarget.style.color = '#0284c7';
+                                                                                    }}
+                                                                                >
+                                                                                    View Papers &rarr;
+                                                                                </button>
+                                                                            </div>
                                                                         </td>
-                                                                        <td
-                                                                            style={{ ...eventStyle, verticalAlign: 'top', paddingTop: '14px' }}
-                                                                            rowSpan={item.tracks.length}
-                                                                        >
-                                                                            {item.event}
+                                                                        <td style={venueCellStyle}>
+                                                                            <span style={{
+                                                                                color: '#00629b',
+                                                                                fontWeight: '700',
+                                                                            }}>
+                                                                                {trackItem.venue}
+                                                                            </span>
                                                                         </td>
-                                                                    </>
-                                                                )}
-                                                                <td style={cellStyle}>
-                                                                    <strong>{trackItem.track}</strong>
-                                                                </td>
-                                                                <td style={venueCellStyle}>
+                                                                    </tr>
+                                                                ))}
+                                                            </React.Fragment>
+                                                        );
+                                                    }
+
+                                                    return (
+                                                        <tr key={idx} style={rowBg}>
+                                                            <td style={timeStyle}>{item.time}</td>
+                                                            <td style={eventStyle}>{item.event}</td>
+                                                            <td style={cellStyle}>{item.desc}</td>
+                                                            <td style={venueCellStyle}>
+                                                                {item.venue ? (
                                                                     <span style={{
                                                                         color: '#00629b',
                                                                         fontWeight: '700',
                                                                     }}>
-                                                                        {trackItem.venue}
+                                                                        {item.venue}
                                                                     </span>
-                                                                </td>
-                                                            </tr>
-                                                        ))}
-                                                    </React.Fragment>
-                                                );
-                                            }
+                                                                ) : '—'}
+                                                            </td>
+                                                        </tr>
+                                                    );
+                                                })}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            ))}
 
-                                            return (
-                                                <tr key={idx} style={rowBg}>
-                                                    <td style={timeStyle}>{item.time}</td>
-                                                    <td style={eventStyle}>{item.event}</td>
-                                                    <td style={cellStyle}>{item.desc}</td>
-                                                    <td style={venueCellStyle}>
-                                                        {item.venue ? (
-                                                            <span style={{
-                                                                color: '#00629b',
-                                                                fontWeight: '700',
-                                                            }}>
-                                                                {item.venue}
-                                                            </span>
-                                                        ) : '—'}
-                                                    </td>
-                                                </tr>
-                                            );
-                                        })}
-                                    </tbody>
-                                </table>
+                            {/* Color Legend for Master Schedule */}
+                            <div style={{
+                                background: '#fff',
+                                border: '1px solid #e2e8f0',
+                                borderRadius: '8px',
+                                padding: '14px 18px',
+                                marginTop: '10px'
+                            }}>
+                                <div style={{ fontWeight: '700', fontSize: '0.85rem', color: '#1e293b', marginBottom: '8px' }}>
+                                    Color Legend:
+                                </div>
+                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', fontSize: '0.82rem' }}>
+                                    {[
+                                        { color: '#fffbe6', border: '#f59e0b', label: 'Keynote Sessions' },
+                                        { color: '#f0f4f8', border: '#cbd5e1', label: 'Breaks & Networking' },
+                                        { color: '#e8f4ea', border: '#10b981', label: 'Special / Ceremonial Events' },
+                                        { color: '#fff', border: '#e2e8f0', label: 'Technical / General Sessions' },
+                                    ].map(({ color, border, label }) => (
+                                        <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                            <div style={{ width: '18px', height: '18px', background: color, border: `1px solid ${border}`, borderRadius: '4px' }}></div>
+                                            <span style={{ color: '#475569', fontWeight: '500' }}>{label}</span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </>
+                    )}
+
+                    {/* ═══════════════════════════════════════════
+                        VIEW 2: TECHNICAL TRACK SCHEDULE
+                    ═══════════════════════════════════════════ */}
+                    {activeScheduleView === 'technical' && (
+                        <div>
+                            {/* Session Switcher Tabs & Back Button */}
+                            <div style={{
+                                display: 'flex',
+                                flexWrap: 'wrap',
+                                alignItems: 'center',
+                                justifyContent: 'space-between',
+                                gap: '10px',
+                                background: '#f8fafc',
+                                border: '1px solid #e2e8f0',
+                                borderRadius: '10px',
+                                padding: '10px 14px',
+                                marginBottom: '22px',
+                            }}>
+                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                                    {[
+                                        { id: 'all', label: 'All Sessions (10 Tracks)' },
+                                        { id: 'day1', label: 'Day 1: Session A (6 Tracks)' },
+                                        { id: 'day2', label: 'Day 2: Session B (4 Tracks)' },
+                                    ].map((tab) => {
+                                        const isActive = selectedTechnicalDay === tab.id;
+                                        return (
+                                            <button
+                                                key={tab.id}
+                                                type="button"
+                                                onClick={() => {
+                                                    setSelectedTechnicalDay(tab.id);
+                                                    if (tab.id === 'day1') setSelectedTrackDay1('all');
+                                                    if (tab.id === 'day2') setSelectedTrackDay2('all');
+                                                }}
+                                                style={{
+                                                    background: isActive ? '#00629b' : '#fff',
+                                                    color: isActive ? '#fff' : '#334155',
+                                                    border: `1px solid ${isActive ? '#00629b' : '#cbd5e1'}`,
+                                                    padding: '6px 14px',
+                                                    borderRadius: '6px',
+                                                    fontSize: '0.85rem',
+                                                    fontWeight: '600',
+                                                    cursor: 'pointer',
+                                                    transition: 'all 0.2s ease',
+                                                }}
+                                            >
+                                                {tab.label}
+                                            </button>
+                                        );
+                                    })}
+                                </div>
+
+                                <button
+                                    type="button"
+                                    onClick={() => setActiveScheduleView('master')}
+                                    style={{
+                                        background: '#fff',
+                                        color: '#00629b',
+                                        border: '1px solid #00629b',
+                                        padding: '6px 14px',
+                                        borderRadius: '6px',
+                                        fontSize: '0.82rem',
+                                        fontWeight: '700',
+                                        cursor: 'pointer',
+                                        display: 'inline-flex',
+                                        alignItems: 'center',
+                                        gap: '6px',
+                                        transition: 'all 0.15s ease',
+                                    }}
+                                >
+                                    <i className="fa fa-arrow-left"></i>
+                                    Back to Master Schedule
+                                </button>
                             </div>
 
-                            {/* Detailed Technical Track Schedule for this day (Session A on Day 1, Session B on Day 2) */}
-                            {trackDetailData[day.id] && (
-                                <div style={{ marginTop: '10px', marginBottom: '40px' }}>
+                            {/* DAY 1: TECHNICAL TRACK SESSION A */}
+                            {(selectedTechnicalDay === 'all' || selectedTechnicalDay === 'day1') && (
+                                <div id="session-day1" style={{ marginBottom: '45px', scrollMarginTop: '80px' }}>
                                     {/* Session Banner */}
                                     <div style={{
                                         background: 'linear-gradient(135deg, #1e3a5f 0%, #0d233a 100%)',
@@ -665,18 +940,18 @@ const TechnicalProgrammePage = () => {
                                                 textTransform: 'uppercase',
                                                 marginBottom: '6px'
                                             }}>
-                                                {day.id === 'day1' ? 'Technical Track Session A Schedule' : 'Technical Track Session B Schedule'}
+                                                Day 1 (Friday, 4 Dec) • 01:00 PM – 03:00 PM
                                             </span>
                                             <h3 style={{ margin: '0 0 4px 0', fontSize: '1.25rem', fontWeight: '800', color: '#fff' }}>
-                                                {trackDetailData[day.id].sessionTitle}
+                                                {trackDetailData.day1.sessionTitle}
                                             </h3>
                                             <p style={{ margin: 0, fontSize: '0.86rem', color: '#cbd5e1' }}>
-                                                Each paper: <strong style={{ color: '#fff' }}>10 min presentation + 3 min Q&amp;A</strong> &nbsp;|&nbsp; {trackDetailData[day.id].tracks.length} Parallel Tracks
+                                                Each paper: <strong style={{ color: '#fff' }}>10 min presentation + 3 min Q&amp;A</strong> &nbsp;|&nbsp; 6 Parallel Tracks (48 Papers)
                                             </p>
                                         </div>
                                     </div>
 
-                                    {/* Track Filter Pills */}
+                                    {/* Track Filter Pills for Day 1 */}
                                     <div style={{
                                         display: 'flex',
                                         flexWrap: 'wrap',
@@ -685,35 +960,28 @@ const TechnicalProgrammePage = () => {
                                     }}>
                                         <button
                                             type="button"
-                                            onClick={() => day.id === 'day1' ? setSelectedTrackDay1('all') : setSelectedTrackDay2('all')}
+                                            onClick={() => setSelectedTrackDay1('all')}
                                             style={{
                                                 padding: '6px 14px',
                                                 borderRadius: '20px',
                                                 fontSize: '0.8rem',
                                                 fontWeight: '600',
                                                 cursor: 'pointer',
-                                                border: (day.id === 'day1' ? selectedTrackDay1 === 'all' : selectedTrackDay2 === 'all')
-                                                    ? '2px solid #00629b'
-                                                    : '1px solid #cbd5e1',
-                                                background: (day.id === 'day1' ? selectedTrackDay1 === 'all' : selectedTrackDay2 === 'all')
-                                                    ? '#00629b'
-                                                    : '#fff',
-                                                color: (day.id === 'day1' ? selectedTrackDay1 === 'all' : selectedTrackDay2 === 'all')
-                                                    ? '#fff'
-                                                    : '#334155',
+                                                border: selectedTrackDay1 === 'all' ? '2px solid #00629b' : '1px solid #cbd5e1',
+                                                background: selectedTrackDay1 === 'all' ? '#00629b' : '#fff',
+                                                color: selectedTrackDay1 === 'all' ? '#fff' : '#334155',
                                                 transition: 'all 0.15s ease',
                                             }}
                                         >
-                                            All Tracks ({trackDetailData[day.id].tracks.length})
+                                            All Tracks ({trackDetailData.day1.tracks.length})
                                         </button>
-                                        {trackDetailData[day.id].tracks.map((tr, tIdx) => {
-                                            const activeTrack = day.id === 'day1' ? selectedTrackDay1 : selectedTrackDay2;
-                                            const isSelected = activeTrack === String(tIdx);
+                                        {trackDetailData.day1.tracks.map((tr, tIdx) => {
+                                            const isSelected = selectedTrackDay1 === String(tIdx);
                                             return (
                                                 <button
                                                     key={tIdx}
                                                     type="button"
-                                                    onClick={() => day.id === 'day1' ? setSelectedTrackDay1(String(tIdx)) : setSelectedTrackDay2(String(tIdx))}
+                                                    onClick={() => setSelectedTrackDay1(String(tIdx))}
                                                     style={{
                                                         padding: '6px 14px',
                                                         borderRadius: '20px',
@@ -732,15 +1000,14 @@ const TechnicalProgrammePage = () => {
                                         })}
                                     </div>
 
-                                    {/* Track Tables */}
-                                    {trackDetailData[day.id].tracks.map((track, tIdx) => {
-                                        const activeTrack = day.id === 'day1' ? selectedTrackDay1 : selectedTrackDay2;
-                                        if (activeTrack !== 'all' && activeTrack !== String(tIdx)) {
+                                    {/* Day 1 Track Tables */}
+                                    {trackDetailData.day1.tracks.map((track, tIdx) => {
+                                        if (selectedTrackDay1 !== 'all' && selectedTrackDay1 !== String(tIdx)) {
                                             return null;
                                         }
 
                                         return (
-                                            <div key={tIdx} style={{ marginBottom: '24px' }}>
+                                            <div id={`track-day1-${tIdx}`} key={tIdx} style={{ marginBottom: '24px', scrollMarginTop: '80px' }}>
                                                 {/* Track Bar Header */}
                                                 <div style={{
                                                     background: '#1e3a5f',
@@ -803,34 +1070,196 @@ const TechnicalProgrammePage = () => {
                                     })}
                                 </div>
                             )}
-                        </div>
-                    ))}
 
-                    {/* Legend */}
-                    <div style={{
-                        background: '#fff',
-                        border: '1px solid #e2e8f0',
-                        borderRadius: '8px',
-                        padding: '14px 18px',
-                        marginTop: '10px'
-                    }}>
-                        <div style={{ fontWeight: '700', fontSize: '0.85rem', color: '#1e293b', marginBottom: '8px' }}>
-                            Color Legend:
-                        </div>
-                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', fontSize: '0.82rem' }}>
-                            {[
-                                { color: '#fffbe6', border: '#f59e0b', label: 'Keynote Sessions' },
-                                { color: '#f0f4f8', border: '#cbd5e1', label: 'Breaks & Networking' },
-                                { color: '#e8f4ea', border: '#10b981', label: 'Special / Ceremonial Events' },
-                                { color: '#fff', border: '#e2e8f0', label: 'Technical / General Sessions' },
-                            ].map(({ color, border, label }) => (
-                                <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                                    <div style={{ width: '18px', height: '18px', background: color, border: `1px solid ${border}`, borderRadius: '4px' }}></div>
-                                    <span style={{ color: '#475569', fontWeight: '500' }}>{label}</span>
+                            {/* DAY 2: TECHNICAL TRACK SESSION B */}
+                            {(selectedTechnicalDay === 'all' || selectedTechnicalDay === 'day2') && (
+                                <div id="session-day2" style={{ marginBottom: '45px', scrollMarginTop: '80px' }}>
+                                    {/* Session Banner */}
+                                    <div style={{
+                                        background: 'linear-gradient(135deg, #1e3a5f 0%, #0d233a 100%)',
+                                        color: '#fff',
+                                        borderRadius: '8px',
+                                        padding: '16px 20px',
+                                        marginBottom: '16px',
+                                        boxShadow: '0 3px 12px rgba(30, 58, 95, 0.12)',
+                                        display: 'flex',
+                                        flexWrap: 'wrap',
+                                        justifyContent: 'space-between',
+                                        alignItems: 'center',
+                                        gap: '12px',
+                                    }}>
+                                        <div>
+                                            <span style={{
+                                                display: 'inline-block',
+                                                background: 'rgba(255,255,255,0.15)',
+                                                padding: '3px 10px',
+                                                borderRadius: '12px',
+                                                fontSize: '0.74rem',
+                                                fontWeight: '700',
+                                                letterSpacing: '0.6px',
+                                                textTransform: 'uppercase',
+                                                marginBottom: '6px'
+                                            }}>
+                                                Day 2 (Saturday, 5 Dec) • 11:00 AM – 01:00 PM
+                                            </span>
+                                            <h3 style={{ margin: '0 0 4px 0', fontSize: '1.25rem', fontWeight: '800', color: '#fff' }}>
+                                                {trackDetailData.day2.sessionTitle}
+                                            </h3>
+                                            <p style={{ margin: 0, fontSize: '0.86rem', color: '#cbd5e1' }}>
+                                                Each paper: <strong style={{ color: '#fff' }}>10 min presentation + 3 min Q&amp;A</strong> &nbsp;|&nbsp; 4 Parallel Tracks (29 Papers)
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    {/* Track Filter Pills for Day 2 */}
+                                    <div style={{
+                                        display: 'flex',
+                                        flexWrap: 'wrap',
+                                        gap: '8px',
+                                        marginBottom: '18px',
+                                    }}>
+                                        <button
+                                            type="button"
+                                            onClick={() => setSelectedTrackDay2('all')}
+                                            style={{
+                                                padding: '6px 14px',
+                                                borderRadius: '20px',
+                                                fontSize: '0.8rem',
+                                                fontWeight: '600',
+                                                cursor: 'pointer',
+                                                border: selectedTrackDay2 === 'all' ? '2px solid #00629b' : '1px solid #cbd5e1',
+                                                background: selectedTrackDay2 === 'all' ? '#00629b' : '#fff',
+                                                color: selectedTrackDay2 === 'all' ? '#fff' : '#334155',
+                                                transition: 'all 0.15s ease',
+                                            }}
+                                        >
+                                            All Tracks ({trackDetailData.day2.tracks.length})
+                                        </button>
+                                        {trackDetailData.day2.tracks.map((tr, tIdx) => {
+                                            const isSelected = selectedTrackDay2 === String(tIdx);
+                                            return (
+                                                <button
+                                                    key={tIdx}
+                                                    type="button"
+                                                    onClick={() => setSelectedTrackDay2(String(tIdx))}
+                                                    style={{
+                                                        padding: '6px 14px',
+                                                        borderRadius: '20px',
+                                                        fontSize: '0.8rem',
+                                                        fontWeight: '600',
+                                                        cursor: 'pointer',
+                                                        border: isSelected ? '2px solid #00629b' : '1px solid #cbd5e1',
+                                                        background: isSelected ? '#00629b' : '#fff',
+                                                        color: isSelected ? '#fff' : '#334155',
+                                                        transition: 'all 0.15s ease',
+                                                    }}
+                                                >
+                                                    {tr.trackNo}
+                                                </button>
+                                            );
+                                        })}
+                                    </div>
+
+                                    {/* Day 2 Track Tables */}
+                                    {trackDetailData.day2.tracks.map((track, tIdx) => {
+                                        if (selectedTrackDay2 !== 'all' && selectedTrackDay2 !== String(tIdx)) {
+                                            return null;
+                                        }
+
+                                        return (
+                                            <div id={`track-day2-${tIdx}`} key={tIdx} style={{ marginBottom: '24px', scrollMarginTop: '80px' }}>
+                                                {/* Track Bar Header */}
+                                                <div style={{
+                                                    background: '#1e3a5f',
+                                                    color: '#fff',
+                                                    padding: '12px 18px',
+                                                    borderRadius: '8px 8px 0 0',
+                                                    display: 'flex',
+                                                    flexWrap: 'wrap',
+                                                    justifyContent: 'space-between',
+                                                    alignItems: 'center',
+                                                    gap: '8px',
+                                                    borderBottom: '2px solid #00629b',
+                                                }}>
+                                                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
+                                                        <span style={{
+                                                            background: '#00629b',
+                                                            color: '#fff',
+                                                            padding: '3px 10px',
+                                                            borderRadius: '4px',
+                                                            fontSize: '0.78rem',
+                                                            fontWeight: '700',
+                                                            letterSpacing: '0.5px'
+                                                        }}>
+                                                            {track.trackNo}
+                                                        </span>
+                                                        <span style={{ fontWeight: '700', fontSize: '0.92rem', color: '#fff' }}>
+                                                            {track.theme}
+                                                        </span>
+                                                    </div>
+                                                    <div style={{ fontSize: '0.82rem', color: '#cbd5e1' }}>
+                                                        Venue: <strong style={{ color: '#fff' }}>{track.venue}</strong>
+                                                    </div>
+                                                </div>
+
+                                                {/* Papers Table */}
+                                                <div className="schedule-table-wrapper" style={{ borderRadius: '0 0 8px 8px', marginBottom: 0 }}>
+                                                    <table style={{ width: '100%', minWidth: '720px', borderCollapse: 'collapse', fontSize: '0.84rem' }}>
+                                                        <thead>
+                                                            <tr>
+                                                                <th style={{ ...headerStyle, width: '160px' }}>Time Slot</th>
+                                                                <th style={{ ...headerStyle, width: '85px', textAlign: 'center' }}>Paper ID</th>
+                                                                <th style={headerStyle}>Paper Title</th>
+                                                                <th style={{ ...headerStyle, width: '300px' }}>Authors</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            {track.papers.map((paper, pIdx) => (
+                                                                <tr key={pIdx} style={{ background: pIdx % 2 === 0 ? '#ffffff' : '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
+                                                                    <td style={{ ...timeStyle, fontSize: '0.82rem', whiteSpace: 'nowrap' }}>{paper.time}</td>
+                                                                    <td style={{ ...cellStyle, textAlign: 'center', fontWeight: '800', color: '#00629b' }}>{paper.id}</td>
+                                                                    <td style={{ ...cellStyle, fontWeight: '600', color: '#1e293b', lineHeight: '1.45' }}>{paper.title}</td>
+                                                                    <td style={{ ...cellStyle, fontSize: '0.8rem', color: '#475569', lineHeight: '1.45' }}>{paper.authors}</td>
+                                                                </tr>
+                                                            ))}
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
                                 </div>
-                            ))}
+                            )}
+
+                            {/* Back to Master Schedule Bottom Button */}
+                            <div style={{ textAlign: 'center', marginTop: '35px', marginBottom: '10px' }}>
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        setActiveScheduleView('master');
+                                        window.scrollTo({ top: 120, behavior: 'smooth' });
+                                    }}
+                                    style={{
+                                        background: '#00629b',
+                                        color: '#fff',
+                                        border: 'none',
+                                        padding: '12px 24px',
+                                        borderRadius: '8px',
+                                        fontSize: '0.92rem',
+                                        fontWeight: '700',
+                                        cursor: 'pointer',
+                                        display: 'inline-flex',
+                                        alignItems: 'center',
+                                        gap: '8px',
+                                        boxShadow: '0 2px 8px rgba(0, 98, 155, 0.25)',
+                                    }}
+                                >
+                                    <i className="fa fa-calendar-alt"></i>
+                                    Back to Master Conference Schedule
+                                </button>
+                            </div>
                         </div>
-                    </div>
+                    )}
 
                 </div>
             </div>
