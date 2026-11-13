@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --primary: #00629b;
   /* IEEE Blue */
   --secondary: #2e8b57;
@@ -21,8 +21,8 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden !important;
-  max-width: 100%;
+  overflow-x: clip;
+  max-width: 100vw;
   width: 100%;
 }
 
@@ -32,7 +32,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden !important;
   background-color: var(--white);
-  max-width: 100%;
+  max-width: 100vw;
   width: 100%;
   position: relative;
 }
@@ -2398,11 +2398,10 @@ textarea,
     padding: 0.75rem;
   }
 }
-html, body, #root, .App, .app, .page-wrapper, .home-page {
-    overflow-x: hidden !important;
-    max-width: 100% !important;
-    width: 100% !important;
-    box-sizing: border-box;
+html, body, #root, .App, .app, .page-wrapper {
+    overflow-x: clip;
+    max-width: 100vw;
+    width: 100%;
 }
 
 
@@ -2571,15 +2570,11 @@ html, body, #root, .App, .app, .page-wrapper, .home-page {
     transition: transform 0.3s ease-in-out;
     z-index: 1001;
     display: none !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
     overflow-y: auto;
   }
 
   .nav-links.active {
     display: flex !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
     transform: translateX(0);
   }
 
@@ -2769,26 +2764,8 @@ html, body, #root, .App, .app, .page-wrapper, .home-page {
 
 /* ── Global Mobile Overflow Prevention (All Pages) ── */
 @media (max-width: 768px) {
-    html, body {
-        overflow-x: hidden !important;
-        position: relative;
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-    .container {
-        padding: 0 16px !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-    }
     .container-fluid {
         padding: 0 16px !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-    }
-    .page-wrapper, .home-page, .section-content {
-        overflow-x: hidden !important;
-        max-width: 100% !important;
-        width: 100% !important;
     }
     .countdown-container {
         gap: 10px !important;
@@ -2801,11 +2778,6 @@ html, body, #root, .App, .app, .page-wrapper, .home-page {
     }
     .countdown-item .count {
         font-size: 1.6rem !important;
-    }
-    .ieee-middle-bar {
-        padding: 12px 16px !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
     }
     .ieee-middle-bar .conference-title {
         font-size: 1.15rem !important;
