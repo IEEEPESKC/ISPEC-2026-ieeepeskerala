@@ -359,7 +359,7 @@ const Hero = () => {
                   >
                     <span className="hero-label text-emerald-500 mb-4 block">{conferenceInfo.subtitle}</span>
                     <motion.h1
-                      className="text-white text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black mb-6 leading-none tracking-tighter"
+                      className="text-white text-6xl md:text-8xl lg:text-9xl font-black mb-6 leading-none tracking-tighter"
                       animate={{
                         scale: [1, 1.02, 1],
                         filter: ['brightness(1)', 'brightness(1.2)', 'brightness(1)']
