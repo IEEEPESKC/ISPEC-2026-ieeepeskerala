@@ -7,10 +7,7 @@ const Footer = () => {
         color: 'rgb(255, 255, 255)', 
         paddingTop: '60px', 
         paddingBottom: '20px', 
-        marginTop: '0px',
-        overflow: 'hidden',
-        width: '100%',
-        maxWidth: '100%' }}>
+        marginTop: '0px' }}>
             <div className="container" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 15px' }}>
 
                 {/* 4 Column Top Section */}
