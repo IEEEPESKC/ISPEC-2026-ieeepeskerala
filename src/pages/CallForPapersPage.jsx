@@ -240,36 +240,11 @@ const CallForPapersPage = () => {
 
                     {/* ── Presentation Instructions Section ── */}
                     <div id="presentation-instructions" style={{ marginTop: '50px', paddingTop: '40px', borderTop: '2px solid #eef2f6' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '15px', marginBottom: '25px' }}>
-                            <div>
-                                <span style={{ background: '#e8f5e9', color: '#2e8b57', padding: '4px 12px', borderRadius: '4px', fontSize: '0.82rem', fontWeight: '700', letterSpacing: '0.05em', textTransform: 'uppercase' }}>For Presenters</span>
-                                <h2 style={{ fontSize: '2.2rem', color: '#1a1a2e', margin: '8px 0 0 0', fontWeight: '800' }}>
-                                    Presentation Instructions
-                                </h2>
-                            </div>
-                            <a
-                                href="https://docs.google.com/presentation/d/1HA_Fr9sG6wEfFFhjHKcBdxWwtrsTrVjN/edit?usp=sharing&ouid=117547984015209509017&rtpof=true&sd=true"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                style={{
-                                    display: 'inline-flex',
-                                    alignItems: 'center',
-                                    gap: '10px',
-                                    background: '#2e8b57',
-                                    color: '#ffffff',
-                                    padding: '12px 24px',
-                                    borderRadius: '8px',
-                                    fontWeight: '700',
-                                    fontSize: '0.95rem',
-                                    textDecoration: 'none',
-                                    boxShadow: '0 4px 14px rgba(46, 139, 87, 0.3)',
-                                    transition: 'all 0.25s ease'
-                                }}
-                                onMouseEnter={e => { e.currentTarget.style.background = '#246e45'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-                                onMouseLeave={e => { e.currentTarget.style.background = '#2e8b57'; e.currentTarget.style.transform = 'translateY(0)'; }}
-                            >
-                                <i className="fas fa-file-powerpoint"></i> Download PPT Template
-                            </a>
+                        <div style={{ marginBottom: '25px' }}>
+                            <span style={{ background: '#e8f5e9', color: '#2e8b57', padding: '4px 12px', borderRadius: '4px', fontSize: '0.82rem', fontWeight: '700', letterSpacing: '0.05em', textTransform: 'uppercase' }}>For Presenters</span>
+                            <h2 style={{ fontSize: '2.2rem', color: '#1a1a2e', margin: '8px 0 0 0', fontWeight: '800' }}>
+                                Presentation Instructions
+                            </h2>
                         </div>
 
                         <div style={{

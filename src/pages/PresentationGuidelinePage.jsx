@@ -17,38 +17,13 @@ const PresentationGuidelinePage = () => {
                     borderLeft: '5px solid #2e8b57',
                     marginBottom: '40px'
                 }}>
-                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '20px', marginBottom: '15px' }}>
-                        <div>
-                            <span style={{ background: '#e8f5e9', color: '#2e8b57', padding: '4px 12px', borderRadius: '4px', fontSize: '0.82rem', fontWeight: '700', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-                                IEEE iSPEC 2026 Technical Sessions
-                            </span>
-                            <h2 style={{ fontSize: '1.9rem', color: '#1a1a2e', margin: '10px 0 0 0', fontWeight: '800' }}>
-                                Paper Session Presenter Instructions
-                            </h2>
-                        </div>
-                        <a
-                            href={PPT_TEMPLATE_URL}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            style={{
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                gap: '10px',
-                                background: '#2e8b57',
-                                color: '#ffffff',
-                                padding: '12px 24px',
-                                borderRadius: '8px',
-                                fontWeight: '700',
-                                fontSize: '0.95rem',
-                                textDecoration: 'none',
-                                boxShadow: '0 4px 14px rgba(46, 139, 87, 0.3)',
-                                transition: 'all 0.25s ease'
-                            }}
-                            onMouseEnter={e => { e.currentTarget.style.background = '#246e45'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-                            onMouseLeave={e => { e.currentTarget.style.background = '#2e8b57'; e.currentTarget.style.transform = 'translateY(0)'; }}
-                        >
-                            <i className="fas fa-file-powerpoint"></i> Download PPT Template
-                        </a>
+                    <div style={{ marginBottom: '15px' }}>
+                        <span style={{ background: '#e8f5e9', color: '#2e8b57', padding: '4px 12px', borderRadius: '4px', fontSize: '0.82rem', fontWeight: '700', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                            IEEE iSPEC 2026 Technical Sessions
+                        </span>
+                        <h2 style={{ fontSize: '1.9rem', color: '#1a1a2e', margin: '10px 0 0 0', fontWeight: '800' }}>
+                            Paper Session Presenter Instructions
+                        </h2>
                     </div>
                     <p style={{ fontSize: '1.08rem', color: '#475569', lineHeight: '1.7', margin: 0 }}>
                         All authors presenting papers at IEEE iSPEC 2026 are requested to carefully follow the instructions below to ensure smooth and effective conduct of the technical sessions.
