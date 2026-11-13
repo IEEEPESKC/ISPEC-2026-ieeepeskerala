@@ -209,6 +209,167 @@ const scheduleData = [
     },
 ];
 
+const trackDetailData = {
+    day1: {
+        label: 'Day 1 (4 Dec) — Technical Track Session A | 1:00 PM – 3:00 PM',
+        tracks: [
+            {
+                trackNo: 'Track 1',
+                venue: 'Aryabhata Hall (B 303)',
+                theme: 'Solar PV Systems & Monitoring',
+                papers: [
+                    { time: '1:00–1:13 PM', id: '16', title: 'IoT-Based Dual-Axis Solar Tracker for Voltage Stability', authors: 'Rakshitha S, Harshitha S, Shreevarshini S D, Jayeswar T P, R Jayabarathi' },
+                    { time: '1:13–1:26 PM', id: '306', title: 'IoT-Enabled Dual-Axis Solar Tracking System with Cloud-Pause Algorithm and Integrated Battery Charging Using ESP32 and INA219', authors: 'Pawan D Sencha, Manu K, Anav Honymon, Resmi R' },
+                    { time: '1:26–1:39 PM', id: '504', title: 'AI-Enhanced Solar Power Monitoring System for Homes', authors: 'Aravind Boda, Esther Gurram, Santosha Kumar A' },
+                    { time: '1:39–1:52 PM', id: '539', title: 'Comparative Study of MPPT Algorithms for Photovoltaic Power Generation', authors: 'Sudheer S, Dileeplal J' },
+                    { time: '1:52–2:05 PM', id: '762', title: 'Performance Enhancement of Solar photovoltaic Arrays under Partial Shading conditions using circular back shift Reconfiguration Technique', authors: 'Prathima H. V., R. Shivarudraswamy, Dr. Praveen Kumar Bonthagorla, M. Ramesh, Pooja Suman, Sahana V' },
+                    { time: '2:05–2:18 PM', id: '763', title: 'Ginger (Zingiber officinale) Dye-Sensitized Solar Cells: A Literature Review, Comparative Assessment, and COMSOL Multiphysics Voc Simulation', authors: 'Yousef Hazem Ali, Abdel-rahman Hazem Ali, R. Shivarudra Swamy, Dr. Praveen kumar Bonthagorla, Prathima H. V.' },
+                    { time: '2:18–2:31 PM', id: '196', title: 'Development of a Solar-Powered Smart Bottle Vending and Reverse Vending System using AI-Based Bottle Identification', authors: 'Harinandana J, Aswin M, Vaishnav B. Ajith, Anand N, Vivek A, Abhilash Suryan R' },
+                    { time: '2:31–2:44 PM', id: '415', title: 'Design of a Grid Supported Renewable Energy Microgrid Using Simulink and Application of Cuckoo Search Algorithm in It', authors: 'Sreekala V, Akhil S. Karun' },
+                ],
+            },
+            {
+                trackNo: 'Track 2',
+                venue: 'Shanon Hall (B104)',
+                theme: 'PV Analytics, Forecasting & AI for Solar',
+                papers: [
+                    { time: '1:00–1:13 PM', id: '394', title: 'Comparative Analysis of Mathematical Models for Solar Photovoltaic Power Prediction', authors: 'Tanuj Rai, Sri. Revathi B, Dr Sheik Mohammed, Ravikumar Pandi V' },
+                    { time: '1:13–1:26 PM', id: '406', title: 'Controlled Benchmarking of Deep Architectures and Class-Weighting Strategies for Photovoltaic Electroluminescence Defect Segmentation', authors: 'Manu Prakash Maurya, Priyanka Kajal, Satvasheel Powar, Atul Dhar, André Augusto' },
+                    { time: '1:26–1:39 PM', id: '421', title: 'Two-Stage Deep Learning for PV Cell Localization and Defect Triage from Electroluminescence Images', authors: 'Manu Prakash Maurya, Rajwardhan Bhandigare, Satvasheel Powar, Atul Dhar, André Augusto' },
+                    { time: '1:39–1:52 PM', id: '537', title: 'A Multi-Horizon Framework for Power Forecasting by Integrating Satellite Nowcasting and Numerical Weather Prediction at a Utility-Scale Solar Park', authors: 'Abhishek Yadav, Archana Yadav, Saurabh Kapil' },
+                    { time: '1:52–2:05 PM', id: '319', title: 'Integrated Computational Platform for Techno-Sustainable Design Optimization of Bifacial PV Systems', authors: 'Astitva Kumar, Ayushi Srivastava, Pratyai Chakrabarty, Aman Aman, Aditya Garg, Ashish Upadhyay' },
+                    { time: '2:05–2:18 PM', id: '318', title: 'Optimal Sizing of a PV System in an Isolated DC Nanogrid Using a Digital Twin', authors: 'Yashwant Rana, K Kathambari, B Smitha Evelin Zoraida, S Arul Daniel' },
+                    { time: '2:18–2:31 PM', id: '357', title: 'Probabilistic Assessment of PV Hosting Capacity under Uncertainty in Urban Distribution Feeders', authors: 'Pramod Sendanayake' },
+                    { time: '2:31–2:44 PM', id: '358', title: 'AI Driven IoT and Blockchain Based Peer to Peer Solar Energy Trading Using Q-Learning and Dynamic Pricing', authors: 'Manoj B, Bharani M, Joseph Athisayaraj S, Saravana Prabhu D' },
+                ],
+            },
+            {
+                trackNo: 'Track 3',
+                venue: 'Senatus Hall (A 204)',
+                theme: 'Microgrids, Hybrid Renewables & Energy Markets',
+                papers: [
+                    { time: '1:00–1:13 PM', id: '195', title: 'Optimal Energy Management of a PV–Battery Community Microgrid with Green Hydrogen Production Using Marine Predators Algorithm', authors: 'Dr Sheik Mohammed, Gobbi Ramasamy, Teh Chin Hui, Sri. Revathi B, Rahul Satheesh' },
+                    { time: '1:13–1:26 PM', id: '379', title: 'Optimizing Riverine Hybrid Renewable Energy for Power Quality', authors: 'G BALRAM GYADARI, Sravan Kumar Purella, Nagendra Singh, Chandra Rakhee B, Sunanda S, Natarajan K' },
+                    { time: '1:26–1:39 PM', id: '510', title: 'Load-Flow and Preliminary Dynamic Assessment of a Low-Voltage Prosumer Microgrid with a Shared Solar Collector Bus', authors: 'Rejish Babu, Sheryl Arulini A, Shalu George K' },
+                    { time: '1:39–1:52 PM', id: '402', title: 'CHaRT: A Multi-Criteria Spatial Framework for Climate-Resilient Offshore Wind Siting in U.S. Waters', authors: 'Parvathy Gopikrishna, Peter Enevoldsen' },
+                    { time: '1:52–2:05 PM', id: '244', title: 'Temporal Analysis of Wind Direction Patterns in India: A Multi-Year Perspective', authors: 'Pramod N E, Satheesh Kumar K' },
+                    { time: '2:05–2:18 PM', id: '339', title: 'Real-Time Edge AI and Digital Twin Framework for Intelligent Street Lighting and EV Charging Energy Management in Sustainable Smart Cities', authors: 'BALAMURUGAN E, KARTHIKA M, RAMASAMI S, PRIYADHARSHINI S, PAVITHRA G, NANTHINI M' },
+                    { time: '2:18–2:31 PM', id: '36', title: 'Market Analytics and Policy Pathways in India\'s Green Day Ahead Market: A Data-Driven Study', authors: 'Nandan Rajesh, Gopi Krishna K, Harikrishnan Miraj Chathankandath, Sayooj Ramachandran, Anu Kumar, Maya P' },
+                    { time: '2:31–2:44 PM', id: '174', title: 'Short Term Resource Adequacy Assessment and Procurement Planning Under Renewable Integration', authors: 'Jayeshkumar Priolkar' },
+                ],
+            },
+            {
+                trackNo: 'Track 4',
+                venue: 'Faraday Hall (B04)',
+                theme: 'Batteries, Storage & EV Systems',
+                papers: [
+                    { time: '1:00–1:13 PM', id: '417', title: 'Early Detection of Thermal Stress in Lithium-Ion Cells Using the Rate of Temperature Rise', authors: 'Ilango Karuppasamy, Thirupugazhl SD, Bhavyaa M' },
+                    { time: '1:13–1:26 PM', id: '209', title: 'EV-Based Smart Energy Management for Peak Load Reduction', authors: 'Saurav Krishnaprasad, Anto Joseph, Swaroop S S, Horizon A R, Sijo George' },
+                    { time: '1:26–1:39 PM', id: '305', title: 'Simplified Multiphysics Modelling of Battery Heating Coils for Cold-Climate', authors: 'Chetan Mahawar, Dharanivendhan T' },
+                    { time: '1:39–1:52 PM', id: '403', title: 'A Federated Learning Approach to Electric Vehicle Battery Remaining Useful Life Prediction with Explainable Artificial Intelligence', authors: 'Tejaswini Garlapati, Iswarya Kannoth Veetil' },
+                    { time: '1:52–2:05 PM', id: '536', title: 'A Hybrid Coulomb Counting and LSTM Framework for Residual-Error Correction in Lithium-Ion Battery State-of-Charge Estimation', authors: 'SajiJustus Justus, Baburaj P' },
+                    { time: '2:05–2:18 PM', id: '662', title: 'Design and Implementation of a Smart Adaptive Active Cell Balancing System for Lithium-Ion Battery Packs', authors: 'Sridharan S, Nancy Princes Stanley, Prangaya C' },
+                    { time: '2:18–2:31 PM', id: '562', title: 'Converter-Less Battery Interconnection Using Relay Coordination and Intelligent Control for Modular LVDC Hotel Loads in Electric Houseboats', authors: 'Dhanesh Raghavan, R M Shereef' },
+                    { time: '2:31–2:44 PM', id: '143', title: 'Performance Evaluation and Fault Analysis of PMSM-Based Electric Power Steering System Under Varying Road Conditions', authors: 'Lalitha Saranya Pathi, Sowmya Chalapala, Umashankar Subramaniam' },
+                ],
+            },
+            {
+                trackNo: 'Track 5',
+                venue: 'PG Software Lab (B308)',
+                theme: 'Power Converters & Electric Drives',
+                papers: [
+                    { time: '1:00–1:13 PM', id: '231', title: 'Hybrid MPCC-Fuzzy Control Strategy for High-Performance PMSM Drives in Three-Phase VSI Systems', authors: 'Manu Neethi Chozhan A M, Prabhanjhan S B, RESMI R' },
+                    { time: '1:13–1:26 PM', id: '234', title: 'Comprehensive study of the Silicon Carbide (SiC) high density traction inverter Field-Oriented Control (FOC) for a Permanent Magnet Synchronous Motor (PMSM)', authors: 'Preethi S, J Ramprabhakar' },
+                    { time: '1:26–1:39 PM', id: '770', title: 'Simulation of MTPA and Field Weakening Control for PMSM Drive for High Speed Applications', authors: 'Deepshiga M, Gopika Gokul, Namitha C Jayan, Ritu Nandana M Nair, RESMI R' },
+                    { time: '1:39–1:52 PM', id: '660', title: 'Integrated Design, Fabrication, and Real-Time Implementation of Space Vector Modulated Field-Oriented Control for Permanent Magnet Synchronous Motor Drives', authors: 'Kumaravel S, Keshav Menon, Justin Yesudas, Athiradh Sudeesh, Bharadwaj V. P.' },
+                    { time: '1:52–2:05 PM', id: '769', title: 'A Modified Dual Input SEPIC Converter using Switched Inductors for Hybrid Energy Applications', authors: 'Jeanmary Jose, Sivaprasad Athikkal, Kumaravel Sundaramoorthy' },
+                    { time: '2:05–2:18 PM', id: '719', title: 'A Numerical Simulation-based Performance Analysis of Low Pass Filter Control and PI-cascaded control strategies for a 7 kW Commercial Battery Vehicle under Randomized Driving Cycles', authors: 'Phani Bankupalli, Inavelli Chandramouli' },
+                    { time: '2:18–2:31 PM', id: '748', title: 'DC-DC Converter fed Class-D Sonar Power Amplifier for Underwater Acoustic Experiments', authors: 'Harshita V P, Panchalai V N, Parvathy S.' },
+                    { time: '2:31–2:44 PM', id: '420', title: 'Hardware Implementation of Closed-Loop DC-DC Boost Converter', authors: 'PAUL JOHN, Mukti Barai' },
+                ],
+            },
+            {
+                trackNo: 'Track 6 (Online)',
+                venue: 'Department Computing Facility (B116)',
+                theme: 'Online Session I',
+                papers: [
+                    { time: '1:00–1:13 PM', id: '163', title: 'Development and testing of a paint for passive cooling of buildings', authors: 'Abhinav Sobti' },
+                    { time: '1:13–1:26 PM', id: '150', title: 'From Vernacular to Appropriate Technology: A Case Study of Sustainable Construction in Vidarbha', authors: 'Pradnyawant Gote, Tarika Dagadkar, Sachin Dagadkar, Anannya Dagadkar' },
+                    { time: '1:26–1:39 PM', id: '514', title: 'Techno-Economic Optimization of Second-Life NMC Battery Energy Storage Systems Using Dataset-Derived Degradation Model', authors: 'Ishaan Garg' },
+                    { time: '1:39–1:52 PM', id: '493', title: 'Smart Grid Driven Energy Management for Electric Vehicles – A Review on Challenges and Future Prospects', authors: 'M VINAY KUMAR, S Nagaraju, CH AMRUTHA, K Aishwarya, B Sumanth, G Anand' },
+                    { time: '1:52–2:05 PM', id: '535', title: 'Multi-Agent System with Knowledge-Grounded Validation for Power Equipment Ledger Maintenance', authors: 'JiangYu Yan, Hong Wang' },
+                    { time: '2:05–2:18 PM', id: '277', title: 'Graph Theory-Based Optimal Relay Coordination in Mesh Distribution Networks', authors: 'Aarya Premkumar, Angel TS, Sreelekshmi RS, Anand Kaippallil, Anupam Krishna, Aswin K Raj' },
+                    { time: '2:18–2:31 PM', id: '524', title: 'Machine Learning-Based Predictive Condition Monitoring of a DC Geared Motor', authors: 'Sheeba G, Akash S, Arun D, Israel M, Rameshkumar A, Jasmin M' },
+                    { time: '2:31–2:44 PM', id: '697', title: 'AI-Based Smart Traffic Management System Using YOLOv8, ByteTrack, and Multi-Factor Traffic Priority Score (MTPS) for Adaptive Traffic Signal Control', authors: 'Vijayalakshmi T, Taasha Trinita V, Jenifer A, Revathi M' },
+                ],
+            },
+        ],
+    },
+    day2: {
+        label: 'Day 2 (5 Dec) — Technical Track Session B | 11:00 AM – 1:00 PM',
+        tracks: [
+            {
+                trackNo: 'Track 1',
+                venue: 'Faraday Hall (B 04)',
+                theme: 'Smart Grids, AI & Forecasting',
+                papers: [
+                    { time: '11:00–11:13 AM', id: '245', title: 'ML-Assisted Predictive Industrial Load Management Using Mixed Integer Linear Programming', authors: 'Gowtham P K, N Mayadevi, Ashok S' },
+                    { time: '11:13–11:26 AM', id: '378', title: 'Activation–Optimiser Selection for MLP-Based Smart Meter Anomaly Detection and Theft-Type Classification', authors: 'Adhyan Rajiv Gupta, Sreenu Sreekumar, Rahul Satheesh, Sheik Mohammed Sulthan' },
+                    { time: '11:26–11:39 AM', id: '414', title: 'Physics-Calibrated Uncertainty-Aware Transformer for Reliable Early Transient Stability Assessment', authors: 'Devadharshini N, Rakshath Raj Y, Shanthi M' },
+                    { time: '11:39–11:52 AM', id: '448', title: 'ODYSSEY: An AI-Driven Digital Twin Framework for Interactive Marine Ecosystem Simulation and Conservation Awareness', authors: 'Samuel James Billy Graham, Siva Suryakanth M, Jaspin K' },
+                    { time: '11:52 AM–12:05 PM', id: '507', title: 'Toward Carbon-Neutral AI: An Energy and Carbon Audit of Large Language Model Fine-Tuning on Unified-Memory and Discrete GPUs', authors: 'Aadil Ganie, Saad Ezzini' },
+                    { time: '12:05–12:18 PM', id: '526', title: 'Peak-Aware Gradient Boosting for Short-Term Electricity Demand Forecasting in Smart Building Portfolios', authors: 'ROSAMMA S' },
+                    { time: '12:18–12:31 PM', id: '768', title: 'Dynamic Tail-Risk Modelling for Probabilistic Day-Ahead Electricity Price Forecasting in the Indian Power Market', authors: 'Lekshmi B Suresh, Lekshmi Krishna R, Muthukumari S, Rahul Satheesh' },
+                    { time: '12:31–12:44 PM', id: '767', title: 'Memory Augmented Agentic AI for Explainable Power System Simulation and Decision Support', authors: 'Honoksharathna B, Renkhanayagi A R K, Muthukumari S, Rahul Satheesh' },
+                ],
+            },
+            {
+                trackNo: 'Track 2',
+                venue: 'Shanon Hall (B104)',
+                theme: 'Fault Detection, Protection & Grid Security',
+                papers: [
+                    { time: '11:00–11:13 AM', id: '667', title: 'Evaluation of Thermal Stress Level on Insulation of Power Transformers using Fuzzy Logic Approach', authors: 'AVINASH DEWANGAN' },
+                    { time: '11:13–11:26 AM', id: '765', title: 'Fault Detection and Classification of a Two-Terminal VSC-HVDC System Using SVM in MATLAB/Simulink', authors: 'ANIRUDH NAIK, Devamsh Dinkar, Naveen Babu D, Arjun Prakash, Haseena A, Biju K, Vinod V' },
+                    { time: '11:26–11:39 AM', id: '766', title: 'Explainable AI-Based Transmission Line Fault Classification Using Feature Engineering', authors: 'Devana Bala Sathwik, Porupureddy Rahul Sai Sri Praharsha, Muthukumari S, Rahul Satheesh' },
+                    { time: '11:39–11:52 AM', id: '610', title: 'A Multi-Criteria Analysis Framework for the Siting and Scheduling of UAV Swarm Charging Infrastructure at Forward Operating Bases for DRDO Applications', authors: 'Dr. Deepika Yadav, Dr Ranjit Roy, Prashant Kumar, Tahiti Roy' },
+                    { time: '11:52 AM–12:05 PM', id: '578', title: 'A Hybrid Detection and ANN-Based Recovery Framework for False Data Injection Attacks with Economic Flexibility Analysis in Power Systems', authors: 'Dr Deepika Yadav, Dr Ranjit Roy, Prashant Kumar, Tahiti Roy' },
+                    { time: '12:05–12:18 PM', id: '203', title: 'An Auxiliary Filter–Based Approach for DC Series Arc Fault Detection in Module-Level PV Converters', authors: 'Levin Binu' },
+                    { time: '12:18–12:31 PM', id: '429', title: 'Real-Time Distribution Line Wire Breakage Detection for Sustainable Power Management', authors: 'Narmada Byreddy, Pallavi Mekonda, Srinidhi Adla, Sahithi Sri Tangella' },
+                    { time: '12:31–12:44 PM', id: '730', title: 'Inter-Turn Short-Circuit Fault Detection using SFRA End-to-End Voltage Transfer Function', authors: 'Pavithra M, Jayabal Rajamohan, Rajesh Rajamani, Kalyanasundaram V' },
+                ],
+            },
+            {
+                trackNo: 'Track 3',
+                venue: 'Aryabhata Hall',
+                theme: 'Drives, Inverters & Grid-Connected Converters',
+                papers: [
+                    { time: '11:00–11:13 AM', id: '299', title: 'Sensorless BLDC Motor Controller for Electric Vehicle Acoustic Alerting Systems (AVAS) via Direct Digital Synthesis SPWM Injection', authors: 'Vinayak H, Mayadevi N' },
+                    { time: '11:13–11:26 AM', id: '672', title: 'Genetic Algorithm-Based Multi-Objective Wheel Slip Control for Independent-Wheel-Drive Electric Vehicles', authors: 'Pranjal Barman, Nayan Jyoti Pathak, Honey Brahma, Brian Azzopardi' },
+                    { time: '11:26–11:39 AM', id: '696', title: 'PSO-Based Dynamic Power-Reference Optimization for Grid-Connected VSC Under Dynamic Local-Load Conditions', authors: 'Vijay Kumar, Jagan Mohan Raju T' },
+                    { time: '11:39–11:52 AM', id: '405', title: 'Sensitivity Analysis of Virtual Synchronous Machine (VSM) Control for Grid-Forming Inverters in Varying Grid Strengths', authors: 'Jacintha Dias, Asheesh Dhaneria' },
+                    { time: '11:52 AM–12:05 PM', id: '408', title: 'PSO-Tuned Flexible Power Point Tracking with Zero-Power Safety Clamping for Low-Voltage Ride-Through in Distributed PV Systems', authors: 'ASHEESH DHANERIA, Anil Kumar, Satish Chetwani, Ashutosh Giri' },
+                    { time: '12:05–12:18 PM', id: '731', title: 'System Configuration and Parameter Optimization for Low-Voltage Ride-Through in Single-Phase PV Systems', authors: 'ASHEESH DHANERIA, Anil Kumar, Satish Chetwani, Ashutosh Giri' },
+                    { time: '12:18–12:31 PM', id: '516', title: 'HIL-Based Accelerator Model for Electric Vehicle Motor Control', authors: 'Subash M, Chandra Prakash, Selvajyothi K, Raja B, Sivaselvan B' },
+                ],
+            },
+            {
+                trackNo: 'Track 4 (Hybrid)',
+                venue: 'PG Software Lab (B308) — Onsite & Online',
+                theme: 'Hybrid Session (Onsite and Online Presenters)',
+                papers: [
+                    { time: '11:00–11:13 AM', id: '525', title: 'Optimal Tap Selection and Power Electronic Switching for Online Voltage Regulation in Power Systems', authors: 'Lesin Lama Levan, Praveen Raj' },
+                    { time: '11:13–11:26 AM', id: '527', title: 'A Metaheuristic MPPT Control Based ZETA Converter for Solar PV Applications', authors: 'Angel Nazy Simon, Praveen Raj' },
+                    { time: '11:26–11:39 AM', id: '416', title: 'Integrated Forecasting of Solar PV Deployment and End-of-Life Waste in Kerala, India', authors: 'Shoarabh Sharma, Jiya Thakur, Priyanka Kajal, Satvasheel Powar, Atul Dhar' },
+                    { time: '11:39–11:52 AM', id: '385', title: 'Evaluating the Influence of Rectangular and Circular Coil Geometries for Wireless Power Transfer', authors: 'Mr. Jaish J. S., Mr. Karthik Satheesan, Mr. Karthik K., Mr. Arafan Mohammed, Ms. Sandhya P and Dr. Nisha G. K.' },
+                    { time: '11:52 AM–12:05 PM', id: '520', title: 'Cognitive Spectrum Sensing and Dynamic Channel Hopping Using AI (CNN-LSTM) for Interference-Aware IoT Communication', authors: 'Hemalatha S, Sashikiran S, Mukeshwaran M, MANIKANDAN J, Manuneethisozhan K, HEMAMALINI V' },
+                    { time: '12:05–12:18 PM', id: '540', title: 'Adaptive Electric Vehicle Safety System with Intelligent Driver Assistance and Battery Monitoring', authors: 'Hemamalini V, Dhatchayani N, Selvi T, Pooja Sri A, Manikandan J, Hemalatha S' },
+                ],
+            },
+        ],
+    },
+};
+
+
 const headerStyle = {
     background: '#1e3a5f',
     color: '#fff',
@@ -469,6 +630,117 @@ const TechnicalProgrammePage = () => {
                             </div>
                         </div>
                     ))}
+
+                    {/* ═══════════════════════════════════════════
+                        PAPER-LEVEL TRACK DETAILS
+                    ═══════════════════════════════════════════ */}
+                    <div style={{ marginTop: '40px' }}>
+                        <div style={{
+                            background: 'linear-gradient(135deg, #1e3a5f 0%, #0d233a 100%)',
+                            color: '#fff',
+                            borderRadius: '12px',
+                            padding: '22px 20px',
+                            marginBottom: '24px',
+                            textAlign: 'center',
+                            boxShadow: '0 4px 15px rgba(30, 58, 95, 0.12)',
+                        }}>
+                            <span style={{
+                                display: 'inline-block',
+                                background: 'rgba(255,255,255,0.15)',
+                                padding: '4px 12px',
+                                borderRadius: '20px',
+                                fontSize: '0.78rem',
+                                fontWeight: '600',
+                                letterSpacing: '0.8px',
+                                textTransform: 'uppercase',
+                                marginBottom: '8px'
+                            }}>
+                                Detailed Paper Schedule
+                            </span>
+                            <h2 style={{ margin: '0 0 8px 0', fontSize: '1.4rem', fontWeight: '800', letterSpacing: '0.3px', lineHeight: '1.3' }}>
+                                Technical Track Paper Schedule
+                            </h2>
+                            <p style={{ margin: 0, fontSize: '0.9rem', color: '#cbd5e1', lineHeight: '1.6' }}>
+                                Each paper: <strong style={{ color: '#fff' }}>10 min presentation + 3 min Q&amp;A</strong>
+                            </p>
+                        </div>
+
+                        {Object.entries(trackDetailData).map(([dayKey, dayData]) => (
+                            <div key={dayKey} style={{ marginBottom: '40px' }}>
+                                {/* Day Header */}
+                                <div style={{
+                                    background: '#1e3a5f',
+                                    color: '#fff',
+                                    padding: '12px 20px',
+                                    borderRadius: '8px',
+                                    fontWeight: '700',
+                                    fontSize: '1rem',
+                                    marginBottom: '18px',
+                                }}>
+                                    {dayData.label}
+                                </div>
+
+                                {dayData.tracks.map((track, tIdx) => (
+                                    <div key={tIdx} style={{ marginBottom: '28px' }}>
+                                        {/* Track Sub-Header */}
+                                        <div style={{
+                                            display: 'flex',
+                                            flexWrap: 'wrap',
+                                            alignItems: 'center',
+                                            gap: '10px',
+                                            background: '#f1f5fb',
+                                            border: '1px solid #c9d9ef',
+                                            borderRadius: '8px 8px 0 0',
+                                            padding: '10px 16px',
+                                            borderBottom: 'none',
+                                        }}>
+                                            <span style={{
+                                                background: '#00629b',
+                                                color: '#fff',
+                                                padding: '3px 10px',
+                                                borderRadius: '12px',
+                                                fontSize: '0.78rem',
+                                                fontWeight: '700',
+                                                whiteSpace: 'nowrap',
+                                            }}>
+                                                {track.trackNo}
+                                            </span>
+                                            <span style={{ fontWeight: '700', fontSize: '0.9rem', color: '#1e3a5f' }}>
+                                                {track.theme}
+                                            </span>
+                                            <span style={{ marginLeft: 'auto', fontSize: '0.82rem', color: '#475569', whiteSpace: 'nowrap' }}>
+                                                📍 {track.venue}
+                                            </span>
+                                        </div>
+
+                                        {/* Papers Table */}
+                                        <div className="schedule-table-wrapper" style={{ borderRadius: '0 0 8px 8px', marginBottom: 0 }}>
+                                            <table style={{ width: '100%', minWidth: '680px', borderCollapse: 'collapse', fontSize: '0.83rem' }}>
+                                                <thead>
+                                                    <tr>
+                                                        <th style={{ ...headerStyle, width: '130px' }}>Time</th>
+                                                        <th style={{ ...headerStyle, width: '60px' }}>Paper ID</th>
+                                                        <th style={headerStyle}>Paper Title</th>
+                                                        <th style={{ ...headerStyle, width: '220px' }}>Author(s)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {track.papers.map((paper, pIdx) => (
+                                                        <tr key={pIdx} style={{ background: pIdx % 2 === 0 ? '#fff' : '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
+                                                            <td style={{ ...timeStyle, fontSize: '0.8rem' }}>{paper.time}</td>
+                                                            <td style={{ ...cellStyle, textAlign: 'center', fontWeight: '700', color: '#00629b' }}>{paper.id}</td>
+                                                            <td style={{ ...cellStyle, fontWeight: '500' }}>{paper.title}</td>
+                                                            <td style={{ ...cellStyle, fontSize: '0.78rem', color: '#475569' }}>{paper.authors}</td>
+                                                        </tr>
+                                                    ))}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        ))}
+                    </div>
 
                     {/* Legend */}
                     <div style={{
