@@ -223,7 +223,7 @@ const HomePage = () => {
                 </div>
 
                 {/* ── Content overlapping the hero ── */}
-                <div style={{ position: 'relative', zIndex: 10, background: '#fafafa', borderRadius: '40px 40px 0 0', boxShadow: '0 -20px 50px rgba(0,0,0,0.6)' }}>
+                <div style={{ position: 'relative', zIndex: 10, background: '#fafafa', borderRadius: '40px 40px 0 0', boxShadow: '0 -20px 50px rgba(0,0,0,0.6)', overflow: 'hidden', width: '100%', maxWidth: '100%' }}>
                     
                     {/* ── About Section ── */}
                     <div style={{ padding: '90px 15px 80px', borderBottom: '1px solid #eaeaea' }}>
