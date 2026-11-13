@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import PageLayout from '../components/PageLayout';
 
 const scheduleData = [
