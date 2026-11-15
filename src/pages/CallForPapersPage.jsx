@@ -208,7 +208,7 @@ const CallForPapersPage = () => {
         <p style={{ marginBottom: '15px' }}>
             <strong>Registration</strong><br />
             • Early-bird Registration: up to 10th November 2026<br />
-            • Standard Registration: 11th – 15th November 2026
+            • Standard Registration: 11th – 20th November 2026
         </p>
         <p style={{ marginBottom: '15px' }}>
             <strong>Conference</strong><br />
