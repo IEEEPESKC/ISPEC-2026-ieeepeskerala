@@ -113,7 +113,7 @@ const KeynoteSpeakersPage = () => {
                                     Dean Sharafi is an Executive Advisor specialising in energy transition, working with companies and start-ups internationally. He holds degrees in Applied Physics, Electrical Engineering and Business Management, and brings approximately 30 years of experience in power system engineering, including senior leadership positions with Western Power and the Australian Energy Market Operator. His expertise spans power system protection, high-voltage systems, asset management, power system operations and electricity market operations.
                                 </p>
                                 <p style={{ margin: 0 }}>
-                                    Dean is a member of the Australian Institute of Management, CIGRE and Engineers Australia, and is a Senior Member of the IEEE. Over the past two decades, he has contributed extensively to IEEE Power &amp; Energy Society initiatives and CIGRE working groups. He served on the Governing Board of the IEEE Power &amp; Energy Society from 2017 to 2022 and is currently the Society's Treasurer. Dean is also an Associate Editor for the IEEE Transactions on Power Systems and an IEEE Distinguished Lecturer. He has supported a range of organisations in engaging with Asia-Pacific delegations seeking insight from Australia’s experience in energy transition and renewable energy integration.
+                                    Dean is a member of the Australian Institute of Management, CIGRE and Engineers Australia, and is a Senior Member of the IEEE. Over the past two decades, he has contributed extensively to IEEE Power &amp; Energy Society initiatives and CIGRE working groups. He served on the Governing Board of the IEEE Power &amp; Energy Society from 2017 to 2022 and is currently the Society's Treasurer. Dean is also an Associate Editor for the IEEE Transactions on Power Systems. He has supported a range of organisations in engaging with Asia-Pacific delegations seeking insight from Australia’s experience in energy transition and renewable energy integration.
                                 </p>
                             </div>
                         </div>
@@ -137,7 +137,7 @@ const KeynoteSpeakersPage = () => {
                                 <li>Former Senior Leadership, Western Power &amp; Australian Energy Market Operator (AEMO)</li>
                                 <li>Former Governing Board Member, IEEE Power &amp; Energy Society (2017–2022)</li>
                                 <li>Associate Editor, IEEE Transactions on Power Systems</li>
-                                <li>IEEE Distinguished Lecturer &amp; IEEE Senior Member</li>
+                                <li>IEEE Senior Member</li>
                                 <li>Member, Australian Institute of Management (AIM), CIGRE &amp; Engineers Australia</li>
                             </ul>
                         </div>
