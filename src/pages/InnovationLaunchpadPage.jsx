@@ -67,7 +67,7 @@ const InnovationLaunchpadPage = () => {
                                 lineHeight: '1.6',
                                 maxWidth: '780px',
                             }}>
-                                Organized by <strong>IEEE PES Kerala Chapter</strong> in association with <strong>IEEE PES Young Professionals</strong>.
+                                Organized by <strong>IEEE PES Kerala Chapter</strong> in association with <strong>IEEE PES Young Professionals</strong> and <strong>In -SDES</strong>.
                             </p>
                         </div>
 
