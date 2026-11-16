@@ -26,6 +26,7 @@ const KeynoteSpeakersPage = lazy(() => import('./pages/KeynoteSpeakersPage'))
 const VisaInformation = lazy(() => import('./pages/VisaInformation'))
 const TechnicalProgrammePage = lazy(() => import('./pages/TechnicalProgrammePage'))
 const AccommodationPage = lazy(() => import('./pages/AccommodationPage'))
+const InnovationLaunchpadPage = lazy(() => import('./pages/InnovationLaunchpadPage'))
 
 // Simple fallback shown while a page chunk loads
 const PageLoader = () => (
@@ -73,6 +74,8 @@ function App() {
           <Route path="/technical-program" element={<Suspense fallback={<PageLoader />}><TechnicalProgrammePage /></Suspense>} />
           <Route path="/program/technical-programme" element={<Suspense fallback={<PageLoader />}><TechnicalProgrammePage /></Suspense>} />
           <Route path="/accommodation" element={<Suspense fallback={<PageLoader />}><AccommodationPage /></Suspense>} />
+          <Route path="/innovation-launchpad" element={<Suspense fallback={<PageLoader />}><InnovationLaunchpadPage /></Suspense>} />
+          <Route path="/program/innovation-launchpad" element={<Suspense fallback={<PageLoader />}><InnovationLaunchpadPage /></Suspense>} />
         </Routes>
       </div>
     </Router>
