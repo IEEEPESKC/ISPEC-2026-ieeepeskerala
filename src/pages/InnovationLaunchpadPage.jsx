@@ -369,9 +369,6 @@ const InnovationLaunchpadPage = () => {
                                     <span>🔗</span> Register for Innovation Launchpad
                                     <i className="fas fa-arrow-right" style={{ fontSize: '0.85rem' }}></i>
                                 </a>
-                                <div style={{ marginTop: '12px', fontSize: '0.84rem', color: '#99f6e4' }}>
-                                    Direct link: <a href="https://tinyurl.com/mnyyvvyx" target="_blank" rel="noopener noreferrer" style={{ color: '#ffffff', textDecoration: 'underline' }}>https://tinyurl.com/mnyyvvyx</a>
-                                </div>
                             </div>
 
                             {/* Final Callout Note */}
@@ -398,3 +395,4 @@ const InnovationLaunchpadPage = () => {
 };
 
 export default InnovationLaunchpadPage;
+
