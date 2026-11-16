@@ -193,7 +193,7 @@ const InnovationLaunchpadPage = () => {
                                         fontSize: '0.82rem',
                                         fontWeight: '700',
                                     }}>
-                                        Sponsored by InSDES
+                                        Sponsored by In-SDES
                                     </span>
                                 </div>
 
