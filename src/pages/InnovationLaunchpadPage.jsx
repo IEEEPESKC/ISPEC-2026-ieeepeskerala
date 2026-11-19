@@ -160,6 +160,26 @@ const InnovationLaunchpadPage = () => {
                                         </div>
                                     </div>
                                 </div>
+
+                                <div style={{
+                                    background: '#fef2f2',
+                                    border: '1px solid #fecaca',
+                                    borderRadius: '12px',
+                                    padding: '18px 20px',
+                                    display: 'flex',
+                                    alignItems: 'flex-start',
+                                    gap: '12px',
+                                }}>
+                                    <span style={{ fontSize: '1.6rem', lineHeight: 1 }}>⏳</span>
+                                    <div>
+                                        <div style={{ fontSize: '0.75rem', fontWeight: '800', textTransform: 'uppercase', color: '#dc2626', letterSpacing: '0.5px', marginBottom: '4px' }}>
+                                            Registration Deadline
+                                        </div>
+                                        <div style={{ fontSize: '0.92rem', color: '#991b1b', fontWeight: '700', lineHeight: '1.5' }}>
+                                            25th November 2026
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
                             {/* Prizes Section */}
@@ -280,7 +300,7 @@ const InnovationLaunchpadPage = () => {
                                         {
                                             step: '1',
                                             title: 'Register & Submit Pitch Deck',
-                                            desc: 'Register through the link below. A sample pitch deck is attached with the form — make sure to submit your presentation along with your registration.',
+                                            desc: 'Register through the link below on or before 25th November 2026. A sample pitch deck is attached with the form — make sure to submit your presentation along with your registration.',
                                         },
                                         {
                                             step: '2',
@@ -344,8 +364,22 @@ const InnovationLaunchpadPage = () => {
                                 <h3 style={{ fontSize: '1.3rem', fontWeight: '800', margin: '0 0 8px 0', color: '#ffffff' }}>
                                     Ready to Showcase Your Idea?
                                 </h3>
+                                <div style={{
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    gap: '6px',
+                                    background: 'rgba(255, 255, 255, 0.2)',
+                                    padding: '5px 14px',
+                                    borderRadius: '20px',
+                                    fontSize: '0.86rem',
+                                    fontWeight: '700',
+                                    marginBottom: '14px',
+                                    color: '#ffffff',
+                                }}>
+                                    <span>⏳</span> Registration Deadline: 25th November 2026
+                                </div>
                                 <p style={{ fontSize: '0.94rem', color: '#ccfbf1', margin: '0 0 20px 0' }}>
-                                    Fill out the registration form and attach your pitch deck before the deadline.
+                                    Fill out the registration form and attach your pitch deck on or before 25th November 2026.
                                 </p>
                                 <a
                                     href="https://tinyurl.com/mnyyvvyx"

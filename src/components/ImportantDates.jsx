@@ -8,6 +8,14 @@ const ImportantDates = () => {
             status: 'closed'
         },
         { label: 'Registration Deadline', date: '1 November 2026', status: 'future' },
+        {
+            label: <>
+                <span style={{ backgroundColor: '#00629b', color: 'white', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', marginRight: '6px', verticalAlign: 'middle' }}>YP PROGRAM</span>
+                Innovation Launchpad Registration Deadline
+            </>,
+            date: '25th November 2026',
+            status: 'active'
+        },
         { label: 'Conference Dates', date: '4 – 6 December 2026', status: 'future' },
         {
             label: <><span style={{ backgroundColor: '#e74c3c', color: 'white', padding: '2px 6px', borderRadius: '4px', fontSize: '0.7rem', marginRight: '6px', verticalAlign: 'middle' }}>HARD DEADLINE</span>Camera Ready Paper Submission</>,
