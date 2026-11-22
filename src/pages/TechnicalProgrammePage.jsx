@@ -258,6 +258,7 @@ const trackDetailData = {
                     { time: '02:05 PM – 02:18 PM', id: '36', title: 'Market Analytics and Policy Pathways in India’s Green Day Ahead Market: A Data-Driven Study', authors: 'Nandan Rajesh, Gopi Krishna K, Harikrishnan Miraj Chathankandath, Sayooj Ramachandran, Anu Kumar, Maya P' },
                     { time: '02:18 PM – 02:31 PM', id: '174', title: 'Short Term Resource Adequacy Assessment and Procurement Planning Under Renewable Integration', authors: 'Jayeshkumar Priolkar' },
                     { time: '02:31 PM – 02:44 PM', id: '771', title: 'Charging Time Based Battery Health Estimation and Uncertainty Aware Remaining Useful Life Prediction', authors: 'Aditi Hirkude, Mahek Bhandari, Eslavath Sai Saranya, Mahi Teja Talluri, Amol D Rahulkar' },
+                    { time: '02:44 PM – 02:57 PM', id: '628', title: 'Thermodynamic and Environmental Performance Investigation of Hydrogen Fuel Flexibility in an Integrated Hybrid Power System', authors: 'Sk Arafat Zaman, Fahad M. Alzahrani' },
                 ],
             },
             {
