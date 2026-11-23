@@ -204,10 +204,8 @@ const scheduleData = [
             {
                 time: '10:00 AM – 1:00 PM',
                 event: 'Optional Cultural Visit',
-                desc: 'An optional cultural visit is planned for conference delegates from 10:00 AM to 1:00 PM. Delegates who are interested in participating are requested to register through the link below.',
-                venue: 'Venue & Track details to be announced',
-                link: 'https://tally.so/r/5XjvME',
-                linkLabel: 'Expression of Interest',
+                desc: 'An optional cultural visit is planned for conference delegates. We encourage interested delegates to register in advance to help us plan the visit.',
+                venue: 'Expression of Interest: https://tally.so/r/5XjvME',
                 type: 'cultural',
             },
         ],
