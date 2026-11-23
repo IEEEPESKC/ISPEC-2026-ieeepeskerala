@@ -203,10 +203,12 @@ const scheduleData = [
             },
             {
                 time: '10:00 AM – 1:00 PM',
-                event: 'Cultural Visit (Optional)',
-                desc: 'Optional cultural visit for delegates',
-                venue: 'Details to be announced',
-                type: 'normal',
+                event: 'Optional Cultural Visit',
+                desc: 'An optional cultural visit is planned for conference delegates. We encourage interested delegates to register in advance to help us plan the visit.',
+                venue: '',
+                link: 'https://tally.so/r/5XjvME',
+                linkLabel: 'Expression of Interest',
+                type: 'cultural',
             },
         ],
     },
@@ -258,6 +260,7 @@ const trackDetailData = {
                     { time: '02:05 PM – 02:18 PM', id: '36', title: 'Market Analytics and Policy Pathways in India’s Green Day Ahead Market: A Data-Driven Study', authors: 'Nandan Rajesh, Gopi Krishna K, Harikrishnan Miraj Chathankandath, Sayooj Ramachandran, Anu Kumar, Maya P' },
                     { time: '02:18 PM – 02:31 PM', id: '174', title: 'Short Term Resource Adequacy Assessment and Procurement Planning Under Renewable Integration', authors: 'Jayeshkumar Priolkar' },
                     { time: '02:31 PM – 02:44 PM', id: '771', title: 'Charging Time Based Battery Health Estimation and Uncertainty Aware Remaining Useful Life Prediction', authors: 'Aditi Hirkude, Mahek Bhandari, Eslavath Sai Saranya, Mahi Teja Talluri, Amol D Rahulkar' },
+                    { time: '02:44 PM – 02:57 PM', id: '628', title: 'Thermodynamic and Environmental Performance Investigation of Hydrogen Fuel Flexibility in an Integrated Hybrid Power System', authors: 'Sk Arafat Zaman, Fahad M. Alzahrani' },
                 ],
             },
             {
@@ -434,6 +437,8 @@ const getRowStyle = (type) => {
             return { background: '#f0f4f8' };
         case 'special':
             return { background: '#e8f4ea' };
+        case 'cultural':
+            return { background: '#f3eeff' };
         default:
             return { background: '#fff' };
     }
@@ -792,16 +797,41 @@ const TechnicalProgrammePage = () => {
                                                         <tr key={idx} style={rowBg}>
                                                             <td style={timeStyle}>{item.time}</td>
                                                             <td style={eventStyle}>{item.event}</td>
-                                                            <td style={cellStyle}>{item.desc}</td>
+                                                            <td style={cellStyle}>
+                                                                {item.desc}
+                                                            </td>
                                                             <td style={venueCellStyle}>
-                                                                {item.venue ? (
+                                                                {item.venue && (
                                                                     <span style={{
                                                                         color: '#00629b',
                                                                         fontWeight: '700',
+                                                                        display: 'block',
+                                                                        marginBottom: item.link ? '8px' : '0',
                                                                     }}>
                                                                         {item.venue}
                                                                     </span>
-                                                                ) : '—'}
+                                                                )}
+                                                                {item.link ? (
+                                                                    <a
+                                                                        href={item.link}
+                                                                        target="_blank"
+                                                                        rel="noopener noreferrer"
+                                                                        style={{
+                                                                            display: 'inline-block',
+                                                                            padding: '7px 16px',
+                                                                            background: '#6c3fc0',
+                                                                            color: '#fff',
+                                                                            borderRadius: '6px',
+                                                                            fontWeight: '700',
+                                                                            fontSize: '0.85rem',
+                                                                            textDecoration: 'none',
+                                                                            whiteSpace: 'nowrap',
+                                                                            boxShadow: '0 2px 6px rgba(108, 63, 192, 0.25)',
+                                                                        }}
+                                                                    >
+                                                                        {item.linkLabel || 'Register'}
+                                                                    </a>
+                                                                ) : (!item.venue ? '—' : null)}
                                                             </td>
                                                         </tr>
                                                     );
