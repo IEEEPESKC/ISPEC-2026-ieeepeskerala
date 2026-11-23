@@ -205,7 +205,9 @@ const scheduleData = [
                 time: '10:00 AM – 1:00 PM',
                 event: 'Optional Cultural Visit',
                 desc: 'An optional cultural visit is planned for conference delegates. We encourage interested delegates to register in advance to help us plan the visit.',
-                venue: 'Expression of Interest: https://tally.so/r/5XjvME',
+                venue: '',
+                link: 'https://tally.so/r/5XjvME',
+                linkLabel: 'Expression of Interest',
                 type: 'cultural',
             },
         ],
@@ -797,37 +799,39 @@ const TechnicalProgrammePage = () => {
                                                             <td style={eventStyle}>{item.event}</td>
                                                             <td style={cellStyle}>
                                                                 {item.desc}
-                                                                {item.link && (
-                                                                    <div style={{ marginTop: '10px' }}>
-                                                                        <a
-                                                                            href={item.link}
-                                                                            target="_blank"
-                                                                            rel="noopener noreferrer"
-                                                                            style={{
-                                                                                display: 'inline-block',
-                                                                                padding: '7px 16px',
-                                                                                background: '#6c3fc0',
-                                                                                color: '#fff',
-                                                                                borderRadius: '6px',
-                                                                                fontWeight: '700',
-                                                                                fontSize: '0.85rem',
-                                                                                textDecoration: 'none',
-                                                                            }}
-                                                                        >
-                                                                            {item.linkLabel || 'Register'}
-                                                                        </a>
-                                                                    </div>
-                                                                )}
                                                             </td>
                                                             <td style={venueCellStyle}>
-                                                                {item.venue ? (
+                                                                {item.venue && (
                                                                     <span style={{
                                                                         color: '#00629b',
                                                                         fontWeight: '700',
+                                                                        display: 'block',
+                                                                        marginBottom: item.link ? '8px' : '0',
                                                                     }}>
                                                                         {item.venue}
                                                                     </span>
-                                                                ) : '—'}
+                                                                )}
+                                                                {item.link ? (
+                                                                    <a
+                                                                        href={item.link}
+                                                                        target="_blank"
+                                                                        rel="noopener noreferrer"
+                                                                        style={{
+                                                                            display: 'inline-block',
+                                                                            padding: '7px 16px',
+                                                                            background: '#6c3fc0',
+                                                                            color: '#fff',
+                                                                            borderRadius: '6px',
+                                                                            fontWeight: '700',
+                                                                            fontSize: '0.85rem',
+                                                                            textDecoration: 'none',
+                                                                            whiteSpace: 'nowrap',
+                                                                            boxShadow: '0 2px 6px rgba(108, 63, 192, 0.25)',
+                                                                        }}
+                                                                    >
+                                                                        {item.linkLabel || 'Register'}
+                                                                    </a>
+                                                                ) : (!item.venue ? '—' : null)}
                                                             </td>
                                                         </tr>
                                                     );
