@@ -203,10 +203,12 @@ const scheduleData = [
             },
             {
                 time: '10:00 AM – 1:00 PM',
-                event: 'Cultural Visit (Optional)',
-                desc: 'Optional cultural visit for delegates',
-                venue: 'Details to be announced',
-                type: 'normal',
+                event: 'Optional Cultural Visit',
+                desc: 'An optional cultural visit is planned for conference delegates from 10:00 AM to 1:00 PM. Delegates who are interested in participating are requested to register through the link below.',
+                venue: 'Venue & Track details to be announced',
+                link: 'https://tally.so/r/5XjvME',
+                linkLabel: 'Expression of Interest',
+                type: 'cultural',
             },
         ],
     },
@@ -435,6 +437,8 @@ const getRowStyle = (type) => {
             return { background: '#f0f4f8' };
         case 'special':
             return { background: '#e8f4ea' };
+        case 'cultural':
+            return { background: '#f3eeff' };
         default:
             return { background: '#fff' };
     }
@@ -793,7 +797,30 @@ const TechnicalProgrammePage = () => {
                                                         <tr key={idx} style={rowBg}>
                                                             <td style={timeStyle}>{item.time}</td>
                                                             <td style={eventStyle}>{item.event}</td>
-                                                            <td style={cellStyle}>{item.desc}</td>
+                                                            <td style={cellStyle}>
+                                                                {item.desc}
+                                                                {item.link && (
+                                                                    <div style={{ marginTop: '10px' }}>
+                                                                        <a
+                                                                            href={item.link}
+                                                                            target="_blank"
+                                                                            rel="noopener noreferrer"
+                                                                            style={{
+                                                                                display: 'inline-block',
+                                                                                padding: '7px 16px',
+                                                                                background: '#6c3fc0',
+                                                                                color: '#fff',
+                                                                                borderRadius: '6px',
+                                                                                fontWeight: '700',
+                                                                                fontSize: '0.85rem',
+                                                                                textDecoration: 'none',
+                                                                            }}
+                                                                        >
+                                                                            {item.linkLabel || 'Register'}
+                                                                        </a>
+                                                                    </div>
+                                                                )}
+                                                            </td>
                                                             <td style={venueCellStyle}>
                                                                 {item.venue ? (
                                                                     <span style={{
