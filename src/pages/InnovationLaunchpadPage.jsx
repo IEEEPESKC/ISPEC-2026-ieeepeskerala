@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PageLayout from '../components/PageLayout';
+import launchpadPoster from '../assets/Launch_pad.jpeg';
 
 const InnovationLaunchpadPage = () => {
+    const [lightboxOpen, setLightboxOpen] = useState(false);
     return (
         <PageLayout title="Innovation Launchpad">
             <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 20px' }}>
@@ -73,6 +75,85 @@ const InnovationLaunchpadPage = () => {
 
                         {/* Card Content Body */}
                         <div style={{ padding: '36px' }}>
+
+                            {/* Poster Image */}
+                            <div style={{
+                                textAlign: 'center',
+                                marginBottom: '32px',
+                            }}>
+                                <img
+                                    src={launchpadPoster}
+                                    alt="Innovation Launchpad Poster"
+                                    onClick={() => setLightboxOpen(true)}
+                                    style={{
+                                        maxWidth: '100%',
+                                        width: '100%',
+                                        maxHeight: '520px',
+                                        objectFit: 'contain',
+                                        borderRadius: '12px',
+                                        boxShadow: '0 8px 30px rgba(0,0,0,0.12)',
+                                        cursor: 'zoom-in',
+                                        border: '1px solid #e2e8f0',
+                                        display: 'block',
+                                        margin: '0 auto',
+                                    }}
+                                />
+                                <p style={{ fontSize: '0.8rem', color: '#94a3b8', marginTop: '8px' }}>
+                                    Click to enlarge
+                                </p>
+                            </div>
+
+                            {/* Lightbox */}
+                            {lightboxOpen && (
+                                <div
+                                    onClick={() => setLightboxOpen(false)}
+                                    style={{
+                                        position: 'fixed',
+                                        inset: 0,
+                                        background: 'rgba(0,0,0,0.85)',
+                                        zIndex: 9999,
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        cursor: 'zoom-out',
+                                        padding: '20px',
+                                    }}
+                                >
+                                    <img
+                                        src={launchpadPoster}
+                                        alt="Innovation Launchpad Poster (Full)"
+                                        style={{
+                                            maxWidth: '95vw',
+                                            maxHeight: '92vh',
+                                            objectFit: 'contain',
+                                            borderRadius: '10px',
+                                            boxShadow: '0 20px 60px rgba(0,0,0,0.5)',
+                                        }}
+                                    />
+                                    <button
+                                        onClick={() => setLightboxOpen(false)}
+                                        style={{
+                                            position: 'fixed',
+                                            top: '18px',
+                                            right: '22px',
+                                            background: 'rgba(255,255,255,0.15)',
+                                            border: 'none',
+                                            color: '#fff',
+                                            fontSize: '1.6rem',
+                                            lineHeight: 1,
+                                            width: '40px',
+                                            height: '40px',
+                                            borderRadius: '50%',
+                                            cursor: 'pointer',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                        }}
+                                    >
+                                        ✕
+                                    </button>
+                                </div>
+                            )}
 
                             {/* Key Highlights Grid */}
                             <div style={{
