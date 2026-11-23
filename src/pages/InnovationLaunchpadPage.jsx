@@ -86,12 +86,10 @@ const InnovationLaunchpadPage = () => {
                                     alt="Innovation Launchpad Poster"
                                     onClick={() => setLightboxOpen(true)}
                                     style={{
-                                        maxWidth: '100%',
                                         width: '100%',
-                                        maxHeight: '520px',
-                                        objectFit: 'contain',
+                                        height: 'auto',
                                         borderRadius: '12px',
-                                        boxShadow: '0 8px 30px rgba(0,0,0,0.12)',
+                                        boxShadow: '0 8px 30px rgba(0, 0, 0, 0.12)',
                                         cursor: 'zoom-in',
                                         border: '1px solid #e2e8f0',
                                         display: 'block',
