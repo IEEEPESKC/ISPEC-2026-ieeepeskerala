@@ -2,6 +2,7 @@ import React from 'react';
 import PageLayout from '../components/PageLayout';
 
 const PPT_TEMPLATE_URL = 'https://docs.google.com/presentation/d/1HA_Fr9sG6wEfFFhjHKcBdxWwtrsTrVjN/edit?usp=sharing&ouid=117547984015209509017&rtpof=true&sd=true';
+const PPT_SUBMISSION_URL = 'https://forms.gle/ryetBMfpBB79PHFq7';
 
 const PresentationGuidelinePage = () => {
     return (
@@ -15,7 +16,7 @@ const PresentationGuidelinePage = () => {
                     padding: '35px 30px',
                     boxShadow: '0 4px 20px rgba(0,0,0,0.05)',
                     borderLeft: '5px solid #2e8b57',
-                    marginBottom: '40px'
+                    marginBottom: '30px'
                 }}>
                     <div style={{ marginBottom: '15px' }}>
                         <span style={{ background: '#e8f5e9', color: '#2e8b57', padding: '4px 12px', borderRadius: '4px', fontSize: '0.82rem', fontWeight: '700', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
@@ -26,8 +27,111 @@ const PresentationGuidelinePage = () => {
                         </h2>
                     </div>
                     <p style={{ fontSize: '1.08rem', color: '#475569', lineHeight: '1.7', margin: 0 }}>
-                        All authors presenting papers at IEEE iSPEC 2026 are requested to carefully follow the instructions below to ensure smooth and effective conduct of the technical sessions.
+                        All authors presenting papers at IEEE iSPEC 2026 are requested to carefully follow the instructions below to ensure smooth and effective conduct of the technical sessions. Please go through the Presentation Guidelines carefully and prepare your slides accordingly.
                     </p>
+                </div>
+
+                {/* PPT Submission Deadline & Upload Card */}
+                <div style={{
+                    background: '#ffffff',
+                    border: '2px solid #2e8b57',
+                    borderRadius: '16px',
+                    padding: '32px 30px',
+                    boxShadow: '0 8px 25px rgba(46, 139, 87, 0.12)',
+                    marginBottom: '40px',
+                }}>
+                    <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        flexWrap: 'wrap',
+                        gap: '16px',
+                        marginBottom: '18px',
+                        borderBottom: '1px solid #e2e8f0',
+                        paddingBottom: '18px',
+                    }}>
+                        <div>
+                            <div style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '6px',
+                                background: '#fef2f2',
+                                border: '1px solid #fecaca',
+                                color: '#dc2626',
+                                padding: '4px 12px',
+                                borderRadius: '20px',
+                                fontSize: '0.8rem',
+                                fontWeight: '800',
+                                textTransform: 'uppercase',
+                                letterSpacing: '0.05em',
+                                marginBottom: '8px',
+                            }}>
+                                <span>⏰</span> Action Required · Submission Deadline
+                            </div>
+                            <h3 style={{ margin: '4px 0 0', fontSize: '1.5rem', fontWeight: '800', color: '#1e293b' }}>
+                                PPT Submission Deadline: <span style={{ color: '#dc2626' }}>30 November 2026</span>
+                            </h3>
+                        </div>
+                        <a
+                            href={PPT_SUBMISSION_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                background: '#2e8b57',
+                                color: '#ffffff',
+                                padding: '14px 28px',
+                                borderRadius: '10px',
+                                fontWeight: '700',
+                                textDecoration: 'none',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '10px',
+                                fontSize: '1rem',
+                                boxShadow: '0 4px 14px rgba(46, 139, 87, 0.3)',
+                                transition: 'all 0.2s ease',
+                                whiteSpace: 'nowrap',
+                            }}
+                            onMouseEnter={e => { e.currentTarget.style.background = '#246e45'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                            onMouseLeave={e => { e.currentTarget.style.background = '#2e8b57'; e.currentTarget.style.transform = 'translateY(0)'; }}
+                        >
+                            <span>📤</span> Open PPT Submission Form
+                        </a>
+                    </div>
+
+                    <p style={{ fontSize: '1.02rem', color: '#334155', lineHeight: '1.7', margin: '0 0 20px 0' }}>
+                        All authors are requested to upload their final presentation slides (PPT/PPTX) through the submission form on or before <strong>30 November 2026</strong>.
+                    </p>
+
+                    {/* Mandatory File Naming Convention Box */}
+                    <div style={{
+                        background: '#f8fafc',
+                        border: '1px solid #cbd5e1',
+                        borderLeft: '5px solid #00629b',
+                        borderRadius: '10px',
+                        padding: '20px 22px',
+                    }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px' }}>
+                            <span style={{ fontSize: '1.25rem' }}>📁</span>
+                            <h4 style={{ margin: 0, fontSize: '1.05rem', fontWeight: '800', color: '#0f172a' }}>
+                                Mandatory File Naming Convention: <code style={{ background: '#e0f2fe', color: '#00629b', padding: '3px 8px', borderRadius: '4px', fontSize: '0.95rem' }}>PID_0XXX.pptx</code>
+                            </h4>
+                        </div>
+                        <p style={{ margin: '0 0 12px 0', fontSize: '0.93rem', color: '#475569', lineHeight: '1.6' }}>
+                            Please ensure that your <strong>Paper ID (PID)</strong> is correctly mentioned in the filename while uploading your presentation.
+                        </p>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', alignItems: 'center' }}>
+                            <span style={{ fontSize: '0.85rem', fontWeight: '700', color: '#64748b' }}>Examples:</span>
+                            <span style={{ background: '#ffffff', border: '1px solid #cbd5e1', padding: '5px 12px', borderRadius: '6px', fontFamily: 'monospace', fontSize: '0.9rem', color: '#0f172a', fontWeight: '700' }}>
+                                PID_0187.pptx
+                            </span>
+                            <span style={{ background: '#ffffff', border: '1px solid #cbd5e1', padding: '5px 12px', borderRadius: '6px', fontFamily: 'monospace', fontSize: '0.9rem', color: '#0f172a', fontWeight: '700' }}>
+                                PID_0025.pptx
+                            </span>
+                            <span style={{ background: '#ffffff', border: '1px solid #cbd5e1', padding: '5px 12px', borderRadius: '6px', fontFamily: 'monospace', fontSize: '0.9rem', color: '#0f172a', fontWeight: '700' }}>
+                                PID_0154.pptx
+                            </span>
+                        </div>
+                    </div>
                 </div>
 
                 {/* Grid of Key Instructions */}
@@ -161,30 +265,56 @@ const PresentationGuidelinePage = () => {
                             Presentations that do not follow the prescribed iSPEC 2026 template will not be permitted during technical sessions. Click to open and download the template directly from Google Slides / PowerPoint.
                         </p>
                     </div>
-                    <a
-                        href={PPT_TEMPLATE_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{
-                            background: '#2e8b57',
-                            color: '#ffffff',
-                            padding: '14px 28px',
-                            borderRadius: '10px',
-                            fontWeight: '700',
-                            textDecoration: 'none',
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            gap: '10px',
-                            fontSize: '1rem',
-                            boxShadow: '0 4px 14px rgba(0,0,0,0.25)',
-                            transition: 'all 0.2s ease',
-                            whiteSpace: 'nowrap'
-                        }}
-                        onMouseEnter={e => { e.currentTarget.style.background = '#246e45'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-                        onMouseLeave={e => { e.currentTarget.style.background = '#2e8b57'; e.currentTarget.style.transform = 'translateY(0)'; }}
-                    >
-                        <i className="fas fa-external-link-alt"></i> Open PPT Template
-                    </a>
+                    <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                        <a
+                            href={PPT_TEMPLATE_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                background: '#2e8b57',
+                                color: '#ffffff',
+                                padding: '14px 26px',
+                                borderRadius: '10px',
+                                fontWeight: '700',
+                                textDecoration: 'none',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '10px',
+                                fontSize: '1rem',
+                                boxShadow: '0 4px 14px rgba(0,0,0,0.25)',
+                                transition: 'all 0.2s ease',
+                                whiteSpace: 'nowrap'
+                            }}
+                            onMouseEnter={e => { e.currentTarget.style.background = '#246e45'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                            onMouseLeave={e => { e.currentTarget.style.background = '#2e8b57'; e.currentTarget.style.transform = 'translateY(0)'; }}
+                        >
+                            <i className="fas fa-external-link-alt"></i> Open PPT Template
+                        </a>
+                        <a
+                            href={PPT_SUBMISSION_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                background: 'rgba(255,255,255,0.15)',
+                                color: '#ffffff',
+                                border: '1px solid rgba(255,255,255,0.35)',
+                                padding: '14px 26px',
+                                borderRadius: '10px',
+                                fontWeight: '700',
+                                textDecoration: 'none',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '10px',
+                                fontSize: '1rem',
+                                transition: 'all 0.2s ease',
+                                whiteSpace: 'nowrap'
+                            }}
+                            onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.25)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                            onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.15)'; e.currentTarget.style.transform = 'translateY(0)'; }}
+                        >
+                            <span>📤</span> Upload Slides (Due 30 Nov)
+                        </a>
+                    </div>
                 </div>
 
                 <p style={{ margin: '0 0 50px 0', fontSize: '1.05rem', color: '#64748b', fontStyle: 'italic', textAlign: 'center' }}>
