@@ -51,23 +51,7 @@ const PresentationGuidelinePage = () => {
                         paddingBottom: '18px',
                     }}>
                         <div>
-                            <div style={{
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                gap: '6px',
-                                background: '#fef2f2',
-                                border: '1px solid #fecaca',
-                                color: '#dc2626',
-                                padding: '4px 12px',
-                                borderRadius: '20px',
-                                fontSize: '0.8rem',
-                                fontWeight: '800',
-                                textTransform: 'uppercase',
-                                letterSpacing: '0.05em',
-                                marginBottom: '8px',
-                            }}>
-                                <span>⏰</span> Action Required · Submission Deadline
-                            </div>
+                           
                             <h3 style={{ margin: '4px 0 0', fontSize: '1.5rem', fontWeight: '800', color: '#1e293b' }}>
                                 PPT Submission Deadline: <span style={{ color: '#dc2626' }}>30 November 2026</span>
                             </h3>
