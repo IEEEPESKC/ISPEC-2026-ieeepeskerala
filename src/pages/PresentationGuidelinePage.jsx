@@ -33,6 +33,30 @@ const PresentationGuidelinePage = () => {
                     </div>
                 </div>
 
+                {/* Best Paper Award Highlight */}
+                <div style={{
+                    background: 'linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)',
+                    border: '1px solid #fcd34d',
+                    borderLeft: '5px solid #d97706',
+                    borderRadius: '12px',
+                    padding: '18px 24px',
+                    marginBottom: '28px',
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '14px',
+                    boxShadow: '0 4px 14px rgba(217, 119, 6, 0.1)',
+                }}>
+                    <span style={{ fontSize: '1.45rem', lineHeight: 1.2 }}>🏆</span>
+                    <div>
+                        <div style={{ fontSize: '0.85rem', fontWeight: '800', color: '#b45309', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '4px' }}>
+                            Best Paper Award
+                        </div>
+                        <p style={{ margin: 0, fontSize: '1.02rem', color: '#78350f', fontWeight: '700', lineHeight: '1.6' }}>
+                            The Best Paper Award will be presented to the best offline presentation in each track.
+                        </p>
+                    </div>
+                </div>
+
                 {/* Hero Banner / Overview */}
                 <div style={{
                     background: '#fff',
