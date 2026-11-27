@@ -9,6 +9,30 @@ const PresentationGuidelinePage = () => {
         <PageLayout title="Presentation Instructions">
             <div className="container" style={{ maxWidth: '1000px', margin: '0 auto', padding: '0 15px', paddingBottom: '60px' }}>
 
+                {/* Important Policy Notice */}
+                <div style={{
+                    background: '#fef2f2',
+                    border: '1px solid #fecaca',
+                    borderLeft: '5px solid #dc2626',
+                    borderRadius: '12px',
+                    padding: '18px 24px',
+                    marginBottom: '28px',
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '14px',
+                    boxShadow: '0 2px 10px rgba(220, 38, 38, 0.06)',
+                }}>
+                    <span style={{ fontSize: '1.35rem', lineHeight: 1.2 }}>⚠️</span>
+                    <div>
+                        <div style={{ fontSize: '0.85rem', fontWeight: '800', color: '#b91c1c', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '4px' }}>
+                            Important Notice
+                        </div>
+                        <p style={{ margin: 0, fontSize: '1rem', color: '#7f1d1d', fontWeight: '600', lineHeight: '1.6' }}>
+                            Please note that no further requests for online presentations will be entertained. The schedule is fixed, and refunds are not available.
+                        </p>
+                    </div>
+                </div>
+
                 {/* Hero Banner / Overview */}
                 <div style={{
                     background: '#fff',
