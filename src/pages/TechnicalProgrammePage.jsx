@@ -11,8 +11,8 @@ const scheduleData = [
             {
                 time: '9:00 AM – 10:00 AM',
                 event: 'Registration',
-                desc: 'Conference Registration & Welcome Coffee',
-                venue: 'Registration Desk',
+                desc: 'Conference Registration',
+                venue: 'Registration Desk (A BLOCK RECEPTION AREA)',
                 type: 'normal',
             },
             {
@@ -60,13 +60,7 @@ const scheduleData = [
                 ],
                 type: 'track',
             },
-            {
-                time: '3:00 PM – 3:15 PM',
-                event: 'Tea Break',
-                desc: 'Networking Tea Break',
-                venue: 'Foyer',
-                type: 'break',
-            },
+           
             {
                 time: '3:15 PM – 4:15 PM',
                 event: 'Inaugural Ceremony',
@@ -85,7 +79,7 @@ const scheduleData = [
                 time: '5:00 PM – 7:00 PM',
                 event: 'High Tea Networking Welcome Reception',
                 desc: 'Networking Reception & Icebreaker Session',
-                venue: 'Lawn / Banquet Area',
+                venue: 'Foyer',
                 type: 'normal',
             },
         ],
@@ -99,7 +93,7 @@ const scheduleData = [
             {
                 time: '8:30 AM – 9:00 AM',
                 event: 'Registration',
-                desc: 'Delegate Registration & Morning Refreshments',
+                desc: 'Delegate Registration',
                 venue: 'Registration Desk',
                 type: 'normal',
             },
@@ -181,7 +175,7 @@ const scheduleData = [
                 type: 'normal',
             },
             {
-                time: '6:30 PM – 9:00 PM',
+                time: '6:50 PM – 9:00 PM',
                 event: 'Best Paper Awards, Gala Dinner & Cultural Night',
                 desc: 'Announcement of Best Paper Awards across each Thematic Area, followed by Gala Dinner & Cultural Night',
                 venue: 'AMINETY HALL',
