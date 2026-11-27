@@ -46,16 +46,17 @@ const scheduleData = [
             {
                 time: '1:00 PM – 3:00 PM',
                 event: 'Technical Track Session A',
-                desc: 'Technical Paper Presentations across 6 parallel tracks (Each paper: 10 min presentation + 3 min Q&A)',
+                desc: 'Technical Paper Presentations across 7 parallel tracks (Each paper: 10 min presentation + 3 min Q&A)',
                 isMultiTrack: true,
                 sessionKey: 'day1',
                 tracks: [
                     { track: 'Track 1 (Solar PV Systems & Monitoring)', venue: 'Aryabhata Hall (B 303)' },
-                    { track: 'Track 2 (PV Analytics, Forecasting & AI for Solar)', venue: 'Shanon Hall (B104)' },
+                    { track: 'Track 2 (PV Analytics, Forecasting & AI for Solar)', venue: 'Shannon Hall (B104)' },
                     { track: 'Track 3 (Microgrids, Hybrid Renewables & Energy Markets)', venue: 'Senatus Hall (A 204)' },
-                    { track: 'Track 4 (Batteries, Storage & EV Systems)', venue: 'Faraday Hall (B04)' },
-                    { track: 'Track 5 (Power Converters & Electric Drives)', venue: 'PG Software Lab (B308)' },
-                    { track: 'Track 6 (Online Session I)', venue: 'Department Computing Facility (B116)' },
+                    { track: 'Track 4 (Battery Health, Diagnostics & Management)', venue: 'Faraday Hall (B04)' },
+                    { track: 'Track 5 (Electric Drives & EV Energy Management)', venue: 'PG Software Lab (B308)' },
+                    { track: 'Track 6 (Power Converters & Hardware Implementation)', venue: 'Software Lab 4 (B 316)' },
+                    { track: 'Track 7 (Online Session I)', venue: 'Department Computing Facility (B116)' },
                 ],
                 type: 'track',
             },
@@ -131,7 +132,7 @@ const scheduleData = [
                 sessionKey: 'day2',
                 tracks: [
                     { track: 'Track 1 (Smart Grids, AI & Forecasting)', venue: 'Faraday Hall (B 04)' },
-                    { track: 'Track 2 (Fault Detection, Protection & Grid Security)', venue: 'Shanon Hall (B104)' },
+                    { track: 'Track 2 (Fault Detection, Protection & Grid Security)', venue: 'Shannon Hall (B104)' },
                     { track: 'Track 3 (Drives, Inverters & Grid-Connected Converters)', venue: 'Aryabhata Hall' },
                     { track: 'Track 4 (Online Session II)', venue: 'PG Software Lab (B 308)' },
                 ],
@@ -234,7 +235,7 @@ const trackDetailData = {
             },
             {
                 trackNo: 'Track 2',
-                venue: 'Shanon Hall (B104)',
+                venue: 'Shannon Hall (B104)',
                 theme: 'PV Analytics, Forecasting & AI for Solar',
                 papers: [
                     { time: '01:00 PM – 01:13 PM', id: '406', title: 'Controlled Benchmarking of Deep Architectures and Class-Weighting Strategies for Photovoltaic Electroluminescence Defect Segmentation', authors: 'Manu Prakash Maurya, Priyanka Kajal, Satvasheel Powar, Atul Dhar, André Augusto' },
@@ -262,7 +263,7 @@ const trackDetailData = {
             {
                 trackNo: 'Track 4',
                 venue: 'Faraday Hall (B04)',
-                theme: 'Batteries, Storage & EV Systems',
+                theme: 'Battery Health, Diagnostics & Management',
                 papers: [
                     { time: '01:00 PM – 01:13 PM', id: '417', title: 'Early Detection of Thermal Stress in Lithium-Ion Cells Using the Rate of Temperature Rise', authors: 'Ilango Karuppasamy, Thirupugazhl SD, Bhavyaa M' },
                     { time: '01:13 PM – 01:26 PM', id: '305', title: 'Simplified Multiphysics Modelling of Battery Heating Coils for Cold-Climate', authors: 'Chetan Mahawar, Dharanivendhan T' },
@@ -275,23 +276,30 @@ const trackDetailData = {
             {
                 trackNo: 'Track 5',
                 venue: 'PG Software Lab (B308)',
-                theme: 'Power Converters & Electric Drives',
+                theme: 'Electric Drives & EV Energy Management',
                 papers: [
                     { time: '01:00 PM – 01:13 PM', id: '231', title: 'Hybrid MPCC-Fuzzy Control Strategy for High-Performance PMSM Drives in Three-Phase VSI Systems', authors: 'Manu Neethi Chozhan A M, Prabhanjhan S B, RESMI R' },
                     { time: '01:13 PM – 01:26 PM', id: '234', title: 'Comprehensive study of the Silicon Carbide (SiC) high density traction inverter Field-Oriented Control (FOC) for a Permanent Magnet Synchronous Motor (PMSM)', authors: 'Preethi S, J Ramprabhakar' },
                     { time: '01:26 PM – 01:39 PM', id: '770', title: 'Simulation of MTPA and Field Weakening Control for PMSM Drive for High Speed Applications', authors: 'Deepshiga M, Gopika Gokul, Namitha C Jayan, Ritu Nandana M Nair, RESMI R' },
                     { time: '01:39 PM – 01:52 PM', id: '209', title: 'EV-BASED SMART ENERGY MANAGEMENT FOR PEAK LOAD REDUCTION', authors: 'Saurav Krishnaprasad, Anto Joseph, Swaroop S S, Horizon A R, Sijo George, Sreena Sreekumar' },
                     { time: '01:52 PM – 02:05 PM', id: '339', title: 'Real-Time Edge AI and Digital Twin Framework for Intelligent Street Lighting and EV Charging Energy Management in Sustainable Smart Cities', authors: 'BALAMURUGAN E, KARTHIKA M, RAMASAMI S, PRIYADHARSHINI S, PAVITHRA G, NANTHINI M' },
-                    { time: '02:05 PM – 02:18 PM', id: '660', title: 'Integrated Design, Fabrication, and Real-Time Implementation of Space Vector Modulated Field-Oriented Control for Permanent Magnet Synchronous Motor Drives', authors: 'Kumaravel S, Keshav Menon, Justin Yesudas, Athiradh Sudeesh, Bharadwaj V. P.' },
-                    { time: '02:18 PM – 02:31 PM', id: '769', title: 'A Modified Dual Input SEPIC Converter using Switched Inductors for Hybrid Energy Applications', authors: 'Jeanmary Jose, Sivaprasad Athikkal, Kumaravel Sundaramoorthy' },
-                    { time: '02:31 PM – 02:44 PM', id: '719', title: 'A Numerical Simulation-based Performance Analysis of Low Pass Filter Control and PI-cascaded control strategies for a 7 kW Commercial Battery Vehicle under Randomized Driving Cycles', authors: 'Phani Bankupalli, Inavelli Chandramouli' },
-                    { time: '02:44 PM – 02:57 PM', id: '748', title: 'DC-DC Converter fed Class-D Sonar Power Amplifier for Underwater Acoustic Experiments', authors: 'Harshita V P, Panchalai V N, Parvathy S.' },
-                    { time: '02:57 PM – 03:10 PM', id: '420', title: 'Hardware Implementation of Closed-Loop DC-DC Boost Converter', authors: 'PAUL JOHN, Mukti Barai' },
-                    { time: '03:10 PM – 03:23 PM', id: '562', title: 'Converter-Less Battery Interconnection Using Relay Coordination and Intelligent Control for Modular LVDC Hotel Loads in Electric Houseboats', authors: 'Dhanesh Raghavan, R M shereef' },
                 ],
             },
             {
-                trackNo: 'Track 6 (Online)',
+                trackNo: 'Track 6',
+                venue: 'Software Lab 4 (B 316)',
+                theme: 'Power Converters & Hardware Implementation',
+                papers: [
+                    { time: '01:00 PM – 01:13 PM', id: '660', title: 'Integrated Design, Fabrication, and Real-Time Implementation of Space Vector Modulated Field-Oriented Control for Permanent Magnet Synchronous Motor Drives', authors: 'Kumaravel S, Keshav Menon, Justin Yesudas, Athiradh Sudeesh, Bharadwaj V. P.' },
+                    { time: '01:13 PM – 01:26 PM', id: '769', title: 'A Modified Dual Input SEPIC Converter using Switched Inductors for Hybrid Energy Applications', authors: 'Jeanmary Jose, Sivaprasad Athikkal, Kumaravel Sundaramoorthy' },
+                    { time: '01:26 PM – 01:39 PM', id: '719', title: 'A Numerical Simulation-based Performance Analysis of Low Pass Filter Control and PI-cascaded control strategies for a 7 kW Commercial Battery Vehicle under Randomized Driving Cycles', authors: 'Phani Bankupalli, Inavelli Chandramouli' },
+                    { time: '01:39 PM – 01:52 PM', id: '748', title: 'DC-DC Converter fed Class-D Sonar Power Amplifier for Underwater Acoustic Experiments', authors: 'Harshita V P, Panchalai V N, Parvathy S.' },
+                    { time: '01:52 PM – 02:05 PM', id: '420', title: 'Hardware Implementation of Closed-Loop DC-DC Boost Converter', authors: 'PAUL JOHN, Mukti Barai' },
+                    { time: '02:05 PM – 02:18 PM', id: '562', title: 'Converter-Less Battery Interconnection Using Relay Coordination and Intelligent Control for Modular LVDC Hotel Loads in Electric Houseboats', authors: 'Dhanesh Raghavan, R M shereef' },
+                ],
+            },
+            {
+                trackNo: 'Track 7 (Online)',
                 venue: 'Department Computing Facility (B116)',
                 theme: 'Online Session I',
                 papers: [
@@ -331,7 +339,7 @@ const trackDetailData = {
             },
             {
                 trackNo: 'Track 2',
-                venue: 'Shanon Hall (B104)',
+                venue: 'Shannon Hall (B104)',
                 theme: 'Fault Detection, Protection & Grid Security',
                 papers: [
                     { time: '11:00 AM – 11:13 AM', id: '667', title: 'Evaluation of Thermal Stress Level on Insulation of Power Transformers using Fuzzy Logic Approach', authors: 'AVINASH DEWANGAN' },
