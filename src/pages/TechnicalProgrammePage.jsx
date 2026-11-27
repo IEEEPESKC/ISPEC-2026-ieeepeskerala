@@ -175,13 +175,6 @@ const scheduleData = [
                 type: 'normal',
             },
             {
-                time: '6:30 PM - 6:50 PM',
-                event: 'Valedictory Session',
-                desc: 'Concluding Remarks & Official Vote of Thanks',
-                venue:'SENATUS HALL',
-                type: 'normal'
-            },
-            {
                 time: '6:50 PM – 9:00 PM',
                 event: 'Best Paper Awards, Gala Dinner & Cultural Night',
                 desc: 'Announcement of Best Paper Awards across each Thematic Area, followed by Gala Dinner & Cultural Night',
